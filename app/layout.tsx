@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Dan Habib Tech | Solutions numériques",
+  title: "Dan Habib | Fullstack & Automatisation",
   description:
-    "Agence numérique spécialisée en développement web, mobile et branding.",
+    "Développeur fullstack spécialisé dans l'automatisation des tâches et l'optimisation des processus.",
 };
 
 export default function RootLayout({
