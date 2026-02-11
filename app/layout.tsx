@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Space_Mono, Syncopate } from "next/font/google";
+import { Onest, Oxanium } from "next/font/google";
 import "./globals.css";
 
-const syncopate = Syncopate({
+const oxanium = Oxanium({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-display",
 });
 
-const spaceMono = Space_Mono({
+const onest = Onest({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-body",
 });
 
@@ -60,7 +60,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className={`${syncopate.variable} ${spaceMono.variable}`}>
+      <body className={`${oxanium.variable} ${onest.variable}`}>
         <div className="page">{children}</div>
       </body>
     </html>
