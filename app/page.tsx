@@ -34,6 +34,8 @@ const skills = [
       { name: "JavaScript", level: "Intermédiaire+" },
       { name: "PHP", level: "Intermédiaire" },
       { name: "Go", level: "En apprentissage" },
+      { name: "C++", level: "Débutant" },
+      { name: "HTML/CSS", level: "Intermédiaire" },
     ],
   },
   {
@@ -52,10 +54,19 @@ const skills = [
   {
     title: "Déploiement & Outils",
     items: [
+      { name: "Linux", level: "Utilisation" },
       { name: "VPS", level: "Utilisation" },
       { name: "Docker", level: "Bonne maîtrise" },
       { name: "Git", level: "Quotidien" },
       { name: "API REST", level: "Création & Consommation" },
+    ],
+  },
+  {
+    title: "Spécialisations",
+    items: [
+      { name: "Automatisation", level: "Avancé" },
+      { name: "Scraping", level: "Solide" },
+      { name: "Scripting", level: "Avancé" },
     ],
   },
 ];
