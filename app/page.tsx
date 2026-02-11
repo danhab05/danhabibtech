@@ -106,7 +106,6 @@ export default function HomePage() {
           <nav className="nav-links">
             <a href="#projets">Projets</a>
             <a href="#competences">Compétences</a>
-            <a href="#blog">Blog</a>
             <a href="#contact">Contact</a>
           </nav>
           <button className="theme-toggle" type="button">
@@ -200,9 +199,6 @@ export default function HomePage() {
                 </article>
               ))}
             </div>
-            <button className="button outline" type="button">
-              Générer une image de projet avec l'IA
-            </button>
           </div>
         </section>
 
@@ -227,31 +223,6 @@ export default function HomePage() {
                 </article>
               ))}
             </div>
-          </div>
-        </section>
-
-        <section className="section" id="blog">
-          <div className="container">
-            <div className="section-head">
-              <h2>Blog &amp; Notes</h2>
-              <p>
-                Un espace pour partager des idées et des découvertes sur l'automatisation et le
-                développement.
-              </p>
-            </div>
-            <article className="card blog-card">
-              <div>
-                <p className="eyebrow">25 juillet 2024</p>
-                <h3>Bienvenue sur le Blog</h3>
-                <p>
-                  Ceci est le premier article de votre nouveau blog basé sur des fichiers
-                  Markdown.
-                </p>
-              </div>
-              <a className="button ghost" href="#contact">
-                Lire la suite
-              </a>
-            </article>
           </div>
         </section>
 
