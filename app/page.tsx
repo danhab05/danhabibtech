@@ -63,9 +63,17 @@ const skills = [
 export default function HomePage() {
   return (
     <>
-      <header>
-        <div className="container navbar">
-          <div className="brand">danhabibtech</div>
+      <a className="skip-link" href="#content">
+        Aller au contenu
+      </a>
+      <header className="site-header">
+        <div className="container nav">
+          <div className="brand">
+            <span className="brand-mark" aria-hidden="true">
+              ✦
+            </span>
+            danhabibtech
+          </div>
           <nav className="nav-links">
             <a href="#projets">Projets</a>
             <a href="#competences">Compétences</a>
@@ -78,61 +86,73 @@ export default function HomePage() {
         </div>
       </header>
 
-      <main>
-        <section className="hero container">
-          <div>
-            <p className="pill">Dan Habib</p>
-            <h1>Développeur Fullstack & Automatisateur de tâches</h1>
-            <p>
-              Développeur polyvalent passionné par l'optimisation des processus manuels grâce
-              à la programmation. J'aide les entreprises à gagner du temps en automatisant
-              les tâches chronophages.
-            </p>
-            <div className="hero-actions">
-              <a className="button primary" href="#projets">
-                Voir mes projets
-              </a>
-              <a className="button secondary" href="#contact">
-                Me contacter
-              </a>
+      <main id="content">
+        <section className="hero">
+          <div className="container hero-grid">
+            <div className="hero-copy">
+              <p className="eyebrow">Dan Habib</p>
+              <h1>
+                Développeur Fullstack &amp; Automatisateur de tâches
+              </h1>
+              <p className="lead">
+                Développeur polyvalent passionné par l'optimisation des processus manuels grâce
+                à la programmation. J'aide les entreprises à gagner du temps en automatisant
+                les tâches chronophages.
+              </p>
+              <div className="hero-actions">
+                <a className="button primary" href="#projets">
+                  Voir mes projets
+                </a>
+                <a className="button ghost" href="#contact">
+                  Me contacter
+                </a>
+              </div>
             </div>
-          </div>
-          <div className="hero-card">
-            <ul>
-              <li>
-                <span>01</span>
+            <div className="hero-panel">
+              <div className="panel-top">
                 <div>
-                  <strong>Automatisation</strong>
-                  <p>Workflows fiables pour réduire les tâches répétitives.</p>
+                  <p className="panel-title">Disponibilité</p>
+                  <h2>Ouvert aux missions automation &amp; fullstack</h2>
                 </div>
-              </li>
-              <li>
-                <span>02</span>
+                <span className="status">Disponible</span>
+              </div>
+              <div className="panel-metrics">
                 <div>
-                  <strong>Fullstack</strong>
-                  <p>Front, back et données pour livrer des solutions complètes.</p>
+                  <strong>40+</strong>
+                  <span>Projets livrés</span>
                 </div>
-              </li>
-              <li>
-                <span>03</span>
                 <div>
-                  <strong>Impact</strong>
-                  <p>Focus sur le gain de temps et l'efficacité opérationnelle.</p>
+                  <strong>5+</strong>
+                  <span>Années d'expérience</span>
                 </div>
-              </li>
-            </ul>
+                <div>
+                  <strong>24/7</strong>
+                  <span>Support &amp; maintenance</span>
+                </div>
+              </div>
+              <div className="panel-tags">
+                <span>Automatisation</span>
+                <span>Scraping</span>
+                <span>APIs</span>
+                <span>Fullstack</span>
+              </div>
+            </div>
           </div>
         </section>
 
         <section className="section" id="projets">
           <div className="container">
-            <h2>Mes Projets</h2>
-            <p>Quelques exemples de mon travail en automatisation et développement.</p>
-            <div className="grid">
+            <div className="section-head">
+              <h2>Mes Projets</h2>
+              <p>Quelques exemples de mon travail en automatisation et développement.</p>
+            </div>
+            <div className="grid projects-grid">
               {projects.map((project) => (
                 <article key={project.title} className="card project-card">
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
+                  <div>
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+                  </div>
                   <div className="tag-list">
                     <span className="tag-label">Technologies utilisées :</span>
                     <div className="tags">
@@ -150,7 +170,7 @@ export default function HomePage() {
                 </article>
               ))}
             </div>
-            <button className="button ghost" type="button">
+            <button className="button outline" type="button">
               Générer une image de projet avec l'IA
             </button>
           </div>
@@ -158,11 +178,13 @@ export default function HomePage() {
 
         <section className="section" id="competences">
           <div className="container">
-            <h2>Compétences Techniques</h2>
-            <p>Ma boîte à outils pour construire des solutions efficaces.</p>
+            <div className="section-head">
+              <h2>Compétences Techniques</h2>
+              <p>Ma boîte à outils pour construire des solutions efficaces.</p>
+            </div>
             <div className="grid">
               {skills.map((group) => (
-                <article key={group.title} className="card">
+                <article key={group.title} className="card skill-card">
                   <h3>{group.title}</h3>
                   <ul className="skill-list">
                     {group.items.map((item) => (
@@ -180,55 +202,70 @@ export default function HomePage() {
 
         <section className="section" id="blog">
           <div className="container">
-            <h2>Blog & Notes</h2>
-            <p>Un espace pour partager des idées et des découvertes sur l'automatisation et le développement.</p>
+            <div className="section-head">
+              <h2>Blog &amp; Notes</h2>
+              <p>
+                Un espace pour partager des idées et des découvertes sur l'automatisation et le
+                développement.
+              </p>
+            </div>
             <article className="card blog-card">
               <div>
+                <p className="eyebrow">25 juillet 2024</p>
                 <h3>Bienvenue sur le Blog</h3>
-                <p className="muted">25 juillet 2024</p>
                 <p>
                   Ceci est le premier article de votre nouveau blog basé sur des fichiers
                   Markdown.
                 </p>
               </div>
-              <a className="button secondary" href="#contact">
+              <a className="button ghost" href="#contact">
                 Lire la suite
               </a>
             </article>
           </div>
         </section>
 
-        <section className="section" id="contact">
+        <section className="section contact" id="contact">
           <div className="container">
-            <h2>Parlons de votre projet</h2>
-            <p>Je suis toujours ouvert à de nouvelles opportunités. N'hésitez pas à me contacter.</p>
-            <div className="grid">
+            <div className="section-head">
+              <h2>Parlons de votre projet</h2>
+              <p>Je suis toujours ouvert à de nouvelles opportunités. N'hésitez pas à me contacter.</p>
+            </div>
+            <div className="grid contact-grid">
               <div className="card">
                 <h3>Email</h3>
                 <p>danhabibpro@gmail.com</p>
+              </div>
+              <div className="card">
+                <h3>Disponibilité</h3>
+                <p>Lun - Sam : 9h00 - 19h00</p>
+              </div>
+              <div className="card">
+                <h3>Base</h3>
+                <p>Paris • Casablanca • Remote</p>
               </div>
             </div>
           </div>
         </section>
       </main>
 
-      <footer>
+      <footer className="site-footer">
         <div className="container footer-grid">
           <div>
             <strong>Dan Habib</strong>
-            <p>Développeur Fullstack & automatisation.</p>
+            <p>Développeur Fullstack &amp; automatisation.</p>
           </div>
           <div>
             <strong>Contact</strong>
             <p>danhabibpro@gmail.com</p>
           </div>
           <div>
-            <strong>Disponibilité</strong>
-            <p>Lun - Sam : 9h00 - 19h00</p>
-          </div>
-          <div>
             <strong>Réseaux</strong>
             <p>LinkedIn · Dribbble · Behance</p>
+          </div>
+          <div>
+            <strong>Disponibilité</strong>
+            <p>Lun - Sam : 9h00 - 19h00</p>
           </div>
         </div>
         <div className="footer-bottom">© 2025 Dan Habib. Tous droits réservés.</div>

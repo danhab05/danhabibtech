@@ -1,5 +1,17 @@
 import type { Metadata } from "next";
+import { Bricolage_Grotesque, Prata } from "next/font/google";
 import "./globals.css";
+
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-body",
+});
+
+const prata = Prata({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-display",
+});
 
 export const metadata: Metadata = {
   title: "Dan Habib | Fullstack & Automatisation",
@@ -14,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body>
+      <body className={`${bricolage.variable} ${prata.variable}`}>
         <div className="page">{children}</div>
       </body>
     </html>
