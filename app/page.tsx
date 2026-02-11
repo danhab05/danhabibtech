@@ -280,7 +280,9 @@ export default function HomePage() {
           </div>
           <div>
             <strong>Réseaux</strong>
-            <p>LinkedIn · Dribbble · Behance</p>
+            <p>
+              <a href="https://www.linkedin.com/in/dan-habib-899b84232">LinkedIn</a>
+            </p>
           </div>
           <div>
             <strong>Disponibilité</strong>
