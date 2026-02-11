@@ -261,7 +261,7 @@ export default function HomePage() {
               </div>
               <div className="card">
                 <h3>Base</h3>
-                <p>Paris • Casablanca • Remote</p>
+                <p>Paris • Remote</p>
               </div>
             </div>
           </div>
