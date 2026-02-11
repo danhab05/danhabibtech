@@ -103,14 +103,9 @@ export default function HomePage() {
             </span>
             danhabibtech
           </div>
-          <nav className="nav-links">
-            <a href="#projets">Projets</a>
-            <a href="#competences">Compétences</a>
-            <a href="#contact">Contact</a>
-          </nav>
-          <button className="theme-toggle" type="button">
-            Changer le thème
-          </button>
+          <a className="button ghost nav-cta" href="#contact">
+            Contact
+          </a>
         </div>
       </header>
 
@@ -271,7 +266,9 @@ export default function HomePage() {
             <p>Lun - Ven : 9h00 - 19h00</p>
           </div>
         </div>
-        <div className="footer-bottom">© 2025 Dan Habib. Tous droits réservés.</div>
+        <div className="footer-bottom">
+          © {new Date().getFullYear()} Dan Habib. Tous droits réservés.
+        </div>
       </footer>
     </>
   );
