@@ -17,11 +17,11 @@ const onest = Onest({
 export const metadata: Metadata = {
   metadataBase: new URL("https://danhabibtech.cc"),
   title: {
-    default: "Dan Habib | Développeur Fullstack & Automatisation",
+    default: "Dan Habib Tech | Développeur Fullstack & Automatisation",
     template: "%s | Dan Habib",
   },
   description:
-    "Portfolio de Dan Habib, développeur fullstack spécialisé en automatisation, scraping et outils internes.",
+    "Portfolio de Dan Habib Tech, développeur fullstack spécialisé en automatisation, scraping et outils internes.",
   keywords: [
     "Dan Habib",
     "Habib Dan",

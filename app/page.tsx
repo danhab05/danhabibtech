@@ -74,11 +74,15 @@ const skills = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Dan Habib",
-  alternateName: ["Habib Dan", "DanHabibTech"],
+  name: "Dan Habib Tech",
+  alternateName: ["Dan Habib", "Habib Dan", "DanHabibTech"],
   url: "https://danhabibtech.cc",
   jobTitle: "Développeur Fullstack & Automatisateur de tâches",
-  sameAs: ["https://danhabibtech.cc"],
+  sameAs: [
+    "https://danhabibtech.cc",
+    "https://www.linkedin.com/in/dan-habib-899b84232",
+    "https://github.com/danhab05",
+  ],
   worksFor: {
     "@type": "Organization",
     name: "DanHabibTech",
@@ -101,7 +105,7 @@ export default function HomePage() {
             <span className="brand-mark" aria-hidden="true">
               ⟟
             </span>
-            danhabibtech
+            Dan Habib Tech
           </div>
           <a className="button ghost nav-cta" href="#contact">
             Contact
@@ -113,9 +117,9 @@ export default function HomePage() {
         <section className="hero">
           <div className="container hero-grid">
             <div className="hero-copy">
-              <p className="eyebrow">Dan Habib / Habib Dan</p>
+              <p className="eyebrow">Dan Habib Tech — Développeur</p>
               <h1>
-                Développeur Fullstack &amp; Automatisateur de tâches
+                Dan Habib · Développeur Fullstack &amp; Automatisation
               </h1>
               <p className="lead">
                 Développeur polyvalent passionné par l'optimisation des processus manuels grâce
@@ -159,6 +163,39 @@ export default function HomePage() {
                 <span>Scraping</span>
                 <span>APIs</span>
                 <span>Fullstack</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section about" id="apropos">
+          <div className="container">
+            <div className="section-head">
+              <h2>À propos de Dan Habib Tech</h2>
+              <p>
+                Dan Habib est développeur fullstack spécialisé en automatisation, scraping et
+                outils internes. Sous la marque Dan Habib Tech, je conçois des solutions fiables
+                pour gagner du temps, réduire les erreurs et accélérer les opérations.
+              </p>
+            </div>
+            <div className="grid">
+              <div className="card">
+                <h3>Positionnement</h3>
+                <p>
+                  Automatisation métier, intégrations et applications web sur-mesure pour PME,
+                  équipes opérationnelles et fondateurs.
+                </p>
+              </div>
+              <div className="card">
+                <h3>Valeur</h3>
+                <p>
+                  Focus sur l'impact mesurable : temps gagné, flux simplifiés, données plus
+                  propres.
+                </p>
+              </div>
+              <div className="card">
+                <h3>Technos clés</h3>
+                <p>Python, Next.js, Docker, Selenium, scraping &amp; APIs.</p>
               </div>
             </div>
           </div>
@@ -248,7 +285,7 @@ export default function HomePage() {
       <footer className="site-footer">
         <div className="container footer-grid">
           <div>
-            <strong>Dan Habib</strong>
+            <strong>Dan Habib Tech</strong>
             <p>Développeur Fullstack &amp; automatisation.</p>
           </div>
           <div>
@@ -258,7 +295,8 @@ export default function HomePage() {
           <div>
             <strong>Réseaux</strong>
             <p>
-              <a href="https://www.linkedin.com/in/dan-habib-899b84232">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/dan-habib-899b84232">LinkedIn</a> ·{" "}
+              <a href="https://github.com/danhab05">GitHub</a>
             </p>
           </div>
           <div>
