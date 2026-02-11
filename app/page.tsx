@@ -60,9 +60,27 @@ const skills = [
   },
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Dan Habib",
+  alternateName: ["Habib Dan", "DanHabibTech"],
+  url: "https://danhabibtech.cc",
+  jobTitle: "Développeur Fullstack & Automatisateur de tâches",
+  sameAs: ["https://danhabibtech.cc"],
+  worksFor: {
+    "@type": "Organization",
+    name: "DanHabibTech",
+  },
+};
+
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <a className="skip-link" href="#content">
         Aller au contenu
       </a>
@@ -70,7 +88,7 @@ export default function HomePage() {
         <div className="container nav">
           <div className="brand">
             <span className="brand-mark" aria-hidden="true">
-              ✦
+              ⟟
             </span>
             danhabibtech
           </div>
@@ -90,7 +108,7 @@ export default function HomePage() {
         <section className="hero">
           <div className="container hero-grid">
             <div className="hero-copy">
-              <p className="eyebrow">Dan Habib</p>
+              <p className="eyebrow">Dan Habib / Habib Dan</p>
               <h1>
                 Développeur Fullstack &amp; Automatisateur de tâches
               </h1>
@@ -107,6 +125,7 @@ export default function HomePage() {
                   Me contacter
                 </a>
               </div>
+              <div className="pulse-line" aria-hidden="true"></div>
             </div>
             <div className="hero-panel">
               <div className="panel-top">
