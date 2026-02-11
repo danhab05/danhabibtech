@@ -257,7 +257,7 @@ export default function HomePage() {
               </div>
               <div className="card">
                 <h3>Disponibilité</h3>
-                <p>Lun - Sam : 9h00 - 19h00</p>
+                <p>Lun - Ven : 9h00 - 19h00</p>
               </div>
               <div className="card">
                 <h3>Base</h3>
@@ -284,7 +284,7 @@ export default function HomePage() {
           </div>
           <div>
             <strong>Disponibilité</strong>
-            <p>Lun - Sam : 9h00 - 19h00</p>
+            <p>Lun - Ven : 9h00 - 19h00</p>
           </div>
         </div>
         <div className="footer-bottom">© 2025 Dan Habib. Tous droits réservés.</div>
