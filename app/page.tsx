@@ -3,7 +3,7 @@ const projects = [
     title: "Automatisation d'annonces immobilières",
     description:
       "Automatisation complète du processus de dépôt d'annonce pour une agence. Gestion des formulaires, upload de photos et notifications email.",
-    technologies: ["Python", "Flutter", "JavaScript", "PHP"],
+    technologies: ["Next.js", "Python", "Docker", "Selenium"],
     result:
       "Outil utilisé au quotidien par l'équipe, résultant en un gain de temps considérable.",
   },
@@ -11,15 +11,15 @@ const projects = [
     title: "Formulaire de test antigénique COVID",
     description:
       "Formulaire web d'inscription avec envoi automatique du résultat par mail. Suivi centralisé pour le pharmacien et le patient.",
-    technologies: ["HTML", "PHP", "MySQL"],
+    technologies: ["Flutter", "Python", "Flask", "Docker"],
     result:
-      "A permis d'éviter le contact physique et d'améliorer le flux des patients.",
+      "A permis d'éviter le contact physique et d'améliorer le flux des patients (~100k tests en 2 ans).",
   },
   {
     title: "Scripts d'automatisation et de scraping",
     description:
       "Développement de divers scripts pour automatiser des tâches web répétitives et scraper des données ciblées pour des agences et back-offices.",
-    technologies: ["API", "Batch Processing", "Email Automation"],
+    technologies: ["Python", "Go"],
     result:
       "Fourniture de données qualifiées et optimisation des processus internes.",
   },
