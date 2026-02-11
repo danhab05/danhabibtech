@@ -43,7 +43,7 @@ const skills = [
     items: [
       { name: "Flask", level: "Solide" },
       { name: "Django", level: "Solide" },
-      { name: "Next.js", level: "Débutant" },
+      { name: "Next.js", level: "Intermédiaire" },
       { name: "React", level: "Intermédiaire" },
     ],
   },
