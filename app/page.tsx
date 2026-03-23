@@ -11,6 +11,17 @@ const projects = [
     featured: true,
   },
   {
+    id: "extractgrid",
+    title: "ExtractGrid — PDF bancaire vers Excel",
+    description:
+      "Application web qui convertit automatiquement les relevés bancaires PDF en fichiers Excel structurés. Détection automatique de la banque, extraction des colonnes date, libellé, débit et crédit.",
+    technologies: ["Next.js", "TypeScript", "Node.js"],
+    result:
+      "Outil pratique pour comptables et PME, multi-banques, déployé en production.",
+    link: "https://github.com/danhab05/ExtractGrid",
+    featured: false,
+  },
+  {
     id: "covid",
     title: "Formulaire de test antigénique COVID",
     description:
@@ -19,6 +30,17 @@ const projects = [
     result:
       "~100 000 tests gérés en 2 ans, contact physique réduit, flux patients optimisé.",
     link: null,
+    featured: false,
+  },
+  {
+    id: "ecoledirect",
+    title: "EcoleDirect — Bibliothèque Python",
+    description:
+      "Librairie Python installable via pip pour récupérer automatiquement les devoirs, notes et informations élèves depuis EcoléDirect (ecoledirecte.com).",
+    technologies: ["Python", "pip", "Web scraping"],
+    result:
+      "Publiée sur PyPI, utilisée par des parents et étudiants pour accéder aux données scolaires programmatiquement.",
+    link: "https://github.com/danhab05/ecoledirect",
     featured: false,
   },
   {
@@ -330,7 +352,7 @@ export default function HomePage() {
                 </div>
                 <div className="contact-item">
                   <strong>Disponibilité</strong>
-                  <p>Lun – Ven · 9h00 – 19h00</p>
+                  <p>Lun – Ven &amp; Dim · 8h00 – 20h00</p>
                 </div>
                 <div className="contact-item">
                   <strong>Localisation</strong>
@@ -373,7 +395,7 @@ export default function HomePage() {
           </div>
           <div>
             <strong>Disponibilité</strong>
-            <p>Lun – Ven · 9h – 19h</p>
+            <p>Lun – Ven &amp; Dim · 8h – 20h</p>
           </div>
         </div>
         <div className="container footer-bottom">
