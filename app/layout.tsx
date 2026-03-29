@@ -1,47 +1,42 @@
 import type { Metadata } from "next";
-import { Onest, Oxanium } from "next/font/google";
 import "./globals.css";
 
-const oxanium = Oxanium({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-display",
-});
-
-const onest = Onest({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-body",
-});
-
 export const metadata: Metadata = {
-  metadataBase: new URL("https://danhabibtech.cc"),
+  metadataBase: new URL("https://danhabib.dev"),
   title: {
-    default: "Dan Habib Tech | Développeur Fullstack & Automatisation",
+    default: "Dan Habib | Développeur Fullstack & Automatisation — Paris",
     template: "%s | Dan Habib",
   },
   description:
-    "Portfolio de Dan Habib Tech, développeur fullstack spécialisé en automatisation, scraping et outils internes.",
+    "Dan Habib — Développeur fullstack basé à Paris, spécialisé en automatisation, scraping web et outils internes. Python, Next.js, Docker. Disponible pour missions.",
   keywords: [
     "Dan Habib",
-    "Habib Dan",
+    "DanHabib",
+    "danhabib.dev",
     "danhabibtech",
-    "développeur fullstack",
+    "Dan Habib Tech",
+    "développeur fullstack Paris",
     "automatisation",
-    "scraping",
-    "Python",
+    "web scraping",
+    "Python développeur",
     "Flutter",
     "Next.js",
+    "développeur freelance Paris",
+    "outils internes",
+    "API REST",
+    "Docker",
   ],
+  authors: [{ name: "Dan Habib", url: "https://danhabib.dev" }],
+  creator: "Dan Habib",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Dan Habib | Développeur Fullstack & Automatisation",
     description:
-      "Automatisation, fullstack, scraping et outils internes pour gagner du temps.",
-    url: "https://danhabibtech.cc",
-    siteName: "DanHabibTech",
+      "Automatisation, fullstack, scraping et outils internes pour gagner du temps et optimiser vos processus.",
+    url: "https://danhabib.dev",
+    siteName: "Dan Habib",
     locale: "fr_FR",
     type: "website",
   },
@@ -50,6 +45,18 @@ export const metadata: Metadata = {
     title: "Dan Habib | Développeur Fullstack & Automatisation",
     description:
       "Automatisation, fullstack, scraping et outils internes pour gagner du temps.",
+    creator: "@Snowy_27_",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -60,7 +67,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className={`${oxanium.variable} ${onest.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>
         <div className="page">{children}</div>
       </body>
     </html>

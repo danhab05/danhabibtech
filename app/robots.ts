@@ -6,6 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://danhabibtech.cc/sitemap.xml",
+    sitemap: "https://danhabib.dev/sitemap.xml",
+    host: "https://danhabib.dev",
   };
 }
