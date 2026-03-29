@@ -135,14 +135,14 @@ const githubRepos = [
     description: "Application d'apprentissage du code Morse avec interface interactive.",
     language: "Vue",
     stars: 0,
-    url: "https://github.com/danhab05/MorseMaster",
+    url: "https://morse-master.vercel.app/",
   },
   {
     name: "PdfSplitter",
     description: "Outil web pour découper et réorganiser des fichiers PDF.",
     language: "TypeScript",
     stars: 0,
-    url: "https://github.com/danhab05/PdfSplitter",
+    url: "https://pdf-splitter-sigma.vercel.app/",
   },
 ];
 
