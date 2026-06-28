@@ -163,7 +163,7 @@ const jsonLd = {
     "https://danhabib.dev",
     "https://www.linkedin.com/in/dan-habib-899b84232",
     "https://github.com/danhab05",
-    "https://twitter.com/Snowy_27_",
+    "https://x.com/DanHabib05",
   ],
   knowsAbout: [
     "Python",
@@ -553,11 +553,11 @@ export default function HomePage() {
                     <span className="contact-item-label">Twitter / X</span>
                     <span className="contact-item-value">
                       <a
-                        href="https://twitter.com/Snowy_27_"
+                        href="https://x.com/DanHabib05"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        @Snowy_27_ →
+                        @DanHabib05 →
                       </a>
                     </span>
                   </div>
