@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     title: "Dan Habib | Développeur Fullstack & Automatisation",
     description:
       "Automatisation, fullstack, scraping et outils internes pour gagner du temps.",
-    creator: "@Snowy_27_",
+    creator: "@DanHabib05",
   },
   robots: {
     index: true,
