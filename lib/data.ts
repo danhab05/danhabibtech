@@ -1,7 +1,7 @@
 import { MEDIA } from "./media";
 
 export const SITE = {
-  url: "https://danhabib.dev",
+  url: "https://www.danhabib.dev",
   name: "Dan Habib",
   brand: "Dan Habib",
   jobTitle: "Développeur Fullstack & Automatisation",

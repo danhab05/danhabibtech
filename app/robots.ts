@@ -30,7 +30,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://danhabib.dev/sitemap.xml",
-    host: "https://danhabib.dev",
+    sitemap: "https://www.danhabib.dev/sitemap.xml",
+    host: "https://www.danhabib.dev",
   };
 }

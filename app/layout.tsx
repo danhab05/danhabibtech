@@ -41,7 +41,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://danhabib.dev"),
+  metadataBase: new URL("https://www.danhabib.dev"),
   title: {
     default:
       "Dan Habib — Développeur Fullstack & Automatisation à Paris",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     "API REST",
     "Docker",
   ],
-  authors: [{ name: "Dan Habib", url: "https://danhabib.dev" }],
+  authors: [{ name: "Dan Habib", url: "https://www.danhabib.dev" }],
   creator: "Dan Habib",
   publisher: "Dan Habib",
   category: "technology",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     title: "Dan Habib — Développeur Fullstack & Automatisation",
     description:
       "Automatisation, scraping et applications web sur-mesure pour PME et fondateurs. Basé à Paris, disponible en remote partout en France.",
-    url: "https://danhabib.dev",
+    url: "https://www.danhabib.dev",
     siteName: "Dan Habib — Portfolio",
     locale: "fr_FR",
     type: "website",
