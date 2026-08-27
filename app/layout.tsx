@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     template: "%s | Dan Habib",
   },
   description:
-    "Dan Habib, développeur fullstack freelance à Paris. Automatisation de processus métier, web scraping, outils internes et applications web sur-mesure. Python, Next.js, TypeScript, Docker. Disponible pour missions, réponse sous 24h.",
+    "Dan Habib, développeur fullstack freelance à Paris. J'automatise les tâches répétitives qui coûtent des heures à vos équipes et je construis les applications web et outils internes qui vont avec. Python, Next.js, TypeScript, Docker. Réponse sous 24h.",
   keywords: [
     "Dan Habib",
     "DanHabib",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dan Habib — Développeur Fullstack & Automatisation",
     description:
-      "Automatisation, scraping et applications web sur-mesure pour PME et fondateurs. Basé à Paris, disponible en remote partout en France.",
+      "J'automatise les tâches répétitives et je construis les outils web qui vont avec. Paris, remote partout en France.",
     url: "https://www.danhabib.dev",
     siteName: "Dan Habib — Portfolio",
     locale: "fr_FR",
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dan Habib — Développeur Fullstack & Automatisation",
     description:
-      "Automatisation, scraping et applications web sur-mesure. Paris · Remote.",
+      "J'automatise les tâches répétitives et je construis les outils web qui vont avec. Paris · Remote.",
     creator: "@DanHabib05",
     site: "@DanHabib05",
   },

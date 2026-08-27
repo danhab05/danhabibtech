@@ -8,7 +8,7 @@ export const SITE = {
   email: "danhabibpro@gmail.com",
   location: "Paris, France",
   description:
-    "Dan Habib est un développeur fullstack freelance basé à Paris, spécialisé en automatisation de processus métier, web scraping et développement d'outils internes sur-mesure. Python, Next.js, TypeScript, Docker.",
+    "Dan Habib, développeur fullstack freelance à Paris. J'automatise les tâches répétitives et je construis les applications web et les outils internes qui vont avec. Python, Next.js, TypeScript, Docker.",
   links: {
     github: "https://github.com/danhab05",
     linkedin: "https://www.linkedin.com/in/dan-habib-899b84232",
@@ -32,11 +32,11 @@ export const projects: Project[] = [
   {
     id: "immo",
     title: "BLG Immobilier",
-    category: "Site vitrine & automatisation",
+    category: "Site vitrine + robot de publication",
     description:
-      "Développement complet du site vitrine blgimmobilier.fr pour l'agence BLG Immobilier, couplé à une automatisation du processus de dépôt d'annonces : formulaires, upload de photos et notifications email.",
+      "L'agence ressaisissait chaque annonce à la main : le même bien, les mêmes photos, encore et encore. J'ai livré le site vitrine blgimmobilier.fr et le robot qui prend le relais — formulaire, upload des photos, notifications par mail.",
     result:
-      "Site en production, outil d'automatisation utilisé quotidiennement — gain de temps considérable pour l'équipe.",
+      "Le site est en ligne, le robot tourne tous les jours. La publication d'une annonce ne monopolise plus personne.",
     technologies: ["Next.js", "Python", "Docker", "Selenium"],
     link: "https://blgimmobilier.fr/",
     image: MEDIA.projects.immo,
@@ -46,11 +46,11 @@ export const projects: Project[] = [
   {
     id: "extractgrid",
     title: "ExtractGrid",
-    category: "PDF bancaire → Excel",
+    category: "Relevés bancaires PDF → Excel",
     description:
-      "Application web qui convertit automatiquement les relevés bancaires PDF en fichiers Excel structurés. Détection automatique de la banque, extraction des colonnes date, libellé, débit et crédit.",
+      "Recopier un relevé bancaire dans un tableur, c'est une heure perdue et deux fautes de frappe. ExtractGrid reconnaît la banque tout seul, sort les dates, libellés, débits et crédits, et rend un fichier Excel propre.",
     result:
-      "Outil pratique pour comptables et PME, multi-banques, déployé en production.",
+      "En production, compatible multi-banques, adopté par des comptables et des PME.",
     technologies: ["Next.js", "TypeScript", "Node.js"],
     link: "https://github.com/danhab05/ExtractGrid",
     image: MEDIA.projects.extractgrid,
@@ -60,11 +60,11 @@ export const projects: Project[] = [
   {
     id: "covid",
     title: "Tests antigéniques",
-    category: "Formulaire & suivi patient",
+    category: "Inscription et résultats automatisés",
     description:
-      "Formulaire web d'inscription aux tests COVID avec envoi automatique du résultat par email. Suivi centralisé pour le pharmacien et le patient.",
+      "Une pharmacie débordée par le flux de tests. Les patients s'inscrivent en ligne, reçoivent leur résultat par mail automatiquement, et le pharmacien suit tout depuis une seule interface.",
     result:
-      "≈100 000 tests gérés en 2 ans, contact physique réduit, flux patients optimisé.",
+      "Environ 100 000 tests traités en deux ans, moins d'attente au comptoir et moins de contacts physiques.",
     technologies: ["Flutter", "Python", "Flask", "Docker"],
     link: null,
     image: MEDIA.projects.covid,
@@ -74,11 +74,11 @@ export const projects: Project[] = [
   {
     id: "ecoledirect",
     title: "EcoleDirect",
-    category: "Bibliothèque Python open source",
+    category: "Bibliothèque Python, open source",
     description:
-      "Librairie Python installable via pip pour récupérer automatiquement les devoirs, notes et informations élèves depuis EcoleDirecte, de façon programmatique.",
+      "EcoleDirecte n'expose aucune API publique. Cette librairie comble le trou : trois lignes de Python suffisent pour récupérer les devoirs, les notes et les informations d'un élève.",
     result:
-      "Publiée sur PyPI, utilisée par des parents et étudiants pour accéder aux données scolaires.",
+      "Publiée sur PyPI, installable via pip, utilisée par des parents et des étudiants.",
     technologies: ["Python", "pip", "Web scraping"],
     link: "https://github.com/danhab05/ecoledirect",
     image: MEDIA.projects.ecoledirect,
@@ -88,10 +88,11 @@ export const projects: Project[] = [
   {
     id: "scripts",
     title: "Automatisation & scraping",
-    category: "Scripts sur-mesure",
+    category: "Missions sur-mesure",
     description:
-      "Développement de scripts pour automatiser des tâches web répétitives et scraper des données ciblées pour des agences et back-offices.",
-    result: "Données qualifiées livrées, processus internes optimisés.",
+      "Remplir un back-office, collecter des données que personne ne fournit proprement, répéter la même manipulation web cent fois : tout ce que vos équipes n'ont aucune envie de faire à la main.",
+    result:
+      "Des données livrées prêtes à l'emploi et des process internes nettement allégés.",
     technologies: ["Python", "Go"],
     link: null,
     image: MEDIA.projects.scripts,
@@ -103,8 +104,8 @@ export const projects: Project[] = [
 export const stats = [
   { value: 40, suffix: "+", label: "Projets livrés" },
   { value: 5, suffix: "+", label: "Ans d'expérience" },
-  { value: 100, suffix: "K", label: "Tests COVID gérés" },
-  { value: 50, suffix: "+", label: "Dépôts GitHub" },
+  { value: 100, suffix: "K", label: "Tests traités" },
+  { value: 50, suffix: "+", label: "Dépôts publics" },
 ] as const;
 
 export const skills = [
@@ -155,40 +156,39 @@ export const githubRepos = [
   {
     name: "ExtractGrid",
     description:
-      "Convertit les relevés bancaires PDF en fichiers Excel structurés.",
+      "Transforme un relevé bancaire PDF en fichier Excel exploitable.",
     language: "TypeScript",
     url: "https://github.com/danhab05/ExtractGrid",
   },
   {
     name: "ecoledirect",
     description:
-      "Bibliothèque Python pour accéder aux données scolaires EcoleDirecte via pip.",
+      "L'API que EcoleDirecte n'a jamais publiée, en trois lignes de Python.",
     language: "Python",
     url: "https://github.com/danhab05/ecoledirect",
   },
   {
     name: "pdf2excel",
     description:
-      "Outil de conversion PDF vers Excel avec extraction intelligente de tableaux.",
+      "Extraction de tableaux depuis un PDF, sans recopie manuelle.",
     language: "Python",
     url: "https://github.com/danhab05/pdf2excel",
   },
   {
     name: "pyswifi",
-    description: "Script Python pour automatiser la gestion des réseaux WiFi.",
+    description: "Gestion des réseaux WiFi pilotée en Python.",
     language: "Python",
     url: "https://github.com/danhab05/pyswifi",
   },
   {
     name: "MorseMaster",
-    description:
-      "Application d'apprentissage du code Morse avec interface interactive.",
+    description: "Apprendre le code Morse avec une interface interactive.",
     language: "Vue",
     url: "https://github.com/danhab05/MorseMaster",
   },
   {
     name: "PdfSplitter",
-    description: "Outil web pour découper et réorganiser des fichiers PDF.",
+    description: "Découper et réorganiser des PDF directement dans le navigateur.",
     language: "TypeScript",
     url: "https://github.com/danhab05/PdfSplitter",
   },
@@ -198,27 +198,27 @@ export const faq = [
   {
     question: "Quels types de projets réalisez-vous ?",
     answer:
-      "Trois grandes familles : l'automatisation de processus métier (scripts, robots, intégrations entre outils), le développement web fullstack (sites vitrines, applications web, APIs) et le web scraping avec extraction de données structurées. De la PME au fondateur solo, je conçois des outils sur-mesure qui tournent réellement en production.",
+      "Trois familles. L'automatisation : scripts, robots et intégrations qui font disparaître les tâches répétitives. Le web fullstack : sites, applications et APIs, du premier écran jusqu'au déploiement. Le scraping : collecte et structuration de données que personne ne vous fournit proprement. Le point commun, c'est que ça finit en production, pas dans un dossier.",
   },
   {
     question: "Quelles technologies utilisez-vous ?",
     answer:
-      "Principalement Python (Flask, Django, Selenium) pour l'automatisation et le scraping, Next.js / TypeScript pour le web, Flutter pour le mobile, MySQL pour les données et Docker pour le déploiement sur VPS Linux. Je choisis toujours le bon outil pour le bon problème, sans sur-ingénierie.",
+      "Python pour l'automatisation et le scraping (Flask, Django, Selenium), Next.js et TypeScript pour le web, Flutter pour le mobile, MySQL pour les données, Docker et Linux pour le déploiement. Le choix dépend du problème et de ce que votre équipe pourra maintenir une fois la mission terminée.",
   },
   {
     question: "Comment se déroule une mission ?",
     answer:
-      "On commence par un échange pour cadrer le besoin et identifier ce qui vous fait perdre du temps. Je propose ensuite une solution simple avec un devis clair. Le développement est itératif : vous voyez le résultat rapidement, et je livre un outil déployé, documenté et maintenable.",
+      "On commence par un échange pour identifier ce qui vous coûte réellement du temps. Je reviens avec une proposition et un périmètre clair. Ensuite on avance par itérations : vous voyez quelque chose de fonctionnel très tôt, on ajuste au fur et à mesure, et ce qui part en production a déjà été testé par vous.",
   },
   {
     question: "Travaillez-vous à distance ?",
     answer:
-      "Oui. Je suis basé à Paris et je travaille en remote avec des clients partout en France. Des points réguliers en visio et une communication réactive : réponse sous 24h, du lundi au vendredi et le dimanche, de 8h à 20h.",
+      "Oui, et c'est même le cas le plus fréquent. Je suis basé à Paris et je travaille en remote avec des clients partout en France. Des points en visio quand il y a une décision à prendre, et des réponses rapides le reste du temps : du lundi au vendredi et le dimanche, de 8h à 20h.",
   },
   {
     question: "Comment obtenir un devis ?",
     answer:
-      "Écrivez-moi à danhabibpro@gmail.com en décrivant votre besoin en quelques lignes : le processus à automatiser ou l'outil à créer, votre contexte et vos délais. Je réponds sous 24h avec une première estimation.",
+      "Un mail à danhabibpro@gmail.com avec trois choses : ce que vous voulez automatiser ou construire, dans quel contexte, et pour quand. Je réponds sous 24h avec une première estimation et les questions qu'il me manque pour être précis.",
   },
 ] as const;
 

@@ -23,9 +23,13 @@ export default function Hero() {
   const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setShowVideo(true);
-    }
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const wide = window.matchMedia("(min-width: 900px)").matches;
+    const saveData = (
+      navigator as Navigator & { connection?: { saveData?: boolean } }
+    ).connection?.saveData;
+    // Sur mobile / connexion économe, le poster suffit : pas de mp4 à décoder.
+    if (!reduced && wide && !saveData) setShowVideo(true);
   }, []);
 
   useLayoutEffect(() => {
@@ -103,6 +107,7 @@ export default function Hero() {
     let h = 0;
     let raf = 0;
     let t = 0;
+    let inView = true;
 
     type P = {
       x: number;
@@ -153,19 +158,30 @@ export default function Hero() {
       raf = requestAnimationFrame(tick);
     };
 
-    const onVis = () => {
+    const sync = () => {
       cancelAnimationFrame(raf);
-      if (!document.hidden) raf = requestAnimationFrame(tick);
+      if (!document.hidden && inView) raf = requestAnimationFrame(tick);
     };
+
+    // Le champ de braises ne tourne que quand le hero est visible.
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        inView = entry.isIntersecting;
+        sync();
+      },
+      { threshold: 0 }
+    );
+    io.observe(canvas);
 
     resize();
     raf = requestAnimationFrame(tick);
     window.addEventListener("resize", resize);
-    document.addEventListener("visibilitychange", onVis);
+    document.addEventListener("visibilitychange", sync);
     return () => {
       cancelAnimationFrame(raf);
+      io.disconnect();
       window.removeEventListener("resize", resize);
-      document.removeEventListener("visibilitychange", onVis);
+      document.removeEventListener("visibilitychange", sync);
     };
   }, []);
 
@@ -203,18 +219,21 @@ export default function Hero() {
           Développeur Fullstack &amp; Automatisation — Paris
         </p>
         <h1 className="hero-title">
-          <span className="hero-line">
-            <Chars text="DAN" />
-          </span>
-          <span className="hero-line hero-line-outline">
-            <Chars text="HABIB" />
+          <span className="sr-only">Dan Habib</span>
+          <span aria-hidden="true">
+            <span className="hero-line">
+              <Chars text="DAN" />
+            </span>
+            <span className="hero-line hero-line-outline">
+              <Chars text="HABIB" />
+            </span>
           </span>
         </h1>
         <div className="hero-under">
           <p className="hero-tag hero-fade">
-            Je transforme vos processus chronophages en{" "}
-            <em>machines automatiques</em> et vos idées en applications web qui
-            tournent en production.
+            Vos équipes perdent des heures sur des tâches qu'un script règle en
+            trois secondes. <em>J'écris ce script</em>, et je construis
+            l'application autour.
           </p>
           <div className="hero-cta hero-fade">
             <a className="button primary" href="#projets" data-magnetic="0.3">

@@ -10,12 +10,12 @@ export default function Contact() {
           Contact
         </p>
         <h2 className="contact-headline" data-fx="words">
-          Travaillons <em>ensemble</em>
+          Dites-moi ce qui <em>vous ralentit</em>
         </h2>
         <p className="contact-desc" data-fx="words-scrub">
-          Besoin d'automatiser un process, de créer un outil interne ou de
-          construire une application web&nbsp;? Je suis ouvert aux nouvelles
-          missions — réponse sous 24h.
+          Un process qui traîne, un outil interne à créer, une application à
+          construire&nbsp;? Décrivez-le en trois lignes : je vous dis si je peux
+          aider et combien de temps ça prend. Réponse sous 24h.
         </p>
 
         <div className="contact-cta" data-fx="fade">

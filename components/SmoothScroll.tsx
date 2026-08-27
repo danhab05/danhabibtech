@@ -14,6 +14,12 @@ export default function SmoothScroll() {
       anchors: true,
     });
 
+    // Le préloader pose le verrou avant que Lenis n'existe : on honore
+    // son état ici, et son onComplete fera le start().
+    if (document.documentElement.classList.contains("is-locked")) {
+      lenis.stop();
+    }
+
     lenis.on("scroll", ScrollTrigger.update);
 
     const raf = (time: number) => {

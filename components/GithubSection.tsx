@@ -15,9 +15,9 @@ export default function GithubSection() {
             </h2>
           </div>
           <p className="section-desc" data-fx="words-scrub">
-            50+ dépôts publics — bibliothèques Python, outils TypeScript,
-            scripts d'automatisation. Du code concret, testé en conditions
-            réelles.
+            Une cinquantaine de dépôts publics : des bibliothèques Python, des
+            outils TypeScript, des scripts qui m'ont fait gagner du temps et qui
+            peuvent vous en faire gagner aussi.
           </p>
         </div>
 

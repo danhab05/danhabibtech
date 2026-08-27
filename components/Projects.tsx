@@ -98,7 +98,7 @@ export default function Projects() {
           Projets
         </p>
         <h2 className="h2" data-fx="words">
-          Travaux <em>sélectionnés</em>
+          Ce que j'ai <em>construit</em>
         </h2>
       </div>
 
@@ -146,10 +146,10 @@ export default function Projects() {
 
           <div className="project-panel project-panel-cta">
             <p className="panel-cta-title">
-              Votre projet <em>ici&nbsp;?</em>
+              Le vôtre <em>ensuite&nbsp;?</em>
             </p>
             <a className="button primary" href="#contact" data-magnetic="0.3">
-              Parlons-en
+              En parler
             </a>
           </div>
         </div>

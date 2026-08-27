@@ -19,8 +19,9 @@ export default function Skills() {
             </h2>
           </div>
           <p className="section-desc" data-fx="words-scrub">
-            Les technologies que j'utilise pour construire des solutions
-            efficaces et durables — toujours le bon outil pour le bon problème.
+            Je n'ai pas d'avis religieux sur les technologies. Voici celles que
+            je maîtrise assez bien pour savoir quand il vaut mieux ne pas les
+            utiliser.
           </p>
         </div>
 

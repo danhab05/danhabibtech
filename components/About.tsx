@@ -4,18 +4,18 @@ import { stats } from "@/lib/data";
 const principles = [
   {
     num: "01",
-    title: "Positionnement",
-    text: "Automatisation métier, intégrations et applications web sur-mesure pour PME, équipes opérationnelles et fondateurs qui veulent aller vite.",
+    title: "Ce que je construis",
+    text: "Des robots qui remplissent les formulaires à votre place, des applications web qui remplacent trois tableurs et un classeur, des APIs qui font enfin parler vos outils entre eux.",
   },
   {
     num: "02",
-    title: "Valeur ajoutée",
-    text: "Focus sur l'impact mesurable : temps gagné, flux simplifiés, données plus propres. Pas de sur-ingénierie — que ce qui compte.",
+    title: "Comment je travaille",
+    text: "Un premier livrable utilisable en quelques jours, pas une usine à gaz en six mois. Vous testez tôt, on corrige ensemble, et ce qui part en production a déjà servi.",
   },
   {
     num: "03",
-    title: "Stack",
-    text: "Python, Next.js, Docker, Selenium, scraping & APIs REST. Toujours le bon outil pour le bon problème.",
+    title: "Ce qui vous reste",
+    text: "Un outil déployé, documenté, dont le code vous appartient. Pas de boîte noire, pas de dépendance à vie au prestataire qui l'a écrit.",
   },
 ];
 
@@ -40,13 +40,13 @@ export default function About() {
           </div>
           <div className="about-copy">
             <h2 className="h2" data-fx="words">
-              Développeur <em>pragmatique</em>
+              Le bon outil, <em>rien de plus</em>
             </h2>
             <p className="about-lead" data-fx="words-scrub">
-              Spécialisé en automatisation, scraping et outils internes, je
-              conçois des solutions fiables pour gagner du temps, réduire les
-              erreurs et accélérer les opérations — avec une obsession pour ce
-              qui fonctionne vraiment en production.
+              Je ne vends pas de la technologie, je supprime du travail inutile.
+              Chaque projet démarre par la même question : qu'est-ce qui vous
+              fait perdre le plus de temps cette semaine ? La réponse décide de
+              la stack, jamais l'inverse.
             </p>
             <ul className="about-principles">
               {principles.map((p) => (

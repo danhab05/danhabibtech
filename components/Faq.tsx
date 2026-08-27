@@ -20,8 +20,7 @@ export default function Faq() {
             </h2>
           </div>
           <p className="section-desc" data-fx="words-scrub">
-            Tout ce qu'il faut savoir avant de lancer votre projet
-            d'automatisation ou d'application web.
+            Ce qu'on me demande avant de démarrer, répondu sans détour.
           </p>
         </div>
 

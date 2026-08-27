@@ -1,7 +1,7 @@
 "use client";
 
 import { useLayoutEffect, useRef } from "react";
-import { gsap } from "@/lib/gsap";
+import { gsap, ScrollTrigger } from "@/lib/gsap";
 
 const NAME = "DAN HABIB";
 
@@ -39,6 +39,9 @@ export default function Preloader() {
           el.style.display = "none";
           document.documentElement.classList.remove("is-locked");
           window.__lenis?.start();
+          // La barre de scroll réapparaît au déverrouillage : les positions
+          // des triggers doivent être recalculées avec la vraie largeur.
+          ScrollTrigger.refresh();
           markIntroDone();
         },
       });
@@ -70,6 +73,7 @@ export default function Preloader() {
     return () => {
       ctx.revert();
       document.documentElement.classList.remove("is-locked");
+      window.__lenis?.start();
     };
   }, []);
 

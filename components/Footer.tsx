@@ -27,7 +27,9 @@ export default function Footer() {
         <div className="footer-col footer-col-brand">
           <span className="footer-brand">Dan Habib</span>
           <p>
-            Développeur fullstack &amp; automatisation.
+            J'automatise ce qui vous fait perdre du temps,
+            <br />
+            et je construis ce qui vous en fait gagner.
             <br />
             Paris — Remote.
           </p>

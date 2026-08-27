@@ -5,7 +5,7 @@
   --surface-2: #1a1710;
   --ink: #f2ecdf;
   --ink-dim: #b5ad9c;
-  --muted: #6f695c;
+  --muted: #8d8676;
   --amber: #e8862e;
   --amber-hot: #ffa94d;
   --amber-dim: rgba(232, 134, 46, 0.12);
@@ -415,9 +415,7 @@ body::after {
   position: fixed;
   inset: 0;
   z-index: 850;
-  background: rgba(9, 7, 5, 0.97);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(9, 7, 5, 0.99);
   pointer-events: none;
   visibility: hidden;
   transition: visibility 0s linear 0.8s;
@@ -643,7 +641,6 @@ body::after {
 
 .hero-char {
   display: inline-block;
-  will-change: transform;
 }
 
 .hero-under {
@@ -869,7 +866,18 @@ body::after {
 
 .w {
   display: inline-block;
-  will-change: transform;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* ══════════════════════════════
