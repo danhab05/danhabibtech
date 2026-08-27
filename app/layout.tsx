@@ -1,38 +1,54 @@
-import type { Metadata } from "next";
-import { DM_Serif_Display, DM_Mono, DM_Sans } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Anton, Space_Grotesk, DM_Mono, Instrument_Serif } from "next/font/google";
+import SmoothScroll from "@/components/SmoothScroll";
+import CustomCursor from "@/components/CustomCursor";
+import Preloader from "@/components/Preloader";
 import "./globals.css";
 
-const dmSerifDisplay = DM_Serif_Display({
+const anton = Anton({
   subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal", "italic"],
-  variable: "--font-serif",
+  weight: "400",
+  variable: "--font-anton",
+  display: "swap",
+});
+
+const grotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-grotesk",
   display: "swap",
 });
 
 const dmMono = DM_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
-  variable: "--font-mono",
+  variable: "--font-dmmono",
   display: "swap",
 });
 
-const dmSans = DM_Sans({
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: "400",
   style: ["normal", "italic"],
-  variable: "--font-body",
+  variable: "--font-serif",
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  themeColor: "#070605",
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://danhabib.dev"),
   title: {
-    default: "Dan Habib | Développeur Fullstack & Automatisation — Paris",
+    default:
+      "Dan Habib — Développeur Fullstack & Automatisation à Paris",
     template: "%s | Dan Habib",
   },
   description:
-    "Dan Habib — Développeur fullstack basé à Paris, spécialisé en automatisation, scraping web et outils internes. Python, Next.js, Docker. Disponible pour missions.",
+    "Dan Habib, développeur fullstack freelance à Paris. Automatisation de processus métier, web scraping, outils internes et applications web sur-mesure. Python, Next.js, TypeScript, Docker. Disponible pour missions, réponse sous 24h.",
   keywords: [
     "Dan Habib",
     "DanHabib",
@@ -40,36 +56,39 @@ export const metadata: Metadata = {
     "danhabibtech",
     "Dan Habib Tech",
     "développeur fullstack Paris",
-    "automatisation",
-    "web scraping",
-    "Python développeur",
-    "Flutter",
-    "Next.js",
     "développeur freelance Paris",
-    "outils internes",
+    "automatisation processus métier",
+    "web scraping France",
+    "développeur Python Paris",
+    "Next.js",
+    "Flutter",
+    "outils internes sur-mesure",
     "API REST",
     "Docker",
   ],
   authors: [{ name: "Dan Habib", url: "https://danhabib.dev" }],
   creator: "Dan Habib",
+  publisher: "Dan Habib",
+  category: "technology",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Dan Habib | Développeur Fullstack & Automatisation",
+    title: "Dan Habib — Développeur Fullstack & Automatisation",
     description:
-      "Automatisation, fullstack, scraping et outils internes pour gagner du temps et optimiser vos processus.",
+      "Automatisation, scraping et applications web sur-mesure pour PME et fondateurs. Basé à Paris, disponible en remote partout en France.",
     url: "https://danhabib.dev",
-    siteName: "Dan Habib",
+    siteName: "Dan Habib — Portfolio",
     locale: "fr_FR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dan Habib | Développeur Fullstack & Automatisation",
+    title: "Dan Habib — Développeur Fullstack & Automatisation",
     description:
-      "Automatisation, fullstack, scraping et outils internes pour gagner du temps.",
+      "Automatisation, scraping et applications web sur-mesure. Paris · Remote.",
     creator: "@DanHabib05",
+    site: "@DanHabib05",
   },
   robots: {
     index: true,
@@ -92,10 +111,13 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${dmSerifDisplay.variable} ${dmMono.variable} ${dmSans.variable}`}
+      className={`${anton.variable} ${grotesk.variable} ${dmMono.variable} ${instrumentSerif.variable}`}
     >
       <body>
-        <div className="page">{children}</div>
+        <Preloader />
+        <SmoothScroll />
+        <CustomCursor />
+        {children}
       </body>
     </html>
   );
