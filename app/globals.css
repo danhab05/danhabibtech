@@ -32,6 +32,7 @@
 
 html {
   color-scheme: dark;
+  background-color: var(--bg);
 }
 
 html.is-locked,
@@ -561,6 +562,9 @@ body::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* la vidéo est une ambiance, pas un sujet : on l'assombrit fortement
+     pour que la typographie garde tout le contraste */
+  filter: brightness(0.45) saturate(0.85) contrast(1.05);
 }
 
 .hero-embers {
@@ -576,8 +580,9 @@ body::after {
   inset: 0;
   z-index: 3;
   background:
-    radial-gradient(ellipse 90% 70% at 50% 20%, transparent 30%, rgba(7, 6, 5, 0.55) 100%),
-    linear-gradient(180deg, rgba(7, 6, 5, 0.55) 0%, rgba(7, 6, 5, 0.15) 35%, rgba(7, 6, 5, 0.92) 100%);
+    linear-gradient(90deg, rgba(7, 6, 5, 0.8) 0%, rgba(7, 6, 5, 0.35) 50%, rgba(7, 6, 5, 0.2) 100%),
+    radial-gradient(ellipse 90% 70% at 50% 20%, transparent 30%, rgba(7, 6, 5, 0.6) 100%),
+    linear-gradient(180deg, rgba(7, 6, 5, 0.7) 0%, rgba(7, 6, 5, 0.3) 35%, rgba(7, 6, 5, 0.96) 100%);
 }
 
 .hero-content {
@@ -619,9 +624,13 @@ body::after {
 }
 
 .hero-line-outline {
-  color: transparent;
-  -webkit-text-stroke: 2px var(--amber);
+  color: var(--amber);
   margin-left: 0.35em;
+  text-shadow: 0 4px 40px rgba(7, 6, 5, 0.55);
+}
+
+.hero-title .hero-line:first-child {
+  text-shadow: 0 4px 40px rgba(7, 6, 5, 0.55);
 }
 
 .hero-char-mask {
