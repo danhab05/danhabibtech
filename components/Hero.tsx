@@ -152,7 +152,7 @@ export default function Hero() {
         const tw = 0.55 + 0.45 * Math.sin(t * 2 + p.ph);
         c.beginPath();
         c.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        c.fillStyle = `rgba(240, 158, 76, ${(p.a * tw).toFixed(3)})`;
+        c.fillStyle = `rgba(168, 85, 12, ${(p.a * tw).toFixed(3)})`;
         c.fill();
       }
       raf = requestAnimationFrame(tick);

@@ -35,7 +35,7 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#070605",
+  themeColor: "#f7f4ee",
   width: "device-width",
   initialScale: 1,
 };

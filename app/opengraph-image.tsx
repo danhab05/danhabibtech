@@ -15,7 +15,7 @@ export default function Image() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#070605",
+          background: "#f7f4ee",
           padding: "64px 72px",
           fontFamily: "sans-serif",
           position: "relative",
@@ -30,7 +30,7 @@ export default function Image() {
             height: 560,
             borderRadius: 9999,
             background:
-              "radial-gradient(circle, rgba(232,134,46,0.28) 0%, rgba(232,134,46,0) 70%)",
+              "radial-gradient(circle, rgba(232,134,46,0.30) 0%, rgba(232,134,46,0) 70%)",
             display: "flex",
           }}
         />
@@ -39,7 +39,7 @@ export default function Image() {
             display: "flex",
             alignItems: "center",
             gap: 16,
-            color: "#e8862e",
+            color: "#a8550c",
             fontSize: 26,
             letterSpacing: 8,
             textTransform: "uppercase",
@@ -50,7 +50,7 @@ export default function Image() {
               width: 12,
               height: 12,
               borderRadius: 9999,
-              background: "#e8862e",
+              background: "#a8550c",
               display: "flex",
             }}
           />
@@ -62,7 +62,7 @@ export default function Image() {
             style={{
               fontSize: 148,
               fontWeight: 800,
-              color: "#f2ecdf",
+              color: "#17140f",
               lineHeight: 1,
               letterSpacing: -4,
               textTransform: "uppercase",
@@ -74,7 +74,7 @@ export default function Image() {
             style={{
               marginTop: 28,
               fontSize: 36,
-              color: "#b5ad9c",
+              color: "#554e44",
               display: "flex",
             }}
           >
@@ -87,14 +87,14 @@ export default function Image() {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            borderTop: "1px solid rgba(242,236,223,0.15)",
+            borderTop: "1px solid rgba(23,20,15,0.15)",
             paddingTop: 32,
-            color: "#6f695c",
+            color: "#6f6659",
             fontSize: 26,
           }}
         >
           <div style={{ display: "flex" }}>danhabib.dev</div>
-          <div style={{ display: "flex", color: "#e8862e" }}>
+          <div style={{ display: "flex", color: "#a8550c" }}>
             Python · Next.js · Automatisation · Scraping
           </div>
         </div>

@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Portfolio de Dan Habib, développeur fullstack freelance à Paris : automatisation, scraping et applications web sur-mesure.",
     start_url: "/",
     display: "standalone",
-    background_color: "#070605",
-    theme_color: "#070605",
+    background_color: "#f7f4ee",
+    theme_color: "#f7f4ee",
     icons: [
       {
         src: "/icon",
