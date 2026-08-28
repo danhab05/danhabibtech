@@ -30,6 +30,20 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "assia",
+    title: "Assia",
+    category: "Site vitrine & espace élèves",
+    description:
+      "Un institut de cours de maths et de physique-chimie qui gérait ses demandes au téléphone et par messages. J'ai construit assia.school : la présentation de la méthode, des formats et des tarifs, et l'espace où les familles créent un compte et demandent un cours en quelques minutes.",
+    result:
+      "En ligne et utilisé par l'institut, qui accompagne plus de 130 élèves du collège à la terminale.",
+    technologies: ["Next.js", "React", "Animations", "Vercel"],
+    link: "https://www.assia.school",
+    image: MEDIA.projects.assia,
+    imageAlt:
+      "Visuel abstrait : courbes mathématiques et constructions géométriques lumineuses ambrées sur fond noir",
+  },
+  {
     id: "immo",
     title: "BLG Immobilier",
     category: "Site vitrine + robot de publication",

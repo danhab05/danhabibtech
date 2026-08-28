@@ -35,6 +35,7 @@ Flask, Django, Next.js, React, MySQL, Docker, Linux/VPS, Git, APIs REST.
 
 ## Projets marquants
 
+- Assia (https://www.assia.school) : site vitrine et espace élèves d'un institut de cours de maths et de physique-chimie (cours particuliers, petits groupes, stages). Présentation de la méthode et des tarifs, création de compte et demande de cours en ligne. En production, pour un institut qui accompagne plus de 130 élèves du collège à la terminale (Next.js, React, Vercel).
 - BLG Immobilier (https://blgimmobilier.fr/) : site vitrine + robot de publication d'annonces immobilières (formulaire, photos, notifications), en production et utilisé quotidiennement par l'agence.
 - ExtractGrid (https://github.com/danhab05/ExtractGrid) : conversion automatique de relevés bancaires PDF en fichiers Excel structurés, détection automatique de la banque, multi-banques, utilisé par des comptables et des PME.
 - Tests antigéniques COVID : inscription en ligne, envoi automatique des résultats par mail et suivi centralisé pour une pharmacie. Environ 100 000 tests traités en 2 ans (Flutter, Python, Flask, Docker).

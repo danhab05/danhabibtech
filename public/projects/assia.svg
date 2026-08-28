@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 896" width="1200" height="896" role="img" aria-label="Visuel abstrait : courbes mathématiques lumineuses ambrées sur fond noir">
+  <defs>
+    <radialGradient id="bg" cx="42%" cy="34%" r="78%">
+      <stop offset="0%" stop-color="#1a1208" />
+      <stop offset="55%" stop-color="#0b0806" />
+      <stop offset="100%" stop-color="#050403" />
+    </radialGradient>
+
+    <linearGradient id="curve" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8a4a16" />
+      <stop offset="45%" stop-color="#e8862e" />
+      <stop offset="100%" stop-color="#ffc98a" />
+    </linearGradient>
+
+    <linearGradient id="curve2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffa94d" stop-opacity="0.15" />
+      <stop offset="50%" stop-color="#e8862e" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#e8862e" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e8862e" stop-opacity="0" />
+      <stop offset="30%" stop-color="#e8862e" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#e8862e" stop-opacity="0" />
+    </linearGradient>
+
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="16" result="b" />
+      <feMerge>
+        <feMergeNode in="b" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="34" />
+    </filter>
+
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="saturate" values="0" />
+    </filter>
+
+    <clipPath id="frame">
+      <rect width="1200" height="896" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="896" fill="url(#bg)" />
+
+    <!-- halo chaud -->
+    <ellipse cx="470" cy="330" rx="330" ry="240" fill="#e8862e" opacity="0.12" filter="url(#softGlow)" />
+
+    <!-- grille de repère -->
+    <g stroke="#f2ecdf" stroke-opacity="0.05" stroke-width="1">
+      <path d="M100 0v896M300 0v896M500 0v896M700 0v896M900 0v896M1100 0v896" />
+      <path d="M0 120h1200M0 300h1200M0 480h1200M0 660h1200M0 840h1200" />
+    </g>
+
+    <!-- axes -->
+    <g stroke="#f2ecdf" stroke-opacity="0.16" stroke-width="1.5">
+      <path d="M150 700H1080" />
+      <path d="M150 700V150" />
+    </g>
+    <g fill="#f2ecdf" fill-opacity="0.16">
+      <path d="M1080 700l-14-7v14z" />
+      <path d="M150 150l-7 14h14z" />
+    </g>
+
+    <!-- aire sous la courbe -->
+    <path d="M150 700 C 380 700, 470 300, 640 250 C 810 200, 930 400, 1040 300 L1040 700 Z"
+          fill="url(#curve2)" opacity="0.28" />
+
+    <!-- sinusoïde secondaire -->
+    <path d="M150 560 C 250 420, 330 700, 430 560 C 530 420, 610 700, 710 560 C 810 420, 890 700, 990 560"
+          fill="none" stroke="url(#fade)" stroke-width="2.5" stroke-linecap="round" opacity="0.75" />
+
+    <!-- courbe principale -->
+    <path d="M150 700 C 380 700, 470 300, 640 250 C 810 200, 930 400, 1040 300"
+          fill="none" stroke="url(#curve)" stroke-width="7" stroke-linecap="round" filter="url(#glow)" />
+
+    <!-- tangente -->
+    <path d="M470 560 L830 250" stroke="#ffc98a" stroke-opacity="0.45" stroke-width="1.5"
+          stroke-dasharray="10 9" stroke-linecap="round" />
+
+    <!-- points remarquables -->
+    <g filter="url(#glow)">
+      <circle cx="640" cy="250" r="9" fill="#ffc98a" />
+      <circle cx="430" cy="560" r="6" fill="#e8862e" />
+      <circle cx="1040" cy="300" r="6" fill="#e8862e" />
+    </g>
+    <circle cx="640" cy="250" r="24" fill="none" stroke="#ffa94d" stroke-opacity="0.35" stroke-width="1.5" />
+
+    <!-- constructions géométriques -->
+    <g stroke="#e8862e" stroke-opacity="0.3" stroke-width="1.5" fill="none">
+      <circle cx="905" cy="600" r="86" />
+      <path d="M819 600h172" />
+      <path d="M905 514l86 86-86 86-86-86z" stroke-opacity="0.2" />
+    </g>
+
+    <!-- orbite / physique -->
+    <g stroke="#ffa94d" stroke-opacity="0.22" stroke-width="1.5" fill="none">
+      <ellipse cx="320" cy="240" rx="128" ry="52" transform="rotate(-24 320 240)" />
+      <ellipse cx="320" cy="240" rx="128" ry="52" transform="rotate(38 320 240)" />
+    </g>
+    <circle cx="320" cy="240" r="7" fill="#ffc98a" filter="url(#glow)" />
+
+    <!-- particules -->
+    <g fill="#ffc98a">
+      <circle cx="200" cy="180" r="2" opacity="0.5" />
+      <circle cx="560" cy="140" r="1.6" opacity="0.4" />
+      <circle cx="760" cy="620" r="2.2" opacity="0.35" />
+      <circle cx="1080" cy="180" r="1.8" opacity="0.45" />
+      <circle cx="380" cy="780" r="2" opacity="0.3" />
+      <circle cx="980" cy="760" r="1.5" opacity="0.4" />
+      <circle cx="120" cy="450" r="1.7" opacity="0.35" />
+    </g>
+
+    <!-- vignettage -->
+    <rect width="1200" height="896" fill="url(#bg)" opacity="0" />
+    <radialGradient id="vig" cx="50%" cy="45%" r="72%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0" />
+      <stop offset="100%" stop-color="#000" stop-opacity="0.62" />
+    </radialGradient>
+    <rect width="1200" height="896" fill="url(#vig)" />
+
+    <!-- grain filmique -->
+    <rect width="1200" height="896" filter="url(#grain)" opacity="0.05" style="mix-blend-mode:overlay" />
+  </g>
+</svg>
