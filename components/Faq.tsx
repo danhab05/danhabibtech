@@ -12,7 +12,7 @@ export default function Faq() {
         <div className="section-head">
           <div>
             <p className="section-label" data-fx="fade">
-              <span className="section-num">05</span>
+              <span className="section-num">08</span>
               FAQ
             </p>
             <h2 className="h2" data-fx="words">

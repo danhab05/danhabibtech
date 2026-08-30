@@ -16,9 +16,20 @@ const content = `# Dan Habib — Développeur Fullstack & Automatisation
 
 ## Services
 
-- Automatisation de processus métier : scripts, robots (Selenium), intégrations entre outils, notifications automatiques. Objectif : supprimer la saisie manuelle et les manipulations web répétitives.
-- Développement web fullstack : sites vitrines, applications web, APIs REST (Next.js, TypeScript, Python, Flask, Django), du premier écran jusqu'au déploiement.
-- Web scraping et extraction de données : collecte ciblée et structuration de données pour agences et back-offices.
+- Automatisations : robots et scripts qui remplissent, publient, trient et relancent automatiquement, déclenchés par un formulaire, un mail ou un horaire (Python, Selenium).
+- Intégrations : connexion des outils entre eux via APIs (CRM, facturation, site) pour supprimer la double saisie.
+- Assistants IA : assistants branchés sur les documents et données de l'entreprise, pour répondre aux questions internes récurrentes.
+- Chatbots et WhatsApp : premier niveau de réponse automatique qui qualifie la demande avant qu'elle n'arrive sur le bureau du client.
+- Sites internet : sites rapides et bien référencés, du premier écran jusqu'à la mise en ligne (Next.js, TypeScript).
+- Applications web et mobile : applications sur-mesure quand aucun outil du marché ne convient (Next.js, Flutter).
+- Outils métier et back-office : remplacement des tableurs bricolés par un vrai outil avec accès et historique.
+- Extraction de données : collecte et structuration de données web ou documentaires, livrées exploitables.
+
+## Problèmes traités
+
+Double saisie entre outils, demandes clients oubliées dans une boîte mail,
+relances envoyées à la main, données dispersées dans plusieurs logiciels,
+copier-coller à rallonge pour extraire et reformater de l'information.
 
 ## Méthode de travail
 

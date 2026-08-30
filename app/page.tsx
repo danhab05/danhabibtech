@@ -1,6 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
+import Problem from "@/components/Problem";
+import Services from "@/components/Services";
+import Process from "@/components/Process";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
 import GithubSection from "@/components/GithubSection";
@@ -9,7 +12,7 @@ import Faq from "@/components/Faq";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ScrollFx from "@/components/ScrollFx";
-import { SITE, projects, faq } from "@/lib/data";
+import { SITE, projects, faq, services } from "@/lib/data";
 import { MEDIA } from "@/lib/media";
 
 const jsonLd = {
@@ -54,38 +57,18 @@ const jsonLd = {
         skills:
           "Automatisation de processus métier, web scraping, développement web fullstack, outils internes, APIs REST",
       },
-      makesOffer: [
-        {
+      makesOffer: services
+        .filter((s) => !("isCta" in s && s.isCta))
+        .map((s) => ({
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Automatisation de processus métier",
-            description:
-              "Scripts, robots et intégrations sur-mesure pour éliminer les tâches répétitives et gagner du temps.",
+            name: s.title,
+            description: s.text,
             areaServed: "FR",
+            provider: { "@id": `${SITE.url}/#person` },
           },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Développement web fullstack",
-            description:
-              "Sites vitrines, applications web et APIs en Next.js, TypeScript et Python, déployés en production.",
-            areaServed: "FR",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Web scraping & extraction de données",
-            description:
-              "Collecte et structuration de données web ciblées pour agences et back-offices.",
-            areaServed: "FR",
-          },
-        },
-      ],
+        })),
     },
     {
       "@type": "WebSite",
@@ -142,11 +125,11 @@ const jsonLd = {
 
 const marqueeItems = [
   "Automatisation",
-  "Fullstack",
-  "Web scraping",
-  "Python",
-  "Next.js",
-  "Outils internes",
+  "Assistants IA",
+  "Intégrations",
+  "Chatbots",
+  "Sites & applications",
+  "Outils métier",
 ] as const;
 
 const marqueeItems2 = [
@@ -174,6 +157,9 @@ export default function HomePage() {
       <main id="content">
         <Hero />
         <Marquee items={marqueeItems} variant="fill" />
+        <Problem />
+        <Services />
+        <Process />
         <About />
         <Projects />
         <Marquee items={marqueeItems2} variant="outline" reverse />

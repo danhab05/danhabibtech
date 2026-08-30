@@ -216,7 +216,7 @@ export default function Hero() {
       <div className="hero-content container-wide">
         <p className="hero-eyebrow hero-fade">
           <span className="eyebrow-line" aria-hidden="true" />
-          Développeur Fullstack &amp; Automatisation — Paris
+          Automatisation, IA &amp; développement sur-mesure — Paris
         </p>
         <h1 className="hero-title">
           <span className="sr-only">Dan Habib</span>
@@ -231,16 +231,16 @@ export default function Hero() {
         </h1>
         <div className="hero-under">
           <p className="hero-tag hero-fade">
-            Vos équipes perdent des heures sur des tâches qu'un script règle en
-            trois secondes. <em>J'écris ce script</em>, et je construis
-            l'application autour.
+            Votre entreprise a des tâches qui se répètent tous les jours.{" "}
+            <em>Une machine peut s'en charger</em> — et je construis
+            l'application qui va autour.
           </p>
           <div className="hero-cta hero-fade">
-            <a className="button primary" href="#projets" data-magnetic="0.3">
-              Voir mes projets
+            <a className="button primary" href="#contact" data-magnetic="0.3">
+              Parler de mon besoin
             </a>
-            <a className="button ghost" href="#contact" data-magnetic="0.3">
-              Me contacter
+            <a className="button ghost" href="#services" data-magnetic="0.3">
+              Voir les services
             </a>
           </div>
         </div>

@@ -11,7 +11,7 @@ export default function Skills() {
         <div className="section-head">
           <div>
             <p className="section-label" data-fx="fade">
-              <span className="section-num">04</span>
+              <span className="section-num">07</span>
               Compétences
             </p>
             <h2 className="h2" data-fx="words">

@@ -94,7 +94,7 @@ export default function Projects() {
     >
       <div className="projects-head container-wide">
         <p className="section-label" data-fx="fade">
-          <span className="section-num">02</span>
+          <span className="section-num">05</span>
           Projets
         </p>
         <h2 className="h2" data-fx="words">

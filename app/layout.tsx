@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     template: "%s | Dan Habib",
   },
   description:
-    "Dan Habib, développeur fullstack freelance à Paris. J'automatise les tâches répétitives qui coûtent des heures à vos équipes et je construis les applications web et outils internes qui vont avec. Python, Next.js, TypeScript, Docker. Réponse sous 24h.",
+    "Automatisation, assistants IA, intégrations et développement sur-mesure pour les entreprises. Dan Habib, développeur freelance à Paris : je supprime les tâches répétitives et je construis les outils qui vont avec. Réponse sous 24h.",
   keywords: [
     "Dan Habib",
     "DanHabib",
@@ -65,6 +65,11 @@ export const metadata: Metadata = {
     "outils internes sur-mesure",
     "API REST",
     "Docker",
+    "agent IA entreprise",
+    "assistant IA sur-mesure",
+    "chatbot WhatsApp entreprise",
+    "intégration CRM API",
+    "automatisation PME",
   ],
   authors: [{ name: "Dan Habib", url: "https://www.danhabib.dev" }],
   creator: "Dan Habib",
@@ -76,7 +81,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dan Habib — Développeur Fullstack & Automatisation",
     description:
-      "J'automatise les tâches répétitives et je construis les outils web qui vont avec. Paris, remote partout en France.",
+      "Automatisation, assistants IA, intégrations et applications sur-mesure pour les entreprises. Paris, remote partout en France.",
     url: "https://www.danhabib.dev",
     siteName: "Dan Habib — Portfolio",
     locale: "fr_FR",
@@ -86,7 +91,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dan Habib — Développeur Fullstack & Automatisation",
     description:
-      "J'automatise les tâches répétitives et je construis les outils web qui vont avec. Paris · Remote.",
+      "Automatisation, assistants IA et développement sur-mesure. Paris · Remote.",
     creator: "@DanHabib05",
     site: "@DanHabib05",
   },

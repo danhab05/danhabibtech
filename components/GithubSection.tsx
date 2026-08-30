@@ -7,7 +7,7 @@ export default function GithubSection() {
         <div className="section-head">
           <div>
             <p className="section-label" data-fx="fade">
-              <span className="section-num">03</span>
+              <span className="section-num">06</span>
               Open Source
             </p>
             <h2 className="h2" data-fx="words">

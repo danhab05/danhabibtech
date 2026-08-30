@@ -208,6 +208,111 @@ export const githubRepos = [
   },
 ] as const;
 
+/** Les frictions que rencontrent les entreprises avant d'automatiser. */
+export const painPoints = [
+  {
+    title: "Double saisie",
+    text: "La même information recopiée dans le CRM, le tableur, puis la facture. Trois fois le temps, trois fois le risque d'erreur.",
+  },
+  {
+    title: "Demandes oubliées",
+    text: "Un formulaire arrive dans une boîte mail déjà pleine. Personne ne relance, et le client va voir ailleurs.",
+  },
+  {
+    title: "Relances manuelles",
+    text: "Quelqu'un passe sa semaine à renvoyer les mêmes messages, aux mêmes moments, aux mêmes personnes.",
+  },
+  {
+    title: "Données dispersées",
+    text: "Les infos vivent dans quatre outils qui ne se parlent pas. Pour un chiffre, il faut ouvrir les quatre.",
+  },
+  {
+    title: "Copier-coller à rallonge",
+    text: "Extraire, trier, reformater : des heures de manipulation qu'un script fait en quelques secondes.",
+  },
+] as const;
+
+/** Ce que je conçois pour les entreprises. */
+export const services = [
+  {
+    title: "Automatisations",
+    text: "Des robots qui remplissent, publient, trient et relancent à votre place, déclenchés par un formulaire, un mail ou un horaire.",
+  },
+  {
+    title: "Intégrations",
+    text: "Vos outils reliés entre eux par des APIs : le CRM, la facturation et le site cessent d'être trois îlots séparés.",
+  },
+  {
+    title: "Assistants IA",
+    text: "Des assistants branchés sur vos propres documents et données, qui répondent aux questions internes récurrentes.",
+  },
+  {
+    title: "Chatbots & WhatsApp",
+    text: "Un premier niveau de réponse automatique qui qualifie la demande avant qu'elle n'arrive sur votre bureau.",
+  },
+  {
+    title: "Sites internet",
+    text: "Des sites rapides et bien référencés, du premier écran jusqu'à la mise en ligne, pensés pour convertir.",
+  },
+  {
+    title: "Applications web & mobile",
+    text: "Des applications sur-mesure quand aucun outil du marché ne correspond vraiment à votre façon de travailler.",
+  },
+  {
+    title: "Outils métier",
+    text: "Le back-office que vous bricolez dans un tableur, transformé en véritable outil avec des accès et un historique.",
+  },
+  {
+    title: "Extraction de données",
+    text: "Collecte et structuration de données web ou documentaires, livrées propres et exploitables.",
+  },
+  {
+    title: "Un besoin différent ?",
+    text: "Si ça se répète et que ça vous coûte du temps, c'est probablement automatisable. Décrivez-le, je vous dis si c'est faisable.",
+    isCta: true,
+  },
+] as const;
+
+/** Le déroulé d'une mission. */
+export const processSteps = [
+  {
+    title: "Comprendre",
+    text: "On regarde comment vous travaillez aujourd'hui et on identifie ce qui coûte réellement du temps.",
+  },
+  {
+    title: "Cadrer",
+    text: "Je reviens avec une solution simple, un périmètre clair et une estimation. Pas de devis fleuve.",
+  },
+  {
+    title: "Construire",
+    text: "Développement et branchement sur vos outils existants, par itérations courtes et visibles.",
+  },
+  {
+    title: "Tester",
+    text: "Vous manipulez l'outil sur vos vrais cas avant la mise en production. On corrige ce qui coince.",
+  },
+  {
+    title: "Déployer",
+    text: "Mise en ligne, documentation et prise en main par votre équipe. Le code vous appartient.",
+  },
+  {
+    title: "Faire évoluer",
+    text: "Une fois que ça tourne, on ajuste et on étend au fil de vos besoins réels.",
+  },
+] as const;
+
+/** Options du formulaire de contact. */
+export const needTypes = [
+  "Automatisation",
+  "Intégration entre outils",
+  "Assistant IA / chatbot",
+  "Site internet",
+  "Application web ou mobile",
+  "Outil métier / back-office",
+  "Extraction de données",
+  "Autre",
+] as const;
+
 export const faq = [
   {
     question: "Quels types de projets réalisez-vous ?",
@@ -237,9 +342,9 @@ export const faq = [
 ] as const;
 
 export const navLinks = [
-  { href: "#apropos", label: "À propos" },
+  { href: "#services", label: "Services" },
+  { href: "#methode", label: "Méthode" },
   { href: "#projets", label: "Projets" },
-  { href: "#github", label: "Open Source" },
   { href: "#competences", label: "Compétences" },
   { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Contact" },

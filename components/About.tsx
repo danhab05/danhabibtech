@@ -24,7 +24,7 @@ export default function About() {
     <section className="about section" id="apropos" aria-label="À propos de Dan Habib">
       <div className="container-wide">
         <p className="section-label" data-fx="fade">
-          <span className="section-num">01</span>
+          <span className="section-num">04</span>
           À propos
         </p>
         <div className="about-grid">
