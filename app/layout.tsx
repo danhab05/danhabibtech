@@ -1,16 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Anton, Space_Grotesk, DM_Mono, Instrument_Serif } from "next/font/google";
-import SmoothScroll from "@/components/SmoothScroll";
-import CustomCursor from "@/components/CustomCursor";
-import Preloader from "@/components/Preloader";
+import { Space_Grotesk, DM_Mono } from "next/font/google";
 import "./globals.css";
-
-const anton = Anton({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-anton",
-  display: "swap",
-});
 
 const grotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -26,14 +16,6 @@ const dmMono = DM_Mono({
   display: "swap",
 });
 
-const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  variable: "--font-serif",
-  display: "swap",
-});
-
 export const viewport: Viewport = {
   themeColor: "#f7f4ee",
   width: "device-width",
@@ -43,8 +25,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.danhabib.dev"),
   title: {
-    default:
-      "Dan Habib — Développeur Fullstack & Automatisation à Paris",
+    default: "Dan Habib — Développeur Fullstack & Automatisation à Paris",
     template: "%s | Dan Habib",
   },
   description:
@@ -114,16 +95,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="fr"
-      className={`${anton.variable} ${grotesk.variable} ${dmMono.variable} ${instrumentSerif.variable}`}
-    >
-      <body>
-        <Preloader />
-        <SmoothScroll />
-        <CustomCursor />
-        {children}
-      </body>
+    <html lang="fr" className={`${grotesk.variable} ${dmMono.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

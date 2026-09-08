@@ -1,35 +1,23 @@
 # danhabib.dev
 
-Portfolio de Dan Habib — développeur fullstack & automatisation à Paris.
+Portfolio de Dan Habib — automatisation, IA et développement sur-mesure.
 
-## Stack
+## Design
+Paysage original illustré, hébergé localement (`public/images/atelier-paris.webp`, génération IA pour ce projet), inspiré de la composition du post de Varun https://x.com/orseliyas/status/2097307376143773730. Aucun média du post réutilisé. Image fixe, navigation native, contenu visible immédiatement, détails/FAQ natifs. Pas de GSAP, Lenis, préloader, curseur personnalisé ou vidéo automatique.
 
-- **Next.js 14** (App Router, TypeScript) — site statique pré-rendu
-- **GSAP + ScrollTrigger** — animations au scroll (reveals, compteurs, section projets épinglée en défilement horizontal)
-- **Lenis** — smooth scrolling
-- **Higgsfield AI** — vidéo du hero et visuels des projets (générés par IA, servis depuis le CDN Higgsfield)
+## Stack et contenu
+Next.js 15 App Router, React 18, TypeScript. `app/page.tsx` : page et JSON-LD ; `lib/data.ts` : contenu métier ; `components/Contact.tsx` : contact. Le formulaire **prépare un email mailto**, il ne l’envoie pas : une messagerie configurée est nécessaire. L’adresse directe reste accessible sans JavaScript.
 
-## Animations
+Metadata, canonical www.danhabib.dev, Open Graph, JSON-LD, robots.txt, sitemap.xml et llms.txt conservés.
 
-- Préloader avec compteur et révélation du nom
-- Hero : vidéo de fond, particules de braises en canvas, typographie géante animée lettre par lettre
-- Curseur personnalisé (desktop) avec états hover / « Voir »
-- Marquees infinis, reveals de mots masqués, parallaxe, boutons magnétiques
-- Section projets épinglée en scroll horizontal (desktop), pile verticale (mobile)
-- `prefers-reduced-motion` respecté : tout le contenu reste accessible sans animation
-
-## SEO & GEO
-
-- Metadata complète (Open Graph, Twitter Cards, canonical) + image OG générée (`app/opengraph-image.tsx`)
-- JSON-LD `@graph` : Person, WebSite, ProfilePage, ItemList (projets), FAQPage, offres de services
-- `robots.txt` autorisant explicitement les crawlers IA (GPTBot, ClaudeBot, PerplexityBot…)
-- [`/llms.txt`](https://danhabib.dev/llms.txt) — résumé structuré du site pour les moteurs de réponse IA
-- Sitemap, manifest PWA, favicons générés
-
-## Développement
-
+## Développement et vérification
 ```bash
-npm install
-npm run dev    # http://localhost:3000
-npm run build  # build de production
+npm ci
+npm run dev
+npm run lint
+npm test
+npm run build
+npm run start -- --hostname 127.0.0.1 --port 3147
+npm run test:e2e
 ```
+Tests navigateur avec Chrome installé à `/usr/bin/google-chrome` (surcharge `CHROME_PATH`). `TEST_BASE_URL` permet la vérification de la production. Desktop 1440×900 et mobile 390×844 ; captures dans test-results (ignoré par git).
