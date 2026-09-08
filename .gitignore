@@ -1,6 +1,10 @@
 # dependencies
 node_modules/
 
+# browser test artifacts
+test-results/
+playwright-report/
+
 # Next.js build output
 .next/
 out/

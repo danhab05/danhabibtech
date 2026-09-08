@@ -33,7 +33,7 @@ export default function Contact() {
     ].join("\n");
 
     window.location.href = `mailto:${SITE.email}?subject=${encodeURIComponent(
-      subject
+      subject,
     )}&body=${encodeURIComponent(body)}`;
     setSent(true);
   };
@@ -43,7 +43,7 @@ export default function Contact() {
       <div className="contact-glow" aria-hidden="true" />
       <div className="container-wide">
         <p className="section-label section-label-center" data-fx="fade">
-          <span className="section-num">09</span>
+          <span className="section-num">06 /</span>
           Contact
         </p>
         <h2 className="contact-headline" data-fx="words">
@@ -51,7 +51,7 @@ export default function Contact() {
         </h2>
         <p className="contact-desc" data-fx="words-scrub">
           Il y a sûrement une meilleure façon de la gérer. Expliquez-moi comment
-          vous travaillez aujourd'hui : on regarde ensemble ce qui peut être
+          vous travaillez aujourd’hui : on regarde ensemble ce qui peut être
           automatisé, connecté ou construit. Réponse sous 24h.
         </p>
 
@@ -145,16 +145,22 @@ export default function Contact() {
             {/* Piège à robots : invisible et hors du parcours clavier. */}
             <div className="field-honey" aria-hidden="true">
               <label htmlFor="website">Site web</label>
-              <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+              <input
+                id="website"
+                name="website"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+              />
             </div>
 
             <button className="button primary form-submit" type="submit">
-              Envoyer ma demande
+              Préparer mon email
             </button>
 
             <p className="form-note" role="status">
               {sent
-                ? "Votre logiciel de messagerie vient de s'ouvrir avec le message pré-rempli — il ne reste qu'à l'envoyer."
+                ? "Votre demande est prête. Si votre messagerie ne s’ouvre pas, écrivez directement à danhabibpro@gmail.com. Aucun message n’a été envoyé par ce site."
                 : "Le formulaire ouvre votre messagerie avec la demande déjà rédigée."}
             </p>
           </form>
