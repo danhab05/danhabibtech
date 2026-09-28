@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | SnowTech",
   },
   description:
-    "Automatisation, assistants IA, intégrations et développement sur-mesure pour les entreprises. SnowTech, c'est Dan Habib, développeur à Paris : CRM immobilier, plateformes, factures vers Excel, robots de publication. Réponse sous 24 h.",
+    "Automatisation, assistants IA, intégrations et développement sur-mesure pour les entreprises. SnowTech, studio de développement à Paris : CRM immobilier, plateformes, factures vers Excel, robots de publication. Réponse sous 24 h.",
   keywords: [
     "SnowTech",
     "Snow Tech",

@@ -163,17 +163,17 @@ export default function HomePage() {
         <section className="hero wrap" id="accueil" aria-labelledby="hero-title">
           <p className="kicker">
             <span className="dot" aria-hidden="true" />
-            Dan Habib · développeur à Paris
+            Studio de développement · Paris
           </p>
           <h1 id="hero-title">
-            Je crée les outils qui font le travail répétitif à votre place.
+            Nous créons les outils qui font le travail répétitif à votre place.
           </h1>
           <p className="lead">
             Logiciels sur mesure et automatisations pour les entreprises. Voici
-            quelques outils que j’ai construits et qui tournent aujourd’hui.
+            quelques outils que nous avons construits et qui tournent aujourd’hui.
           </p>
 
-          <ol className="project-index" aria-label="Mes projets">
+          <ol className="project-index" aria-label="Nos projets">
             {projects.map((p, i) => (
               <li key={p.id}>
                 <a href={`#p-${p.id}`} className={`tint-${p.id}`}>
@@ -190,7 +190,7 @@ export default function HomePage() {
 
           <div className="hero-actions">
             <a className="btn" href="#projets">
-              Explorer mes projets <span aria-hidden="true">↓</span>
+              Explorer nos projets <span aria-hidden="true">↓</span>
             </a>
             <a className="btn btn-outline" href="#contact">
               Parler de mon besoin
@@ -200,7 +200,7 @@ export default function HomePage() {
 
         <section className="partners wrap" aria-labelledby="partners-title">
           <p className="label" id="partners-title">
-            Ils me font confiance
+            Ils nous font confiance
           </p>
           <ul className="partner-list">
             {partners.map((pt) => (
@@ -216,7 +216,16 @@ export default function HomePage() {
                       height={130}
                     />
                   ) : (
-                    <span className="partner-wordmark" aria-label={pt.name}>
+                    <span
+                      className="partner-wordmark"
+                      aria-label={pt.name}
+                      style={
+                        {
+                          "--pbg": pt.colors.bg,
+                          "--paccent": pt.colors.accent,
+                        } as React.CSSProperties
+                      }
+                    >
                       <b>{pt.name}</b>
                       <small>{pt.tagline}</small>
                     </span>
@@ -234,7 +243,7 @@ export default function HomePage() {
         <section className="projects wrap" id="projets" aria-labelledby="projets-title">
           <div className="section-head">
             <p className="label">Projets</p>
-            <h2 id="projets-title">Ce que j’ai construit</h2>
+            <h2 id="projets-title">Ce que nous avons construit</h2>
           </div>
 
           <div className="project-list">
@@ -246,7 +255,7 @@ export default function HomePage() {
           <div className="older">
             <div className="section-head">
               <p className="label">Avant ça</p>
-              <h2>Mes projets précédents</h2>
+              <h2>Nos projets précédents</h2>
             </div>
             <div className="older-grid">
               {olderProjects.map((p, i) => (
@@ -259,7 +268,7 @@ export default function HomePage() {
               ))}
             </div>
             <details className="open-source">
-              <summary>Mes autres projets open source</summary>
+              <summary>Nos autres projets open source</summary>
               <ul>
                 {githubRepos.map((r) => (
                   <li key={r.name}>
@@ -278,7 +287,7 @@ export default function HomePage() {
           <div className="wrap">
             <div className="section-head">
               <p className="label">Services</p>
-              <h2 id="services-title">Ce que je peux faire pour vous</h2>
+              <h2 id="services-title">Ce que nous pouvons faire pour vous</h2>
             </div>
             <ul className="services">
               {services.map((s) => (
@@ -337,7 +346,7 @@ export default function HomePage() {
             <SnowMark />
             SnowTech
           </a>
-          <p>Dan Habib, Paris · © {new Date().getFullYear()}</p>
+          <p>SnowTech · Paris · © {new Date().getFullYear()}</p>
           <div>
             <a href={SITE.links.linkedin} target="_blank" rel="noopener noreferrer">
               LinkedIn

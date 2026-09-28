@@ -45,8 +45,8 @@ export default function Contact() {
           <p className="label">Contact</p>
           <h2 id="contact-title">Parlons de votre projet</h2>
           <p>
-            Dites-moi en quelques lignes ce qui vous fait perdre du temps. Je
-            vous réponds sous 24 h, et on voit ensemble si je peux vous aider.
+            Dites-nous en quelques lignes ce qui vous fait perdre du temps. Nous
+            vous répondons sous 24 h, et on voit ensemble comment vous aider.
           </p>
           <div className="contact-direct">
             <a className="contact-channel" href={`mailto:${SITE.email}`}>

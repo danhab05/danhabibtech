@@ -60,7 +60,7 @@ test("native navigation, all projects, FAQ, SEO and static hero", async ({
   await page.screenshot({
     path: `test-results/captures/${info.project.name}-hero.png`,
   });
-  await page.getByRole("link", { name: "Explorer mes projets" }).click();
+  await page.getByRole("link", { name: "Explorer nos projets" }).click();
   await expect(page).toHaveURL(/#projets$/);
   await page.screenshot({
     path: `test-results/captures/${info.project.name}-projects.png`,
@@ -116,7 +116,7 @@ test("content and contact remain reachable without JavaScript", async ({
   const page = await context.newPage();
   await page.goto(process.env.TEST_BASE_URL || "http://127.0.0.1:3147");
   await expect(page.locator("h1")).toBeVisible();
-  await page.getByRole("link", { name: "Explorer mes projets" }).click();
+  await page.getByRole("link", { name: "Explorer nos projets" }).click();
   await expect(page.locator(".project-card")).toHaveCount(9);
   const faq = page.locator("#faq details").first();
   await faq.locator("summary").click();

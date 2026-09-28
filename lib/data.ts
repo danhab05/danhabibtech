@@ -7,7 +7,7 @@ export const SITE = {
   email: "danhabibpro@gmail.com",
   location: "Paris, France",
   description:
-    "SnowTech, c'est Dan Habib, développeur à Paris. Je crée des logiciels et des automatisations pour les entreprises : CRM immobilier, plateforme de cours particuliers, conversion de factures en Excel, publication d'annonces, envoi d'ordonnances.",
+    "SnowTech, studio de développement à Paris. Nous créons des logiciels et des automatisations pour les entreprises : CRM immobilier, plateforme de cours particuliers, conversion de factures en Excel, publication d'annonces, envoi d'ordonnances.",
   links: {
     github: "https://github.com/danhab05",
     linkedin: "https://www.linkedin.com/in/dan-habib-899b84232",
@@ -77,7 +77,7 @@ export const projects: Project[] = [
     gain: "1 clic",
     gainLabel: "pour mettre une annonce en ligne",
     summary:
-      "Facilitimo publie les annonces sur SeLoger à la place de l'agent. L'agent remplit la fiche du bien une fois et clique sur Publier : le robot met l'annonce en ligne, photos comprises, puis envoie un mail de confirmation. Utilisé par l'agence BLG Immobilier, pour qui j'ai aussi fait le site blgimmobilier.fr.",
+      "Facilitimo publie les annonces sur SeLoger à la place de l'agent. L'agent remplit la fiche du bien une fois et clique sur Publier : le robot met l'annonce en ligne, photos comprises, puis envoie un mail de confirmation. Utilisé par l'agence BLG Immobilier, pour qui nous avons aussi fait le site blgimmobilier.fr.",
     before: "Avant, chaque annonce était ressaisie à la main sur le portail.",
     features: ["Une seule saisie", "Photos envoyées par le robot", "Mail de confirmation"],
     technologies: ["Python", "Selenium", "Docker"],
@@ -172,13 +172,15 @@ export const olderProjects: Project[] = [
   },
 ];
 
-/** Entreprises avec qui je travaille. `logo` : chemin dans /public, sinon logo texte. */
+/** Entreprises avec qui nous travaillons. `logo` : chemin dans /public, sinon logo texte. */
 export const partners: {
   name: string;
   tagline: string;
   work: string;
   url: string;
   logo: string | null;
+  /** Couleurs du logo texte : fond et trait d'accent. */
+  colors: { bg: string; accent: string };
 }[] = [
   {
     name: "BLG Immobilier",
@@ -186,6 +188,15 @@ export const partners: {
     work: "Site internet et publication SeLoger avec Facilitimo",
     url: "https://blgimmobilier.fr/",
     logo: null,
+    colors: { bg: "#032f4a", accent: "#f68a1f" },
+  },
+  {
+    name: "Assia",
+    tagline: "Soutien scolaire",
+    work: "Site et plateforme de cours particuliers",
+    url: "https://www.assia.school",
+    logo: null,
+    colors: { bg: "#0c111b", accent: "#ff7a45" },
   },
 ];
 
@@ -232,19 +243,19 @@ export const services = [
 export const processSteps = [
   {
     title: "On s'appelle",
-    text: "Vous me montrez comment vous faites aujourd'hui. 30 minutes, gratuit.",
+    text: "Vous nous montrez comment vous faites aujourd'hui. 30 minutes, gratuit.",
   },
   {
-    title: "Je vous fais une proposition",
-    text: "Ce que je construis, en combien de temps et pour quel prix.",
+    title: "On vous fait une proposition",
+    text: "Ce que nous construisons, en combien de temps et pour quel prix.",
   },
   {
-    title: "Je développe",
+    title: "On développe",
     text: "Vous testez des versions au fur et à mesure et on ajuste.",
   },
   {
     title: "Mise en ligne",
-    text: "Je m'occupe de l'installation et je reste disponible après. Le code est à vous.",
+    text: "Nous nous occupons de l'installation et restons disponibles après. Le code est à vous.",
   },
 ] as const;
 
@@ -262,7 +273,7 @@ export const faq = [
   {
     question: "Combien ça coûte ?",
     answer:
-      "Ça dépend de ce qu'il faut construire. Après un premier appel, je vous envoie un prix fixe. Une petite automatisation coûte beaucoup moins cher qu'une plateforme complète.",
+      "Ça dépend de ce qu'il faut construire. Après un premier appel, nous vous envoyons un prix fixe. Une petite automatisation coûte beaucoup moins cher qu'une plateforme complète.",
   },
   {
     question: "Combien de temps ça prend ?",
@@ -272,17 +283,17 @@ export const faq = [
   {
     question: "Je n'y connais rien en technique, c'est un problème ?",
     answer:
-      "Non. Vous m'expliquez votre travail avec vos mots, je m'occupe du reste. Vous testez l'outil et vous me dites ce qui ne va pas.",
+      "Non. Vous nous expliquez votre travail avec vos mots, on s'occupe du reste. Vous testez l'outil et vous nous dites ce qui ne va pas.",
   },
   {
     question: "Vous travaillez à distance ?",
     answer:
-      "Oui, avec des clients partout en France. Je suis à Paris si on doit se voir. Je réponds du lundi au vendredi et le dimanche, de 8 h à 20 h.",
+      "Oui, avec des clients partout en France. Nous sommes à Paris si on doit se voir. Nous répondons du lundi au vendredi et le dimanche, de 8 h à 20 h.",
   },
   {
     question: "Qu'est-ce qui se passe après la livraison ?",
     answer:
-      "Le code vous appartient. Je reste disponible pour corriger un problème ou ajouter quelque chose plus tard.",
+      "Le code vous appartient. Nous restons disponibles pour corriger un problème ou ajouter quelque chose plus tard.",
   },
 ] as const;
 
