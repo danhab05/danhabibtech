@@ -282,6 +282,78 @@ h3 {
   margin-top: 24px;
 }
 
+/* Partenaires */
+.partners {
+  padding-bottom: 56px;
+}
+.partner-list {
+  display: grid;
+  gap: 12px;
+}
+.partner-list a {
+  display: grid;
+  gap: 14px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  transition: border-color 0.15s;
+}
+.partner-list a:hover {
+  border-color: var(--ink);
+}
+.partner-logo {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 12px;
+}
+.partner-wordmark {
+  display: grid;
+  gap: 4px;
+  padding: 22px 24px 22px 30px;
+  border-radius: 12px;
+  background: #032f4a;
+  color: #fff;
+  position: relative;
+}
+.partner-wordmark::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 20px;
+  bottom: 20px;
+  width: 4px;
+  border-radius: 2px;
+  background: #f68a1f;
+}
+.partner-wordmark b {
+  font-family: var(--font-head);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.partner-wordmark small {
+  color: #c9d2da;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.partner-work {
+  display: grid;
+  gap: 2px;
+  align-content: center;
+  font-weight: 500;
+}
+.partner-work em {
+  color: var(--accent);
+  font-size: 14px;
+  font-style: normal;
+}
+
 /* Teintes par projet */
 .tint-factures {
   --tint: #e1f5eb;
@@ -1284,6 +1356,14 @@ h3 {
   }
   .open-source ul {
     grid-template-columns: 1fr 1fr;
+  }
+  .partner-list {
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  }
+  .partner-list a {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 20px;
   }
 }
 
