@@ -45,10 +45,8 @@ test("native navigation, all projects, FAQ, SEO and static hero", async ({
   page.on("pageerror", (e) => errors.push(e.message));
   await page.goto("/");
   await page.evaluate(() => document.fonts.ready);
-  await expect(page.locator("h1")).toHaveText(
-    "Moins de tâches.Plus de possibles.",
-  );
-  await expect(page.locator(".hero-feed")).toBeVisible();
+  await expect(page.locator("h1")).toContainText("travail répétitif");
+  await expect(page.locator(".project-index li")).toHaveCount(5);
   await expect(page.locator(".project-card")).toHaveCount(5);
   await expect(page.locator(".project-card .mock")).toHaveCount(5);
   await expect(page.locator("video, canvas")).toHaveCount(0);
@@ -67,7 +65,7 @@ test("native navigation, all projects, FAQ, SEO and static hero", async ({
   await page.screenshot({
     path: `test-results/captures/${info.project.name}-projects.png`,
   });
-  for (const id of ["services", "methode", "competences", "faq"]) {
+  for (const id of ["services", "methode", "faq"]) {
     await page.locator(`#${id}`).scrollIntoViewIfNeeded();
     await expect(page.locator(`#${id} h2`)).toBeVisible();
   }

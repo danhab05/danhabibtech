@@ -3,7 +3,7 @@
 Site de SnowTech (studio de Dan Habib) — automatisation, IA et développement sur-mesure.
 
 ## Design
-Hero sombre avec un fil d’« automatisations du jour », puis sections claires. Chaque projet est illustré par une maquette de l’outil dessinée en HTML/CSS (`components/ProjectMockup.tsx`) : aucune image, aucune vidéo, aucune animation imposée. Polices Geist, Geist Mono et Instrument Serif via `next/font`.
+Thème clair « neige », pensé d’abord pour le mobile. Les cinq projets sont listés dès le haut de page, puis détaillés chacun avec une maquette de l’outil dessinée en HTML/CSS (`components/ProjectMockup.tsx`). Logo flocon en SVG (`components/SnowMark.tsx`). Aucune image, aucune vidéo, aucune animation imposée. Polices Bricolage Grotesque et Inter via `next/font`.
 
 ## Stack et contenu
 Next.js 15 App Router, React 18, TypeScript. `app/page.tsx` : page et JSON-LD ; `lib/data.ts` : contenu métier ; `components/Contact.tsx` : contact. Le formulaire **prépare un email mailto**, il ne l’envoie pas : une messagerie configurée est nécessaire. L’adresse directe reste accessible sans JavaScript.

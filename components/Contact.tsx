@@ -39,23 +39,16 @@ export default function Contact() {
   };
 
   return (
-    <section className="contact section" id="contact" aria-label="Contact">
-      <div className="wrap">
+    <section className="contact" id="contact" aria-labelledby="contact-title">
+      <div className="wrap contact-grid">
         <div className="contact-intro">
-          <p className="eyebrow">06 · Contact</p>
-          <h2>
-            Une tâche qui <em>se répète&nbsp;?</em>
-          </h2>
+          <p className="label">Contact</p>
+          <h2 id="contact-title">Parlons de votre projet</h2>
           <p>
-            Il y a sûrement une meilleure façon de la gérer. Expliquez-moi
-            comment vous travaillez aujourd’hui : on regarde ensemble ce qui
-            peut être automatisé, connecté ou construit. Réponse sous 24h.
+            Dites-moi en quelques lignes ce qui vous fait perdre du temps. Je
+            vous réponds sous 24 h, et on voit ensemble si je peux vous aider.
           </p>
-        </div>
-
-        <div className="contact-layout">
-          <aside className="contact-side">
-            <h3 className="contact-side-title">Direct</h3>
+          <div className="contact-direct">
             <a className="contact-channel" href={`mailto:${SITE.email}`}>
               <span className="contact-channel-label">Email</span>
               <span className="contact-channel-value">{SITE.email}</span>
@@ -67,102 +60,86 @@ export default function Contact() {
               rel="noopener noreferrer"
             >
               <span className="contact-channel-label">LinkedIn</span>
-              <span className="contact-channel-value">Profil de Dan, fondateur ↗</span>
+              <span className="contact-channel-value">Dan Habib ↗</span>
             </a>
-            <a
-              className="contact-channel"
-              href={SITE.links.github}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="contact-channel-label">GitHub</span>
-              <span className="contact-channel-value">@danhab05 ↗</span>
-            </a>
-            <div className="contact-facts">
-              <p>
-                <strong>Disponibilité</strong>
-                Lun – Ven &amp; Dim · 8h – 20h
-              </p>
-              <p>
-                <strong>Localisation</strong>
-                Paris · Remote partout en France
-              </p>
-            </div>
-          </aside>
-
-          <form className="contact-form" onSubmit={onSubmit}>
-            <div className="field-row">
-              <div className="field">
-                <label htmlFor="firstName">Prénom</label>
-                <input id="firstName" name="firstName" type="text" required />
-              </div>
-              <div className="field">
-                <label htmlFor="company">Entreprise</label>
-                <input id="company" name="company" type="text" />
-              </div>
-            </div>
-
-            <div className="field-row">
-              <div className="field">
-                <label htmlFor="email">Email</label>
-                <input id="email" name="email" type="email" required />
-              </div>
-              <div className="field">
-                <label htmlFor="phone">
-                  Téléphone <span className="field-opt">(facultatif)</span>
-                </label>
-                <input id="phone" name="phone" type="tel" />
-              </div>
-            </div>
-
-            <div className="field">
-              <label htmlFor="needType">Type de besoin</label>
-              <select id="needType" name="needType" defaultValue="">
-                <option value="" disabled>
-                  Sélectionnez une option
-                </option>
-                {needTypes.map((n) => (
-                  <option key={n} value={n}>
-                    {n}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="field">
-              <label htmlFor="message">Décrivez votre besoin</label>
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                required
-                placeholder="Comment fonctionne votre activité aujourd'hui ? Qu'aimeriez-vous automatiser, connecter ou construire ?"
-              />
-            </div>
-
-            {/* Piège à robots : invisible et hors du parcours clavier. */}
-            <div className="field-honey" aria-hidden="true">
-              <label htmlFor="website">Site web</label>
-              <input
-                id="website"
-                name="website"
-                type="text"
-                tabIndex={-1}
-                autoComplete="off"
-              />
-            </div>
-
-            <button className="button button-dark form-submit" type="submit">
-              Préparer mon email
-            </button>
-
-            <p className="form-note" role="status">
-              {sent
-                ? "Votre demande est prête. Si votre messagerie ne s’ouvre pas, écrivez directement à danhabibpro@gmail.com. Aucun message n’a été envoyé par ce site."
-                : "Le formulaire ouvre votre messagerie avec la demande déjà rédigée."}
-            </p>
-          </form>
+          </div>
+          <p className="contact-hours">
+            Lun – ven et dimanche, 8 h – 20 h · Paris et à distance
+          </p>
         </div>
+
+        <form className="contact-form" onSubmit={onSubmit}>
+          <div className="field-row">
+            <div className="field">
+              <label htmlFor="firstName">Prénom</label>
+              <input id="firstName" name="firstName" type="text" required />
+            </div>
+            <div className="field">
+              <label htmlFor="company">Entreprise</label>
+              <input id="company" name="company" type="text" />
+            </div>
+          </div>
+
+          <div className="field-row">
+            <div className="field">
+              <label htmlFor="email">Email</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+            <div className="field">
+              <label htmlFor="phone">
+                Téléphone <span className="field-opt">(facultatif)</span>
+              </label>
+              <input id="phone" name="phone" type="tel" />
+            </div>
+          </div>
+
+          <div className="field">
+            <label htmlFor="needType">Type de besoin</label>
+            <select id="needType" name="needType" defaultValue="">
+              <option value="" disabled>
+                Choisir
+              </option>
+              {needTypes.map((n) => (
+                <option key={n} value={n}>
+                  {n}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="field">
+            <label htmlFor="message">Votre besoin</label>
+            <textarea
+              id="message"
+              name="message"
+              rows={5}
+              required
+              placeholder="Ex. : on recopie chaque commande du site dans un tableur, ça prend une heure par jour."
+            />
+          </div>
+
+          {/* Piège à robots : invisible et hors du parcours clavier. */}
+          <div className="field-honey" aria-hidden="true">
+            <label htmlFor="website">Site web</label>
+            <input
+              id="website"
+              name="website"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
+
+          <button className="btn form-submit" type="submit">
+            Préparer mon email
+          </button>
+
+          <p className="form-note" role="status">
+            {sent
+              ? "Votre demande est prête. Si votre messagerie ne s’ouvre pas, écrivez directement à danhabibpro@gmail.com. Aucun message n’a été envoyé par ce site."
+              : "Le bouton ouvre votre messagerie avec le message déjà écrit."}
+          </p>
+        </form>
       </div>
     </section>
   );

@@ -1,30 +1,22 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { Bricolage_Grotesque, Inter } from "next/font/google";
 import "./globals.css";
 
-const sans = Geist({
+const display = Bricolage_Grotesque({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const sans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
 });
 
-const mono = Geist_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
-  display: "swap",
-});
-
-const serif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  variable: "--font-serif",
-  display: "swap",
-});
-
 export const viewport: Viewport = {
-  themeColor: "#0e1014",
+  themeColor: "#f4f6f9",
   width: "device-width",
   initialScale: 1,
 };
@@ -36,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | SnowTech",
   },
   description:
-    "Automatisation, assistants IA, intégrations et développement sur-mesure pour les entreprises. SnowTech, studio basé à Paris : je supprime les tâches répétitives et je construis les outils qui vont avec. Réponse sous 24h.",
+    "Automatisation, assistants IA, intégrations et développement sur-mesure pour les entreprises. SnowTech, c'est Dan Habib, développeur à Paris : CRM immobilier, plateformes, factures vers Excel, robots de publication. Réponse sous 24 h.",
   keywords: [
     "SnowTech",
     "Snow Tech",
@@ -102,7 +94,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" className={`${sans.variable} ${mono.variable} ${serif.variable}`}>
+    <html lang="fr" className={`${display.variable} ${sans.variable}`}>
       <body>{children}</body>
     </html>
   );
