@@ -40,23 +40,21 @@ export default function Contact() {
 
   return (
     <section className="contact section" id="contact" aria-label="Contact">
-      <div className="contact-glow" aria-hidden="true" />
-      <div className="container-wide">
-        <p className="section-label section-label-center" data-fx="fade">
-          <span className="section-num">06 /</span>
-          Contact
-        </p>
-        <h2 className="contact-headline" data-fx="words">
-          Une tâche qui <em>se répète&nbsp;?</em>
-        </h2>
-        <p className="contact-desc" data-fx="words-scrub">
-          Il y a sûrement une meilleure façon de la gérer. Expliquez-moi comment
-          vous travaillez aujourd’hui : on regarde ensemble ce qui peut être
-          automatisé, connecté ou construit. Réponse sous 24h.
-        </p>
+      <div className="wrap">
+        <div className="contact-intro">
+          <p className="eyebrow">06 · Contact</p>
+          <h2>
+            Une tâche qui <em>se répète&nbsp;?</em>
+          </h2>
+          <p>
+            Il y a sûrement une meilleure façon de la gérer. Expliquez-moi
+            comment vous travaillez aujourd’hui : on regarde ensemble ce qui
+            peut être automatisé, connecté ou construit. Réponse sous 24h.
+          </p>
+        </div>
 
         <div className="contact-layout">
-          <aside className="contact-side" data-fx="fade">
+          <aside className="contact-side">
             <h3 className="contact-side-title">Direct</h3>
             <a className="contact-channel" href={`mailto:${SITE.email}`}>
               <span className="contact-channel-label">Email</span>
@@ -92,7 +90,7 @@ export default function Contact() {
             </div>
           </aside>
 
-          <form className="contact-form" onSubmit={onSubmit} data-fx="fade">
+          <form className="contact-form" onSubmit={onSubmit}>
             <div className="field-row">
               <div className="field">
                 <label htmlFor="firstName">Prénom</label>
@@ -154,7 +152,7 @@ export default function Contact() {
               />
             </div>
 
-            <button className="button primary form-submit" type="submit">
+            <button className="button button-dark form-submit" type="submit">
               Préparer mon email
             </button>
 

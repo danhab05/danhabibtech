@@ -1,23 +1,30 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk, DM_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
-const grotesk = Space_Grotesk({
+const sans = Geist({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-grotesk",
+  variable: "--font-sans",
   display: "swap",
 });
 
-const dmMono = DM_Mono({
+const mono = Geist_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
-  variable: "--font-dmmono",
+  variable: "--font-mono",
+  display: "swap",
+});
+
+const serif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-serif",
   display: "swap",
 });
 
 export const viewport: Viewport = {
-  themeColor: "#f7f4ee",
+  themeColor: "#0e1014",
   width: "device-width",
   initialScale: 1,
 };
@@ -95,7 +102,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" className={`${grotesk.variable} ${dmMono.variable}`}>
+    <html lang="fr" className={`${sans.variable} ${mono.variable} ${serif.variable}`}>
       <body>{children}</body>
     </html>
   );

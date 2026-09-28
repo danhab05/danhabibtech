@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Contact from "@/components/Contact";
+import ProjectMockup from "@/components/ProjectMockup";
 import {
   SITE,
   projects,
@@ -8,6 +8,7 @@ import {
   processSteps,
   skills,
   githubRepos,
+  otherWork,
 } from "@/lib/data";
 
 const jsonLd = {
@@ -84,7 +85,7 @@ const jsonLd = {
       about: { "@id": `${SITE.url}/#person` },
       mainEntity: { "@id": `${SITE.url}/#person` },
       inLanguage: "fr-FR",
-      primaryImageOfPage: `${SITE.url}/images/atelier-paris.webp`,
+      primaryImageOfPage: `${SITE.url}/opengraph-image`,
     },
     {
       "@type": "ItemList",
@@ -96,7 +97,7 @@ const jsonLd = {
         item: {
           "@type": "CreativeWork",
           name: p.title,
-          description: p.description,
+          description: `${p.pitch} ${p.solution}`,
           ...(p.link ? { url: p.link } : {}),
           keywords: p.technologies.join(", "),
           author: { "@id": `${SITE.url}/#person` },
@@ -133,208 +134,250 @@ export default function HomePage() {
           dan habib<span>.</span>
         </a>
         <nav aria-label="Navigation principale">
-          <a href="#projets">Mes projets</a>
-          <a href="#services">Mon approche</a>
+          <a href="#projets">Projets</a>
+          <a href="#services">Services</a>
+          <a href="#methode">Méthode</a>
+          <a href="#faq">FAQ</a>
         </nav>
-        <a className="button header-contact" href="#contact">
-          On en parle ? <span aria-hidden="true">↗</span>
+        <a className="button button-dark header-contact" href="#contact">
+          On en parle <span aria-hidden="true">→</span>
         </a>
       </header>
       <main id="content">
-        <section
-          className="landscape"
-          id="accueil"
-          aria-labelledby="hero-title"
-        >
-          <Image
-            className="landscape-art"
-            src="/images/atelier-paris.webp"
-            alt=""
-            fill
-            unoptimized
-            priority
-            sizes="100vw"
-          />
-          <div className="landscape-shade" aria-hidden="true" />
-          <div className="hero-copy">
-            <p className="eyebrow">DÉVELOPPEUR INDÉPENDANT · PARIS</p>
-            <h1 id="hero-title">
-              Moins de tâches.
-              <br />
-              Plus de possibles.
-            </h1>
-            <p className="hero-intro">
-              J’automatise ce qui vous ralentit.
-              <br />
-              Je construis ce qui vous manque.
-            </p>
-            <a className="button hero-button" href="#projets">
-              Explorer mes projets <span aria-hidden="true">↓</span>
-            </a>
-          </div>
-          <div className="hero-bottom">
-            <span>
-              <i aria-hidden="true" /> Ouvert aux nouveaux projets
-            </span>
-            <span>Automatisation · IA · Développement</span>
-          </div>
-        </section>
-
-        <section
-          className="intro-band wrap"
-          id="a-propos"
-          aria-label="À propos"
-        >
-          <p className="eyebrow">DU CODE. DU CONCRET.</p>
-          <div>
-            <h2>
-              Des outils qui travaillent.
-              <br />
-              Du temps qui vous revient.
-            </h2>
-            <p>
-              Moi, c’est Dan. Développeur freelance à Paris, je transforme les
-              tâches répétitives et les idées en outils utiles. De la première
-              discussion à la mise en ligne, vous échangez avec la personne qui
-              construit.
-            </p>
-          </div>
-        </section>
-
-        <section className="work-section section" id="projets">
-          <div className="wrap">
-            <div className="section-heading">
-              <div>
-                <p className="eyebrow">01 / QUELQUES RÉALISATIONS</p>
-                <h2>De l’idée au quotidien.</h2>
-              </div>
-              <p>
-                Des projets différents.
-                <br />
-                La même envie de faire simple.
+        <section className="hero" id="accueil" aria-labelledby="hero-title">
+          <div className="hero-glow" aria-hidden="true" />
+          <div className="wrap hero-grid">
+            <div className="hero-copy">
+              <p className="pill">
+                <i aria-hidden="true" /> Disponible pour de nouveaux projets
               </p>
-            </div>
-            <div className="project-grid">
-              {projects.map((project, index) => (
-                <article
-                  className={`project-card project-${project.id}`}
-                  key={project.id}
-                >
-                  <div className="project-cover" aria-hidden="true">
-                    <div className="cover-top">
-                      <span>{project.category}</span>
-                      <span>0{index + 1}</span>
-                    </div>
-                    <div className="project-symbol">
-                      {["a²", "blg.", "PDF → XLS", "+", "</>", "↻"][index]}
-                    </div>
-                    <span className="cover-caption">
-                      {
-                        [
-                          "Apprendre autrement.",
-                          "L’immobilier, connecté.",
-                          "Les données. Sans la saisie.",
-                          "Moins d’attente. Plus de soin.",
-                          "L’école, accessible en Python.",
-                          "Une fois suffit.",
-                        ][index]
-                      }
-                    </span>
-                  </div>
-                  <div className="project-info">
-                    <div className="project-title">
-                      <h3>{project.title}</h3>
-                      {project.link && (
-                        <a
-                          href={project.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`Découvrir ${project.title} (nouvel onglet)`}
-                        >
-                          ↗
-                        </a>
-                      )}
-                    </div>
-                    <p>{project.description}</p>
-                    <details className="project-details">
-                      <summary>Résultat &amp; technologies</summary>
-                      <p>{project.result}</p>
-                      <div className="tags">
-                        {project.technologies.map((t) => (
-                          <span key={t}>{t}</span>
-                        ))}
-                      </div>
-                    </details>
-                  </div>
-                </article>
-              ))}
-            </div>
-            <div className="github-strip">
-              <p>J’aime aussi construire à ciel ouvert.</p>
-              <a
-                href={SITE.links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Retrouvez-moi sur GitHub ↗
-              </a>
-            </div>
-            <details className="open-source">
-              <summary>Explorer les projets open source</summary>
-              <div className="repo-grid">
-                {githubRepos.map((repo) => (
-                  <a
-                    key={repo.name}
-                    href={repo.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <strong>{repo.name} ↗</strong>
-                    <span>{repo.description}</span>
-                  </a>
-                ))}
+              <h1 id="hero-title">
+                Moins de tâches.
+                <br />
+                <em>Plus de possibles.</em>
+              </h1>
+              <p className="hero-intro">
+                Développeur indépendant à Paris. J’automatise ce qui vous
+                ralentit et je construis les outils qui vous manquent : CRM,
+                plateformes, robots et logiciels métier.
+              </p>
+              <div className="hero-actions">
+                <a className="button button-light" href="#projets">
+                  Explorer mes projets <span aria-hidden="true">↓</span>
+                </a>
+                <a className="button button-ghost" href="#contact">
+                  Décrire mon besoin
+                </a>
               </div>
-            </details>
+            </div>
+            <div className="hero-feed" aria-label="Exemples d’automatisations">
+              <div className="feed-head">
+                <span>Aujourd’hui, sans y toucher</span>
+                <small>5 tâches</small>
+              </div>
+              <ul>
+                {[
+                  ["Facture_0342.pdf convertie en Excel", "1 s", "Comptabilité"],
+                  ["Annonce T3 Paris 11e publiée sur SeLoger", "1 clic", "Immobilier"],
+                  ["Ordonnance transmise à la pharmacie", "1 clic", "Santé"],
+                  ["Cours de maths réservé et payé", "mar. 18h", "Éducation"],
+                  ["3 acquéreurs relancés pour une visite", "auto", "CRM"],
+                ].map(([label, meta, tag]) => (
+                  <li key={label}>
+                    <span className="feed-check" aria-hidden="true">
+                      ✓
+                    </span>
+                    <span className="feed-label">
+                      {label}
+                      <small>{tag}</small>
+                    </span>
+                    <span className="feed-meta">{meta}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="wrap hero-proof">
+            <p>
+              <strong>10 min → 1 s</strong> par facture
+            </p>
+            <p>
+              <strong>1 clic</strong> pour publier une annonce
+            </p>
+            <p>
+              <strong>100 000</strong> tests gérés en pharmacie
+            </p>
+            <p>
+              <strong>24 h</strong> pour une réponse
+            </p>
           </div>
         </section>
 
-        <section className="section wrap" id="services">
+        <section className="section wrap" id="projets">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">02 / CE QUE JE PEUX FAIRE</p>
+              <p className="eyebrow">01 · Réalisations</p>
               <h2>
-                Le bon outil.
-                <br />
-                Pas une usine à gaz.
+                Des outils qui <em>travaillent</em> pour vous.
               </h2>
             </div>
             <p>
-              Relier vos outils, alléger vos journées,
-              <br />
-              donner forme à votre prochain projet.
+              Cinq produits, cinq métiers. Chaque fois, une tâche pénible qui
+              disparaît et du temps qui revient.
             </p>
           </div>
-          <div className="services-grid">
-            {services
-              .filter((s) => !("isCta" in s))
-              .map((service, i) => (
-                <article key={service.title}>
-                  <span className="service-index">0{i + 1}</span>
-                  <h3>{service.title}</h3>
-                  <p>{service.text}</p>
-                </article>
+          <div className="project-list">
+            {projects.map((project, index) => (
+              <article
+                className={`project-card project-${project.id}`}
+                key={project.id}
+                aria-labelledby={`project-${project.id}`}
+              >
+                <div className="project-visual">
+                  <ProjectMockup id={project.id} />
+                </div>
+                <div className="project-info">
+                  <p className="project-meta">
+                    <span>0{index + 1}</span>
+                    {project.category}
+                  </p>
+                  <h3 id={`project-${project.id}`}>{project.title}</h3>
+                  <p className="project-pitch">{project.pitch}</p>
+                  <div className="project-gain">
+                    <span className="before">{project.gain.before}</span>
+                    <span aria-hidden="true">→</span>
+                    <strong>{project.gain.after}</strong>
+                    <small>{project.gain.label}</small>
+                  </div>
+                  <dl className="project-story">
+                    <div>
+                      <dt>Avant</dt>
+                      <dd>{project.problem}</dd>
+                    </div>
+                    <div>
+                      <dt>Maintenant</dt>
+                      <dd>{project.solution}</dd>
+                    </div>
+                  </dl>
+                  <ul className="project-features">
+                    {project.features.map((f) => (
+                      <li key={f}>{f}</li>
+                    ))}
+                  </ul>
+                  <div className="project-foot">
+                    <div className="tags">
+                      {project.technologies.map((t) => (
+                        <span key={t}>{t}</span>
+                      ))}
+                    </div>
+                    {project.link && (
+                      <a
+                        className="text-link"
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Voir ${project.title} en ligne (nouvel onglet)`}
+                      >
+                        Voir en ligne ↗
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="other-work">
+            <h3>Et aussi</h3>
+            <div>
+              {otherWork.map((w) => {
+                const inner = (
+                  <>
+                    <strong>
+                      {w.title}
+                      {w.link && " ↗"}
+                    </strong>
+                    <span>{w.text}</span>
+                  </>
+                );
+                return w.link ? (
+                  <a
+                    key={w.title}
+                    href={w.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {inner}
+                  </a>
+                ) : (
+                  <p key={w.title}>{inner}</p>
+                );
+              })}
+            </div>
+          </div>
+          <details className="open-source">
+            <summary>Explorer les projets open source sur GitHub</summary>
+            <div className="repo-grid">
+              {githubRepos.map((repo) => (
+                <a
+                  key={repo.name}
+                  href={repo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <strong>{repo.name} ↗</strong>
+                  <span>{repo.description}</span>
+                  <small>{repo.language}</small>
+                </a>
               ))}
+            </div>
+          </details>
+        </section>
+
+        <section className="section services-section" id="services">
+          <div className="wrap">
+            <div className="section-heading">
+              <div>
+                <p className="eyebrow">02 · Services</p>
+                <h2>
+                  Du sur-mesure, <em>sans usine à gaz.</em>
+                </h2>
+              </div>
+              <p>
+                Relier vos outils, alléger vos journées, donner forme à votre
+                prochain projet.
+              </p>
+            </div>
+            <div className="services-grid">
+              {services.map((service, i) =>
+                "isCta" in service ? (
+                  <a
+                    className="service service-cta"
+                    href="#contact"
+                    key={service.title}
+                  >
+                    <h3>{service.title}</h3>
+                    <p>{service.text}</p>
+                    <span className="text-link">Décrire mon besoin →</span>
+                  </a>
+                ) : (
+                  <article className="service" key={service.title}>
+                    <span className="service-index">0{i + 1}</span>
+                    <h3>{service.title}</h3>
+                    <p>{service.text}</p>
+                  </article>
+                ),
+              )}
+            </div>
           </div>
         </section>
 
         <section className="method-section section" id="methode">
           <div className="wrap method-layout">
             <div>
-              <p className="eyebrow">03 / ON AVANCE ENSEMBLE</p>
+              <p className="eyebrow">03 · Méthode</p>
               <h2>
-                Un interlocuteur.
-                <br />
-                Du début à la suite.
+                Un seul interlocuteur, <em>du début à la suite.</em>
               </h2>
               <p>
                 Un périmètre clair, des versions que vous pouvez essayer et du
@@ -345,8 +388,9 @@ export default function HomePage() {
               </a>
             </div>
             <ol className="method-list">
-              {processSteps.map((step) => (
+              {processSteps.map((step, i) => (
                 <li key={step.title}>
+                  <span aria-hidden="true">0{i + 1}</span>
                   <h3>{step.title}</h3>
                   <p>{step.text}</p>
                 </li>
@@ -356,8 +400,10 @@ export default function HomePage() {
         </section>
 
         <section className="section wrap skills-section" id="competences">
-          <p className="eyebrow">04 / DANS LA BOÎTE À OUTILS</p>
-          <h2>La technique au service du besoin.</h2>
+          <p className="eyebrow">04 · Boîte à outils</p>
+          <h2>
+            La technique, <em>au service du besoin.</em>
+          </h2>
           <div className="skills-grid">
             {skills.map((group) => (
               <div key={group.title}>
@@ -370,8 +416,10 @@ export default function HomePage() {
 
         <section className="section wrap faq-section" id="faq">
           <div>
-            <p className="eyebrow">05 / AVANT DE SE LANCER</p>
-            <h2>Quelques réponses.</h2>
+            <p className="eyebrow">05 · Questions</p>
+            <h2>
+              Quelques <em>réponses.</em>
+            </h2>
           </div>
           <div className="faq-list">
             {faq.map((item) => (
@@ -391,7 +439,7 @@ export default function HomePage() {
         <a className="wordmark" href="#accueil">
           dan habib.
         </a>
-        <p>Du code utile, fait à Paris.</p>
+        <p>Du code utile, fait à Paris · © {new Date().getFullYear()}</p>
         <div>
           <a
             href={SITE.links.linkedin}
