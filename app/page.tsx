@@ -203,9 +203,9 @@ export default function HomePage() {
             Ils nous font confiance
           </p>
           <ul className="partner-list">
-            {partners.map((pt) => (
-              <li key={pt.name}>
-                <a href={pt.url} target="_blank" rel="noopener noreferrer">
+            {partners.map((pt) => {
+              const inner = (
+                <>
                   {pt.logo ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
@@ -232,11 +232,34 @@ export default function HomePage() {
                   )}
                   <span className="partner-work">
                     {pt.work}
-                    <em>{pt.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")} ↗</em>
+                    {pt.url && (
+                      <em>
+                        {pt.url
+                          .replace(/^https?:\/\/(www\.)?/, "")
+                          .replace(/\/$/, "")}{" "}
+                        ↗
+                      </em>
+                    )}
                   </span>
-                </a>
-              </li>
-            ))}
+                </>
+              );
+              return (
+                <li key={pt.name}>
+                  {pt.url ? (
+                    <a
+                      className="partner-card"
+                      href={pt.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {inner}
+                    </a>
+                  ) : (
+                    <div className="partner-card">{inner}</div>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </section>
 

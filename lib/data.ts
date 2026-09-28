@@ -177,7 +177,7 @@ export const partners: {
   name: string;
   tagline: string;
   work: string;
-  url: string;
+  url: string | null;
   logo: string | null;
   /** Couleurs du logo texte : fond et trait d'accent. */
   colors: { bg: string; accent: string };
@@ -197,6 +197,14 @@ export const partners: {
     url: "https://www.assia.school",
     logo: null,
     colors: { bg: "#0c111b", accent: "#ff7a45" },
+  },
+  {
+    name: "Pharmacie Centrale de l'Est",
+    tagline: "Pharmacie",
+    work: "Tests antigéniques : inscription en ligne et résultats par mail",
+    url: null,
+    logo: null,
+    colors: { bg: "#0b5d45", accent: "#3ddc97" },
   },
 ];
 
