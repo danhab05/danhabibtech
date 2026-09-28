@@ -48,21 +48,15 @@ test("native navigation, all projects, FAQ, SEO and static hero", async ({
   await expect(page.locator("h1")).toHaveText(
     "Moins de tâches.Plus de possibles.",
   );
-  await expect(page.locator(".landscape-art")).toBeVisible();
-  await expect(page.locator(".project-card")).toHaveCount(6);
+  await expect(page.locator(".hero-feed")).toBeVisible();
+  await expect(page.locator(".project-card")).toHaveCount(5);
+  await expect(page.locator(".project-card .mock")).toHaveCount(5);
   await expect(page.locator("video, canvas")).toHaveCount(0);
   expect(await page.evaluate(() => document.getAnimations().length)).toBe(0);
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= window.innerWidth,
     ),
-  ).toBe(true);
-  expect(
-    await page
-      .locator(".landscape-art")
-      .evaluate(
-        (img: HTMLImageElement) => img.complete && img.naturalWidth > 0,
-      ),
   ).toBe(true);
   await mkdir("test-results/captures", { recursive: true });
   await page.screenshot({
@@ -101,7 +95,7 @@ test("native navigation, all projects, FAQ, SEO and static hero", async ({
   expect(
     graph.find((n: { "@type": string }) => n["@type"] === "ItemList")
       .itemListElement,
-  ).toHaveLength(6);
+  ).toHaveLength(5);
   for (const url of [
     "/robots.txt",
     "/sitemap.xml",
@@ -125,7 +119,7 @@ test("content and contact remain reachable without JavaScript", async ({
   await page.goto(process.env.TEST_BASE_URL || "http://127.0.0.1:3147");
   await expect(page.locator("h1")).toBeVisible();
   await page.getByRole("link", { name: "Explorer mes projets" }).click();
-  await expect(page.locator(".project-card")).toHaveCount(6);
+  await expect(page.locator(".project-card")).toHaveCount(5);
   const faq = page.locator("#faq details").first();
   await faq.locator("summary").click();
   await expect(faq.locator("p")).toBeVisible();

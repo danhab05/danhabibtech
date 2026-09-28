@@ -1,5 +1,3 @@
-import { MEDIA } from "./media";
-
 export const SITE = {
   url: "https://www.danhabib.dev",
   name: "Dan Habib",
@@ -17,103 +15,131 @@ export const SITE = {
 } as const;
 
 export type Project = {
-  id: string;
+  id: "crm" | "cours" | "factures" | "seloger" | "ordonnances";
   title: string;
   category: string;
-  description: string;
-  result: string;
+  /** Une phrase qui résume le produit. */
+  pitch: string;
+  problem: string;
+  solution: string;
+  features: string[];
+  /** Le gain mis en avant, sous forme « avant → après ». */
+  gain: { before: string; after: string; label: string };
   technologies: string[];
   link: string | null;
-  image: string;
-  imageAlt: string;
 };
 
 export const projects: Project[] = [
   {
-    id: "assia",
-    title: "Assia",
-    category: "Site vitrine & espace élèves",
-    description:
-      "Un institut de cours de maths et de physique-chimie qui gérait ses demandes au téléphone et par messages. J'ai construit assia.school : la présentation de la méthode, des formats et des tarifs, et l'espace où les familles créent un compte et demandent un cours en quelques minutes.",
-    result:
-      "En ligne et utilisé par l'institut, qui accompagne plus de 130 élèves du collège à la terminale.",
-    technologies: ["Next.js", "React", "Animations", "Vercel"],
+    id: "crm",
+    title: "CRM immobilier",
+    category: "Agences immobilières",
+    pitch: "Tout le portefeuille de l'agence au même endroit.",
+    problem:
+      "Les biens dans un tableur, les acquéreurs dans un carnet, les visites dans un agenda et les relances dans la tête de chacun. Une info manque, un client passe à la trappe.",
+    solution:
+      "Un CRM taillé pour l'agence : fiches biens et mandats, acquéreurs et leurs critères, agenda des visites et relances qui partent toutes seules. Quand un bien entre, les bons acquéreurs ressortent.",
+    features: [
+      "Biens, mandats et propriétaires",
+      "Rapprochement bien ↔ acquéreur",
+      "Visites et relances automatiques",
+    ],
+    gain: { before: "4 outils", after: "1 seul", label: "pour suivre toute l'agence" },
+    technologies: ["Next.js", "TypeScript", "Docker"],
+    link: null,
+  },
+  {
+    id: "cours",
+    title: "Plateforme de cours particuliers",
+    category: "Soutien scolaire",
+    pitch: "Réserver, payer et suivre ses cours, sans un seul SMS.",
+    problem:
+      "Les cours se calent par message, se paient en liquide ou par virement à relancer, et les devoirs se perdent entre deux photos WhatsApp.",
+    solution:
+      "Une plateforme avec trois espaces. Le prof ouvre ses créneaux et dépose les devoirs. L'élève réserve et rend son travail. Le parent paie en ligne et suit la progression.",
+    features: [
+      "Comptes prof, élève et parent",
+      "Réservation et paiement en ligne",
+      "Devoirs déposés, rendus, corrigés",
+    ],
+    gain: { before: "10 messages", after: "1 clic", label: "pour réserver un cours" },
+    technologies: ["Next.js", "React", "Paiement en ligne", "Vercel"],
     link: "https://www.assia.school",
-    image: MEDIA.projects.assia,
-    imageAlt:
-      "Visuel abstrait : courbes mathématiques et constructions géométriques lumineuses ambrées sur fond noir",
   },
   {
-    id: "immo",
-    title: "BLG Immobilier",
-    category: "Site vitrine + robot de publication",
-    description:
-      "L'agence ressaisissait chaque annonce à la main : le même bien, les mêmes photos, encore et encore. J'ai livré le site vitrine blgimmobilier.fr et le robot qui prend le relais — formulaire, upload des photos, notifications par mail.",
-    result:
-      "Le site est en ligne, le robot tourne tous les jours. La publication d'une annonce ne monopolise plus personne.",
-    technologies: ["Next.js", "Python", "Docker", "Selenium"],
+    id: "factures",
+    title: "Factures → Excel pour comptable",
+    category: "Cabinets comptables",
+    pitch: "Une facture entre, une ligne Excel au bon format sort.",
+    problem:
+      "Pour chaque facture, le comptable ouvre le PDF, recopie fournisseur, date, HT, TVA et TTC dans son fichier, colonne par colonne. Dix minutes, et une faute de frappe de temps en temps.",
+    solution:
+      "Il dépose la facture dans le logiciel. Les montants et les informations sont lus automatiquement et rangés dans l'Excel exactement au format du cabinet : mêmes colonnes, même ordre, prêt à importer.",
+    features: [
+      "Dépôt par glisser-déposer, une ou cent factures",
+      "Lecture fournisseur, date, HT, TVA, TTC",
+      "Export au modèle Excel du cabinet",
+    ],
+    gain: { before: "10 min", after: "1 s", label: "par facture" },
+    technologies: ["Python", "OCR", "Excel"],
+    link: null,
+  },
+  {
+    id: "seloger",
+    title: "Publication SeLoger en un clic",
+    category: "Agences immobilières",
+    pitch: "L'annonce est saisie une fois, le robot la publie.",
+    problem:
+      "Chaque bien était ressaisi à la main sur le portail : titre, surface, prix, description, photos une par une. Le même travail, encore et encore.",
+    solution:
+      "L'agent remplit sa fiche une seule fois et clique sur « Publier ». Un robot se connecte au portail, remplit chaque champ, envoie les photos et confirme la mise en ligne par mail.",
+    features: [
+      "Une fiche unique par bien",
+      "Formulaire et photos remplis par le robot",
+      "Confirmation par mail",
+    ],
+    gain: { before: "Saisie manuelle", after: "1 clic", label: "par annonce" },
+    technologies: ["Python", "Selenium", "Docker", "Next.js"],
     link: "https://blgimmobilier.fr/",
-    image: MEDIA.projects.immo,
-    imageAlt:
-      "Visuel abstrait généré par IA : façades architecturales se dissolvant en fil de fer ambré sur fond noir",
   },
   {
-    id: "extractgrid",
-    title: "ExtractGrid",
-    category: "Relevés bancaires PDF → Excel",
-    description:
-      "Recopier un relevé bancaire dans un tableur, c'est une heure perdue et deux fautes de frappe. ExtractGrid reconnaît la banque tout seul, sort les dates, libellés, débits et crédits, et rend un fichier Excel propre.",
-    result:
-      "En production, compatible multi-banques, adopté par des comptables et des PME.",
-    technologies: ["Next.js", "TypeScript", "Node.js"],
-    link: "https://github.com/danhab05/ExtractGrid",
-    image: MEDIA.projects.extractgrid,
-    imageAlt:
-      "Visuel abstrait généré par IA : grille de cellules de données lumineuses émergeant d'un document scanné",
-  },
-  {
-    id: "covid",
-    title: "Tests antigéniques",
-    category: "Inscription et résultats automatisés",
-    description:
-      "Une pharmacie débordée par le flux de tests. Les patients s'inscrivent en ligne, reçoivent leur résultat par mail automatiquement, et le pharmacien suit tout depuis une seule interface.",
-    result:
-      "Environ 100 000 tests traités en deux ans, moins d'attente au comptoir et moins de contacts physiques.",
+    id: "ordonnances",
+    title: "Ordonnance → pharmacien en un clic",
+    category: "Pharmacies",
+    pitch: "Photo de l'ordonnance, un clic, la pharmacie prépare.",
+    problem:
+      "Pour faire préparer un traitement, le patient doit écrire un mail, joindre un scan, retrouver l'adresse de la pharmacie… Personne n'a envie, alors tout le monde attend au comptoir.",
+    solution:
+      "Le patient photographie son ordonnance, choisit sa pharmacie et envoie. Le pharmacien la reçoit dans son espace, prépare la commande et prévient le patient quand c'est prêt.",
+    features: [
+      "Envoi en un clic, sans mail à rédiger",
+      "Espace pharmacien pour suivre les demandes",
+      "Notification « commande prête »",
+    ],
+    gain: { before: "Un mail à écrire", after: "1 clic", label: "pour transmettre" },
     technologies: ["Flutter", "Python", "Flask", "Docker"],
     link: null,
-    image: MEDIA.projects.covid,
-    imageAlt:
-      "Visuel abstrait généré par IA : réseau de nœuds lumineux et formes de laboratoire en verre sur fond noir",
-  },
-  {
-    id: "ecoledirect",
-    title: "EcoleDirect",
-    category: "Bibliothèque Python, open source",
-    description:
-      "EcoleDirecte n'expose aucune API publique. Cette librairie comble le trou : trois lignes de Python suffisent pour récupérer les devoirs, les notes et les informations d'un élève.",
-    result:
-      "Publiée sur PyPI, installable via pip, utilisée par des parents et des étudiants.",
-    technologies: ["Python", "pip", "Web scraping"],
-    link: "https://github.com/danhab05/ecoledirect",
-    image: MEDIA.projects.ecoledirect,
-    imageAlt:
-      "Visuel abstrait généré par IA : cascades de particules de code lumineux formant un livre ouvert",
-  },
-  {
-    id: "scripts",
-    title: "Automatisation & scraping",
-    category: "Missions sur-mesure",
-    description:
-      "Remplir un back-office, collecter des données que personne ne fournit proprement, répéter la même manipulation web cent fois : tout ce que vos équipes n'ont aucune envie de faire à la main.",
-    result:
-      "Des données livrées prêtes à l'emploi et des process internes nettement allégés.",
-    technologies: ["Python", "Go"],
-    link: null,
-    image: MEDIA.projects.scripts,
-    imageAlt:
-      "Visuel abstrait généré par IA : engrenages d'horlogerie en traits de lumière ambrée au-dessus d'un terminal",
   },
 ];
+
+/** Réalisations plus anciennes, citées plus brièvement. */
+export const otherWork = [
+  {
+    title: "Tests antigéniques",
+    text: "Inscription en ligne et résultats envoyés automatiquement pour une pharmacie : environ 100 000 tests traités en deux ans.",
+    link: null,
+  },
+  {
+    title: "ExtractGrid",
+    text: "Relevés bancaires PDF convertis en Excel, avec détection automatique de la banque.",
+    link: "https://github.com/danhab05/ExtractGrid",
+  },
+  {
+    title: "EcoleDirect",
+    text: "Bibliothèque Python publiée sur PyPI : devoirs et notes EcoleDirecte en trois lignes.",
+    link: "https://github.com/danhab05/ecoledirect",
+  },
+] as const;
 
 export const stats = [
   { value: 40, suffix: "+", label: "Projets livrés" },

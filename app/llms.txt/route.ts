@@ -46,12 +46,12 @@ Flask, Django, Next.js, React, MySQL, Docker, Linux/VPS, Git, APIs REST.
 
 ## Projets marquants
 
-- Assia (https://www.assia.school) : site vitrine et espace élèves d'un institut de cours de maths et de physique-chimie (cours particuliers, petits groupes, stages). Présentation de la méthode et des tarifs, création de compte et demande de cours en ligne. En production, pour un institut qui accompagne plus de 130 élèves du collège à la terminale (Next.js, React, Vercel).
-- BLG Immobilier (https://blgimmobilier.fr/) : site vitrine + robot de publication d'annonces immobilières (formulaire, photos, notifications), en production et utilisé quotidiennement par l'agence.
-- ExtractGrid (https://github.com/danhab05/ExtractGrid) : conversion automatique de relevés bancaires PDF en fichiers Excel structurés, détection automatique de la banque, multi-banques, utilisé par des comptables et des PME.
-- Tests antigéniques COVID : inscription en ligne, envoi automatique des résultats par mail et suivi centralisé pour une pharmacie. Environ 100 000 tests traités en 2 ans (Flutter, Python, Flask, Docker).
-- ecoledirect (https://github.com/danhab05/ecoledirect) : bibliothèque Python publiée sur PyPI, comble l'absence d'API publique d'EcoleDirecte (devoirs, notes, informations élèves).
-- Scripts d'automatisation et scraping sur-mesure pour agences et back-offices (Python, Go).
+- CRM immobilier : CRM sur-mesure pour agences immobilières. Biens, mandats et propriétaires, acquéreurs et leurs critères, rapprochement automatique bien/acquéreur, agenda des visites et relances automatiques. Remplace 4 outils par un seul.
+- Plateforme de cours particuliers (https://www.assia.school) : comptes professeur, élève et parent. Réservation et paiement des cours en ligne, gestion du planning, devoirs déposés, rendus et corrigés sur la plateforme.
+- Factures vers Excel pour comptable : le comptable dépose une facture, le logiciel lit fournisseur, date, HT, TVA et TTC et remplit l'Excel au format exact du cabinet. Environ 1 seconde par facture contre 10 minutes à la main.
+- Publication SeLoger en un clic (https://blgimmobilier.fr/) : l'agent saisit l'annonce une fois, un robot la publie sur le portail SeLoger (champs, photos) et confirme par mail.
+- Ordonnance vers pharmacien en un clic : le patient photographie son ordonnance, choisit sa pharmacie et l'envoie en un clic, sans mail à rédiger. Le pharmacien la reçoit dans son espace et prévient quand la commande est prête.
+- Aussi : tests antigéniques COVID pour une pharmacie (environ 100 000 tests en 2 ans), ExtractGrid (relevés bancaires PDF vers Excel), ecoledirect (bibliothèque Python sur PyPI).
 
 ## Chiffres clés
 
