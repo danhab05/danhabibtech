@@ -49,7 +49,7 @@ Flask, Django, Next.js, React, MySQL, Docker, Linux/VPS, Git, APIs REST.
 - CRM immobilier : CRM sur-mesure pour agences immobilières. Biens, mandats et propriétaires, acquéreurs et leurs critères, rapprochement automatique bien/acquéreur, agenda des visites et relances automatiques. Remplace 4 outils par un seul.
 - Plateforme de cours particuliers (https://www.assia.school) : comptes professeur, élève et parent. Réservation et paiement des cours en ligne, gestion du planning, devoirs déposés, rendus et corrigés sur la plateforme.
 - Factures vers Excel pour comptable : le comptable dépose une facture, le logiciel lit fournisseur, date, HT, TVA et TTC et remplit l'Excel au format exact du cabinet. Environ 1 seconde par facture contre 10 minutes à la main.
-- Publication SeLoger en un clic (https://blgimmobilier.fr/) : l'agent saisit l'annonce une fois, un robot la publie sur le portail SeLoger (champs, photos) et confirme par mail.
+- Facilitimo, publication SeLoger en un clic (utilisé par BLG Immobilier, https://blgimmobilier.fr/) : l'agent saisit l'annonce une fois, un robot la publie sur le portail SeLoger (champs, photos) et confirme par mail.
 - Ordonnance vers pharmacien en un clic : le patient photographie son ordonnance, choisit sa pharmacie et l'envoie en un clic, sans mail à rédiger. Le pharmacien la reçoit dans son espace et prévient quand la commande est prête.
 - Aussi : tests antigéniques COVID pour une pharmacie (environ 100 000 tests en 2 ans), ExtractGrid (relevés bancaires PDF vers Excel), ecoledirect (bibliothèque Python sur PyPI).
 
