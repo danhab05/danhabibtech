@@ -314,7 +314,7 @@ h3 {
   gap: 4px;
   padding: 22px 24px 22px 30px;
   border-radius: 12px;
-  background: #032f4a;
+  background: var(--pbg);
   color: #fff;
   position: relative;
 }
@@ -326,7 +326,7 @@ h3 {
   bottom: 20px;
   width: 4px;
   border-radius: 2px;
-  background: #f68a1f;
+  background: var(--paccent);
 }
 .partner-wordmark b {
   font-family: var(--font-head);
@@ -1359,6 +1359,9 @@ h3 {
   }
   .partner-list {
     grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  }
+  .partner-wordmark {
+    width: 260px;
   }
   .partner-list a {
     grid-template-columns: auto 1fr;
