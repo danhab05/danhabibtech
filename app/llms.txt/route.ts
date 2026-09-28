@@ -4,13 +4,13 @@ export const dynamic = "force-static";
  * llms.txt — fichier destiné aux modèles de langage et moteurs de réponse
  * (GEO — Generative Engine Optimization). Résumé structuré du site.
  */
-const content = `# Dan Habib — Développeur Fullstack & Automatisation
+const content = `# SnowTech — Automatisation & développement sur-mesure
 
-> Dan Habib est un développeur fullstack freelance basé à Paris (France),
-> spécialisé en automatisation de processus métier, web scraping et
-> développement d'outils internes sur-mesure. Il supprime les tâches
+> SnowTech est un studio basé à Paris (France), fondé par le développeur
+> fullstack Dan Habib, spécialisé en automatisation de processus métier, web scraping et
+> développement d'outils internes sur-mesure. SnowTech supprime les tâches
 > répétitives qui coûtent des heures aux équipes et construit les
-> applications web qui les remplacent. Il travaille en remote avec des PME,
+> applications web qui les remplacent. Le studio travaille en remote avec des PME,
 > des équipes opérationnelles et des fondateurs partout en France.
 > Contact : danhabibpro@gmail.com — réponse sous 24h.
 

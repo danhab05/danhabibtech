@@ -67,7 +67,7 @@ export default function Contact() {
               rel="noopener noreferrer"
             >
               <span className="contact-channel-label">LinkedIn</span>
-              <span className="contact-channel-value">Dan Habib ↗</span>
+              <span className="contact-channel-value">Profil de Dan, fondateur ↗</span>
             </a>
             <a
               className="contact-channel"

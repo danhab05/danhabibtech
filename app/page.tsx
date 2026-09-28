@@ -18,7 +18,8 @@ const jsonLd = {
       "@type": "Person",
       "@id": `${SITE.url}/#person`,
       name: "Dan Habib",
-      alternateName: ["Dan Habib Tech", "DanHabibTech", "danhab05"],
+      alternateName: ["danhab05"],
+      worksFor: { "@id": `${SITE.url}/#organization` },
       url: SITE.url,
       email: `mailto:${SITE.email}`,
       image: `${SITE.url}/opengraph-image`,
@@ -67,30 +68,41 @@ const jsonLd = {
         })),
     },
     {
+      "@type": "Organization",
+      "@id": `${SITE.url}/#organization`,
+      name: SITE.brand,
+      url: SITE.url,
+      email: `mailto:${SITE.email}`,
+      logo: `${SITE.url}/icon`,
+      description: SITE.description,
+      founder: { "@id": `${SITE.url}/#person` },
+      sameAs: [SITE.links.linkedin, SITE.links.github, SITE.links.twitter],
+    },
+    {
       "@type": "WebSite",
       "@id": `${SITE.url}/#website`,
       url: SITE.url,
-      name: "Dan Habib — Portfolio",
+      name: "SnowTech",
       description: SITE.description,
       inLanguage: "fr-FR",
-      publisher: { "@id": `${SITE.url}/#person` },
-      copyrightHolder: { "@id": `${SITE.url}/#person` },
+      publisher: { "@id": `${SITE.url}/#organization` },
+      copyrightHolder: { "@id": `${SITE.url}/#organization` },
     },
     {
-      "@type": "ProfilePage",
+      "@type": "WebPage",
       "@id": `${SITE.url}/#page`,
       url: SITE.url,
-      name: "Dan Habib — Développeur Fullstack & Automatisation à Paris",
+      name: "SnowTech — Automatisation & développement sur-mesure à Paris",
       isPartOf: { "@id": `${SITE.url}/#website` },
-      about: { "@id": `${SITE.url}/#person` },
-      mainEntity: { "@id": `${SITE.url}/#person` },
+      about: { "@id": `${SITE.url}/#organization` },
+      mainEntity: { "@id": `${SITE.url}/#organization` },
       inLanguage: "fr-FR",
       primaryImageOfPage: `${SITE.url}/opengraph-image`,
     },
     {
       "@type": "ItemList",
       "@id": `${SITE.url}/#projets`,
-      name: "Projets de Dan Habib",
+      name: "Projets SnowTech",
       itemListElement: projects.map((p, i) => ({
         "@type": "ListItem",
         position: i + 1,
@@ -100,7 +112,7 @@ const jsonLd = {
           description: `${p.pitch} ${p.solution}`,
           ...(p.link ? { url: p.link } : {}),
           keywords: p.technologies.join(", "),
-          author: { "@id": `${SITE.url}/#person` },
+          author: { "@id": `${SITE.url}/#organization` },
         },
       })),
     },
@@ -130,8 +142,8 @@ export default function HomePage() {
         Aller au contenu
       </a>
       <header className="site-header">
-        <a href="#accueil" className="wordmark" aria-label="Dan Habib, accueil">
-          dan habib<span>.</span>
+        <a href="#accueil" className="wordmark" aria-label="SnowTech, accueil">
+          SnowTech<span>.</span>
         </a>
         <nav aria-label="Navigation principale">
           <a href="#projets">Projets</a>
@@ -157,7 +169,7 @@ export default function HomePage() {
                 <em>Plus de possibles.</em>
               </h1>
               <p className="hero-intro">
-                Développeur indépendant à Paris. J’automatise ce qui vous
+                SnowTech, studio indépendant à Paris. J’automatise ce qui vous
                 ralentit et je construis les outils qui vous manquent : CRM,
                 plateformes, robots et logiciels métier.
               </p>
@@ -437,7 +449,7 @@ export default function HomePage() {
       </main>
       <footer className="site-footer wrap">
         <a className="wordmark" href="#accueil">
-          dan habib.
+          SnowTech<span>.</span>
         </a>
         <p>Du code utile, fait à Paris · © {new Date().getFullYear()}</p>
         <div>

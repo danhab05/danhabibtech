@@ -1,12 +1,13 @@
 export const SITE = {
   url: "https://www.danhabib.dev",
-  name: "Dan Habib",
-  brand: "Dan Habib",
+  name: "SnowTech",
+  brand: "SnowTech",
+  founder: "Dan Habib",
   jobTitle: "Développeur Fullstack & Automatisation",
   email: "danhabibpro@gmail.com",
   location: "Paris, France",
   description:
-    "Dan Habib, développeur fullstack freelance à Paris. J'automatise les tâches répétitives et je construis les applications web et les outils internes qui vont avec. Python, Next.js, TypeScript, Docker.",
+    "SnowTech, studio d'automatisation et de développement sur-mesure à Paris, fondé par Dan Habib. J'automatise les tâches répétitives et je construis les applications web et les outils internes qui vont avec. Python, Next.js, TypeScript, Docker.",
   links: {
     github: "https://github.com/danhab05",
     linkedin: "https://www.linkedin.com/in/dan-habib-899b84232",
