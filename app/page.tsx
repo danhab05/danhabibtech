@@ -10,6 +10,7 @@ import {
   stack,
   githubRepos,
   olderProjects,
+  partners,
 } from "@/lib/data";
 import type { Project } from "@/lib/data";
 
@@ -195,6 +196,39 @@ export default function HomePage() {
               Parler de mon besoin
             </a>
           </div>
+        </section>
+
+        <section className="partners wrap" aria-labelledby="partners-title">
+          <p className="label" id="partners-title">
+            Ils me font confiance
+          </p>
+          <ul className="partner-list">
+            {partners.map((pt) => (
+              <li key={pt.name}>
+                <a href={pt.url} target="_blank" rel="noopener noreferrer">
+                  {pt.logo ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      className="partner-logo"
+                      src={pt.logo}
+                      alt={`Logo ${pt.name}`}
+                      width={280}
+                      height={130}
+                    />
+                  ) : (
+                    <span className="partner-wordmark" aria-label={pt.name}>
+                      <b>{pt.name}</b>
+                      <small>{pt.tagline}</small>
+                    </span>
+                  )}
+                  <span className="partner-work">
+                    {pt.work}
+                    <em>{pt.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")} ↗</em>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </section>
 
         <section className="projects wrap" id="projets" aria-labelledby="projets-title">

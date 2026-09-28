@@ -172,6 +172,23 @@ export const olderProjects: Project[] = [
   },
 ];
 
+/** Entreprises avec qui je travaille. `logo` : chemin dans /public, sinon logo texte. */
+export const partners: {
+  name: string;
+  tagline: string;
+  work: string;
+  url: string;
+  logo: string | null;
+}[] = [
+  {
+    name: "BLG Immobilier",
+    tagline: "Vivre & investir",
+    work: "Site internet et publication SeLoger avec Facilitimo",
+    url: "https://blgimmobilier.fr/",
+    logo: null,
+  },
+];
+
 export const stack = [
   "Python",
   "Next.js",
