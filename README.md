@@ -1,6 +1,6 @@
-# danhabib.dev
+# SnowTech
 
-Portfolio de Dan Habib — automatisation, IA et développement sur-mesure.
+Site de SnowTech (studio de Dan Habib) — automatisation, IA et développement sur-mesure.
 
 ## Design
 Hero sombre avec un fil d’« automatisations du jour », puis sections claires. Chaque projet est illustré par une maquette de l’outil dessinée en HTML/CSS (`components/ProjectMockup.tsx`) : aucune image, aucune vidéo, aucune animation imposée. Polices Geist, Geist Mono et Instrument Serif via `next/font`.

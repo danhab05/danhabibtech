@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Dan Habib — Développeur Fullstack & Automatisation à Paris";
+  "SnowTech — Automatisation & développement sur-mesure à Paris";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -54,7 +54,7 @@ export default function Image() {
               display: "flex",
             }}
           />
-          Portfolio — Paris
+          Studio — Paris
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -68,7 +68,7 @@ export default function Image() {
               textTransform: "uppercase",
             }}
           >
-            Dan Habib
+            SnowTech
           </div>
           <div
             style={{
@@ -78,7 +78,7 @@ export default function Image() {
               display: "flex",
             }}
           >
-            Développeur Fullstack & Automatisation
+            Automatisation & développement sur-mesure
           </div>
         </div>
 

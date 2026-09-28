@@ -32,17 +32,17 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.danhabib.dev"),
   title: {
-    default: "Dan Habib — Développeur Fullstack & Automatisation à Paris",
-    template: "%s | Dan Habib",
+    default: "SnowTech — Automatisation & développement sur-mesure à Paris",
+    template: "%s | SnowTech",
   },
   description:
-    "Automatisation, assistants IA, intégrations et développement sur-mesure pour les entreprises. Dan Habib, développeur freelance à Paris : je supprime les tâches répétitives et je construis les outils qui vont avec. Réponse sous 24h.",
+    "Automatisation, assistants IA, intégrations et développement sur-mesure pour les entreprises. SnowTech, studio basé à Paris : je supprime les tâches répétitives et je construis les outils qui vont avec. Réponse sous 24h.",
   keywords: [
+    "SnowTech",
+    "Snow Tech",
+    "snowtech",
+    "SnowTech Paris",
     "Dan Habib",
-    "DanHabib",
-    "danhabib.dev",
-    "danhabibtech",
-    "Dan Habib Tech",
     "développeur fullstack Paris",
     "développeur freelance Paris",
     "automatisation processus métier",
@@ -59,25 +59,25 @@ export const metadata: Metadata = {
     "intégration CRM API",
     "automatisation PME",
   ],
-  authors: [{ name: "Dan Habib", url: "https://www.danhabib.dev" }],
-  creator: "Dan Habib",
-  publisher: "Dan Habib",
+  authors: [{ name: "SnowTech", url: "https://www.danhabib.dev" }],
+  creator: "SnowTech",
+  publisher: "SnowTech",
   category: "technology",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Dan Habib — Développeur Fullstack & Automatisation",
+    title: "SnowTech — Automatisation & développement sur-mesure",
     description:
       "Automatisation, assistants IA, intégrations et applications sur-mesure pour les entreprises. Paris, remote partout en France.",
     url: "https://www.danhabib.dev",
-    siteName: "Dan Habib — Portfolio",
+    siteName: "SnowTech",
     locale: "fr_FR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dan Habib — Développeur Fullstack & Automatisation",
+    title: "SnowTech — Automatisation & développement sur-mesure",
     description:
       "Automatisation, assistants IA et développement sur-mesure. Paris · Remote.",
     creator: "@DanHabib05",

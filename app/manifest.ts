@@ -2,14 +2,14 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Dan Habib — Développeur Fullstack & Automatisation",
-    short_name: "Dan Habib",
+    name: "SnowTech — Automatisation & développement sur-mesure",
+    short_name: "SnowTech",
     description:
-      "Portfolio de Dan Habib, développeur fullstack freelance à Paris : automatisation, scraping et applications web sur-mesure.",
+      "SnowTech, studio basé à Paris : automatisation, scraping et applications web sur-mesure.",
     start_url: "/",
     display: "standalone",
-    background_color: "#f7f4ee",
-    theme_color: "#f7f4ee",
+    background_color: "#0e1014",
+    theme_color: "#0e1014",
     icons: [
       {
         src: "/icon",
