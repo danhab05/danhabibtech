@@ -16,7 +16,18 @@ export const SITE = {
 } as const;
 
 export type Project = {
-  id: "crm" | "cours" | "factures" | "seloger" | "ordonnances";
+  id:
+    | "crm"
+    | "cours"
+    | "factures"
+    | "seloger"
+    | "ordonnances"
+    | "extractgrid"
+    | "covid"
+    | "ecoledirect"
+    | "scripts";
+  /** Nom du produit ou du client, quand il existe. */
+  name?: string;
   title: string;
   /** Pour qui. */
   sector: string;
@@ -60,12 +71,13 @@ export const projects: Project[] = [
   },
   {
     id: "seloger",
+    name: "BLG Immobilier",
     title: "Annonces SeLoger en 1 clic",
     sector: "Agence immobilière",
     gain: "1 clic",
     gainLabel: "pour mettre une annonce en ligne",
     summary:
-      "L'agent remplit la fiche du bien une fois et clique sur Publier. Un robot met l'annonce en ligne sur SeLoger, photos comprises, puis envoie un mail de confirmation.",
+      "Pour l'agence BLG Immobilier, j'ai fait le site blgimmobilier.fr et le robot de publication. L'agent remplit la fiche du bien une fois et clique sur Publier : le robot met l'annonce en ligne sur SeLoger, photos comprises, puis envoie un mail de confirmation.",
     before: "Avant, chaque annonce était ressaisie à la main sur le portail.",
     features: ["Une seule saisie", "Photos envoyées par le robot", "Mail de confirmation"],
     technologies: ["Python", "Selenium", "Docker"],
@@ -73,12 +85,13 @@ export const projects: Project[] = [
   },
   {
     id: "cours",
+    name: "Assia",
     title: "Plateforme de cours particuliers",
     sector: "Soutien scolaire",
     gain: "3 comptes",
     gainLabel: "prof, élève et parent",
     summary:
-      "Le prof ouvre ses créneaux, l'élève réserve, le parent paie en ligne. Les devoirs sont déposés et rendus sur la plateforme, et chacun voit ce qui le concerne.",
+      "Pour Assia, un institut de maths et physique-chimie qui suit plus de 130 élèves. Le prof ouvre ses créneaux, l'élève réserve, le parent paie en ligne. Les devoirs sont déposés et rendus sur la plateforme.",
     before: "Avant, tout passait par SMS, virements à relancer et photos de devoirs sur WhatsApp.",
     features: ["Réservation", "Paiement en ligne", "Devoirs et suivi"],
     technologies: ["Next.js", "React", "Vercel"],
@@ -99,24 +112,65 @@ export const projects: Project[] = [
   },
 ];
 
-/** Projets plus anciens. */
-export const otherWork = [
+/** Projets précédents. */
+export const olderProjects: Project[] = [
   {
-    title: "Tests antigéniques",
-    text: "Inscription en ligne et résultats envoyés par mail pour une pharmacie. Environ 100 000 tests en deux ans.",
+    id: "covid",
+    name: "Tests antigéniques",
+    title: "Inscription et résultats automatiques",
+    sector: "Pharmacie",
+    gain: "100 000",
+    gainLabel: "tests gérés en deux ans",
+    summary:
+      "Pendant le Covid, une pharmacie était débordée. Les patients s'inscrivaient en ligne, recevaient leur résultat par mail automatiquement, et le pharmacien suivait tout depuis un seul écran.",
+    before: "Avant, tout se faisait au comptoir, avec la file d'attente qui va avec.",
+    features: ["Inscription en ligne", "Résultat envoyé par mail", "Suivi pour le pharmacien"],
+    technologies: ["Flutter", "Python", "Flask", "Docker"],
     link: null,
   },
   {
-    title: "ExtractGrid",
-    text: "Transforme un relevé bancaire PDF en fichier Excel.",
+    id: "extractgrid",
+    name: "ExtractGrid",
+    title: "Relevés bancaires vers Excel",
+    sector: "Comptables et PME",
+    gain: "Multi-banques",
+    gainLabel: "la banque est reconnue toute seule",
+    summary:
+      "On dépose un relevé bancaire en PDF, on récupère un fichier Excel propre avec les dates, les libellés, les débits et les crédits.",
+    before: "Avant, on recopiait le relevé ligne par ligne dans un tableur.",
+    features: ["Détection de la banque", "Débits et crédits séparés", "Export Excel"],
+    technologies: ["Next.js", "TypeScript", "Node.js"],
     link: "https://github.com/danhab05/ExtractGrid",
   },
   {
-    title: "EcoleDirect",
-    text: "Librairie Python pour récupérer notes et devoirs d'EcoleDirecte.",
+    id: "ecoledirect",
+    name: "EcoleDirect",
+    title: "Librairie Python open source",
+    sector: "Parents et étudiants",
+    gain: "3 lignes",
+    gainLabel: "de Python pour avoir notes et devoirs",
+    summary:
+      "EcoleDirecte n'a pas d'API publique. Cette librairie permet de récupérer les devoirs, les notes et les infos d'un élève en quelques lignes. Elle est publiée sur PyPI.",
+    before: "Avant, il fallait se connecter au site et tout regarder à la main.",
+    features: ["Devoirs", "Notes", "Installation avec pip"],
+    technologies: ["Python", "PyPI"],
     link: "https://github.com/danhab05/ecoledirect",
   },
-] as const;
+  {
+    id: "scripts",
+    name: "Automatisation & scraping",
+    title: "Missions sur mesure",
+    sector: "Agences et back-offices",
+    gain: "0 copier-coller",
+    gainLabel: "les données arrivent prêtes",
+    summary:
+      "Remplir un back-office, récupérer des données sur des sites qui ne les fournissent pas proprement, refaire cent fois la même manipulation : des scripts qui le font à la place de l'équipe.",
+    before: "Avant, quelqu'un y passait des heures chaque semaine.",
+    features: ["Robots web", "Collecte de données", "Fichiers prêts à l'emploi"],
+    technologies: ["Python", "Go", "Selenium"],
+    link: null,
+  },
+];
 
 export const stack = [
   "Python",

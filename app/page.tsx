@@ -9,8 +9,9 @@ import {
   processSteps,
   stack,
   githubRepos,
-  otherWork,
+  olderProjects,
 } from "@/lib/data";
+import type { Project } from "@/lib/data";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -102,12 +103,12 @@ const jsonLd = {
       "@type": "ItemList",
       "@id": `${SITE.url}/#projets`,
       name: "Projets SnowTech",
-      itemListElement: projects.map((p, i) => ({
+      itemListElement: [...projects, ...olderProjects].map((p, i) => ({
         "@type": "ListItem",
         position: i + 1,
         item: {
           "@type": "CreativeWork",
-          name: p.title,
+          name: p.name ? `${p.name} — ${p.title}` : p.title,
           description: p.summary,
           ...(p.link ? { url: p.link } : {}),
           keywords: p.technologies.join(", "),
@@ -168,7 +169,7 @@ export default function HomePage() {
           </h1>
           <p className="lead">
             Logiciels sur mesure et automatisations pour les entreprises. Voici
-            cinq outils que j’ai construits et qui tournent aujourd’hui.
+            quelques outils que j’ai construits et qui tournent aujourd’hui.
           </p>
 
           <ol className="project-index" aria-label="Mes projets">
@@ -177,8 +178,8 @@ export default function HomePage() {
                 <a href={`#p-${p.id}`} className={`tint-${p.id}`}>
                   <span className="index-num">0{i + 1}</span>
                   <span className="index-name">
-                    {p.title}
-                    <small>{p.sector}</small>
+                    {p.name ?? p.title}
+                    <small>{p.name ? p.title : p.sector}</small>
                   </span>
                   <span className="index-gain">{p.gain}</span>
                 </a>
@@ -204,73 +205,27 @@ export default function HomePage() {
 
           <div className="project-list">
             {projects.map((p, i) => (
-              <article
-                className={`project-card tint-${p.id}`}
-                id={`p-${p.id}`}
-                key={p.id}
-                aria-labelledby={`t-${p.id}`}
-              >
-                <div className="project-text">
-                  <p className="project-meta">
-                    <span>0{i + 1}</span> {p.sector}
-                  </p>
-                  <h3 id={`t-${p.id}`}>{p.title}</h3>
-                  <p className="project-gain">
-                    <strong>{p.gain}</strong>
-                    <span>{p.gainLabel}</span>
-                  </p>
-                  <p className="project-summary">{p.summary}</p>
-                  <p className="project-before">{p.before}</p>
-                  <ul className="project-features">
-                    {p.features.map((f) => (
-                      <li key={f}>{f}</li>
-                    ))}
-                  </ul>
-                  <div className="project-foot">
-                    <span className="project-tech">
-                      {p.technologies.join(" · ")}
-                    </span>
-                    {p.link && (
-                      <a
-                        className="project-link"
-                        href={p.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Voir ${p.title} en ligne (nouvel onglet)`}
-                      >
-                        Voir en ligne ↗
-                      </a>
-                    )}
-                  </div>
-                </div>
-                <div className="project-visual">
-                  <ProjectMockup id={p.id} />
-                </div>
-              </article>
+              <ProjectCard project={p} index={i} key={p.id} />
             ))}
           </div>
 
           <div className="older">
-            <h3>Avant ça</h3>
-            <ul>
-              {otherWork.map((w) => (
-                <li key={w.title}>
-                  {w.link ? (
-                    <a href={w.link} target="_blank" rel="noopener noreferrer">
-                      <strong>{w.title} ↗</strong>
-                      <span>{w.text}</span>
-                    </a>
-                  ) : (
-                    <p>
-                      <strong>{w.title}</strong>
-                      <span>{w.text}</span>
-                    </p>
-                  )}
-                </li>
+            <div className="section-head">
+              <p className="label">Avant ça</p>
+              <h2>Mes projets précédents</h2>
+            </div>
+            <div className="older-grid">
+              {olderProjects.map((p, i) => (
+                <ProjectCard
+                  project={p}
+                  index={projects.length + i}
+                  compact
+                  key={p.id}
+                />
               ))}
-            </ul>
+            </div>
             <details className="open-source">
-              <summary>Mes projets open source</summary>
+              <summary>Mes autres projets open source</summary>
               <ul>
                 {githubRepos.map((r) => (
                   <li key={r.name}>
@@ -363,5 +318,62 @@ export default function HomePage() {
         </div>
       </footer>
     </>
+  );
+}
+
+function ProjectCard({
+  project: p,
+  index,
+  compact = false,
+}: {
+  project: Project;
+  index: number;
+  compact?: boolean;
+}) {
+  const num = String(index + 1).padStart(2, "0");
+  return (
+    <article
+      className={`project-card tint-${p.id}${compact ? " compact" : ""}`}
+      id={`p-${p.id}`}
+      aria-labelledby={`t-${p.id}`}
+    >
+      <div className="project-text">
+        <p className="project-meta">
+          <span>{num}</span> {p.sector}
+        </p>
+        <h3 id={`t-${p.id}`}>
+          {p.name ?? p.title}
+          {p.name && <small>{p.title}</small>}
+        </h3>
+        <p className="project-gain">
+          <strong>{p.gain}</strong>
+          <span>{p.gainLabel}</span>
+        </p>
+        <p className="project-summary">{p.summary}</p>
+        <p className="project-before">{p.before}</p>
+        <ul className="project-features">
+          {p.features.map((f) => (
+            <li key={f}>{f}</li>
+          ))}
+        </ul>
+        <div className="project-foot">
+          <span className="project-tech">{p.technologies.join(" · ")}</span>
+          {p.link && (
+            <a
+              className="project-link"
+              href={p.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Voir ${p.name ?? p.title} (nouvel onglet)`}
+            >
+              {p.link.includes("github.com") ? "Voir sur GitHub ↗" : "Voir en ligne ↗"}
+            </a>
+          )}
+        </div>
+      </div>
+      <div className="project-visual">
+        <ProjectMockup id={p.id} />
+      </div>
+    </article>
   );
 }

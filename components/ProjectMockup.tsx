@@ -24,6 +24,10 @@ const BAR_LABEL: Record<Project["id"], string> = {
   factures: "factures / export",
   seloger: "annonces / publier",
   ordonnances: "ordonnance / envoyer",
+  covid: "tests / résultats",
+  extractgrid: "extractgrid / relevé",
+  ecoledirect: "main.py",
+  scripts: "terminal",
 };
 
 const BODIES: Record<Project["id"], React.ReactNode> = {
@@ -158,5 +162,79 @@ const BODIES: Record<Project["id"], React.ReactNode> = {
         <span>Votre commande est prête ✓</span>
       </div>
     </div>
+  ),
+  covid: (
+    <div className="covid">
+      <div className="covid-form">
+        <b>Réserver un test</b>
+        <span>Nom · Prénom</span>
+        <span>Samedi 10 h 20</span>
+        <em>Confirmer</em>
+      </div>
+      <div className="covid-mail">
+        <small>Résultat de votre test</small>
+        <mark>Négatif</mark>
+        <span>Envoyé automatiquement · 10 h 38</span>
+      </div>
+    </div>
+  ),
+  extractgrid: (
+    <div className="eg">
+      <div className="eg-bank">
+        <b>Relevé de compte · Septembre</b>
+        <small>Banque détectée ✓</small>
+      </div>
+      <div className="fact-xls">
+        <div className="xls-head eg-row">
+          <span>Date</span>
+          <span>Libellé</span>
+          <span>Débit</span>
+          <span>Crédit</span>
+        </div>
+        {[
+          ["02/09", "Loyer bureau", "1 200,00", ""],
+          ["05/09", "Virement client", "", "3 480,00"],
+          ["08/09", "Abonnement logiciel", "49,00", ""],
+          ["12/09", "Virement client", "", "860,00"],
+        ].map(([d, l, deb, cred], i) => (
+          <div className="xls-row eg-row" key={i}>
+            <span>{d}</span>
+            <span>{l}</span>
+            <span>{deb}</span>
+            <span>{cred}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  ),
+  ecoledirect: (
+    <pre className="code">
+      <span className="c-muted">$ pip install ecoledirect</span>
+      {"\n\n"}
+      <span className="c-key">from</span> ecoledirect{" "}
+      <span className="c-key">import</span> EcoleDirect
+      {"\n\n"}
+      ed = EcoleDirect(<span className="c-str">&quot;identifiant&quot;</span>,{" "}
+      <span className="c-str">&quot;mdp&quot;</span>)
+      {"\n"}
+      devoirs = ed.devoirs()
+      {"\n"}
+      notes = ed.notes()
+    </pre>
+  ),
+  scripts: (
+    <pre className="code">
+      <span className="c-muted">$ python robot.py --source annuaire</span>
+      {"\n"}
+      <span className="c-ok">✓</span> 1 250 fiches récupérées
+      {"\n"}
+      <span className="c-ok">✓</span> doublons retirés
+      {"\n"}
+      <span className="c-ok">✓</span> back-office rempli
+      {"\n"}
+      <span className="c-ok">✓</span> export.xlsx prêt
+      {"\n\n"}
+      <span className="c-muted">Terminé en 42 s</span>
+    </pre>
   ),
 };
