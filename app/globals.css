@@ -290,7 +290,10 @@ h3 {
   display: grid;
   gap: 12px;
 }
-.partner-list a {
+.partner-list li {
+  display: grid;
+}
+.partner-card {
   display: grid;
   gap: 14px;
   padding: 14px;
@@ -299,7 +302,7 @@ h3 {
   background: var(--surface);
   transition: border-color 0.15s;
 }
-.partner-list a:hover {
+a.partner-card:hover {
   border-color: var(--ink);
 }
 .partner-logo {
@@ -330,7 +333,7 @@ h3 {
 }
 .partner-wordmark b {
   font-family: var(--font-head);
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   letter-spacing: -0.01em;
   text-transform: uppercase;
@@ -1357,17 +1360,6 @@ h3 {
   .open-source ul {
     grid-template-columns: 1fr 1fr;
   }
-  .partner-list {
-    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
-  }
-  .partner-wordmark {
-    width: 260px;
-  }
-  .partner-list a {
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    gap: 20px;
-  }
 }
 
 @media (min-width: 880px) {
@@ -1411,6 +1403,14 @@ h3 {
   }
   .hero-actions {
     margin-top: 32px;
+  }
+  .partner-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .partner-wordmark {
+    min-height: 104px;
+    align-content: center;
   }
   .section-head {
     margin-bottom: 40px;
