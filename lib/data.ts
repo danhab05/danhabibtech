@@ -71,13 +71,13 @@ export const projects: Project[] = [
   },
   {
     id: "seloger",
-    name: "BLG Immobilier",
+    name: "Facilitimo",
     title: "Annonces SeLoger en 1 clic",
     sector: "Agence immobilière",
     gain: "1 clic",
     gainLabel: "pour mettre une annonce en ligne",
     summary:
-      "Pour l'agence BLG Immobilier, j'ai fait le site blgimmobilier.fr et le robot de publication. L'agent remplit la fiche du bien une fois et clique sur Publier : le robot met l'annonce en ligne sur SeLoger, photos comprises, puis envoie un mail de confirmation.",
+      "Facilitimo publie les annonces sur SeLoger à la place de l'agent. L'agent remplit la fiche du bien une fois et clique sur Publier : le robot met l'annonce en ligne, photos comprises, puis envoie un mail de confirmation. Utilisé par l'agence BLG Immobilier, pour qui j'ai aussi fait le site blgimmobilier.fr.",
     before: "Avant, chaque annonce était ressaisie à la main sur le portail.",
     features: ["Une seule saisie", "Photos envoyées par le robot", "Mail de confirmation"],
     technologies: ["Python", "Selenium", "Docker"],
