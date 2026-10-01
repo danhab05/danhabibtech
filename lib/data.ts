@@ -40,6 +40,8 @@ export type Project = {
   features: string[];
   technologies: string[];
   link: string | null;
+  /** Capture d'écran réelle du produit (dans /public) et adresse affichée dans la barre. */
+  screenshot?: { src: string; url: string };
 };
 
 export const projects: Project[] = [
@@ -68,6 +70,7 @@ export const projects: Project[] = [
     features: ["Biens et mandats", "Acheteurs proposés automatiquement", "Relances et visites"],
     technologies: ["Next.js", "TypeScript", "Docker"],
     link: null,
+    screenshot: { src: "/projects/crm.webp", url: "crm-blg.vercel.app" },
   },
   {
     id: "seloger",
@@ -82,6 +85,7 @@ export const projects: Project[] = [
     features: ["Une seule saisie", "Photos envoyées par le robot", "Mail de confirmation"],
     technologies: ["Python", "Selenium", "Docker"],
     link: "https://blgimmobilier.fr/",
+    screenshot: { src: "/projects/seloger.webp", url: "facilitimo.online" },
   },
   {
     id: "cours",
@@ -96,6 +100,7 @@ export const projects: Project[] = [
     features: ["Réservation", "Paiement en ligne", "Devoirs et suivi"],
     technologies: ["Next.js", "React", "Vercel"],
     link: "https://www.assia.school",
+    screenshot: { src: "/projects/cours.webp", url: "assia.school" },
   },
   {
     id: "ordonnances",
@@ -141,6 +146,7 @@ export const olderProjects: Project[] = [
     features: ["Détection de la banque", "Débits et crédits séparés", "Export Excel"],
     technologies: ["Next.js", "TypeScript", "Node.js"],
     link: "https://github.com/danhab05/ExtractGrid",
+    screenshot: { src: "/projects/extractgrid.webp", url: "extract-grid.vercel.app" },
   },
   {
     id: "ecoledirect",

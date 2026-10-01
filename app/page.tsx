@@ -438,7 +438,7 @@ function ProjectCard({
         </div>
       </div>
       <div className="project-visual">
-        <ProjectMockup id={p.id} />
+        <ProjectMockup id={p.id} screenshot={p.screenshot} />
       </div>
     </article>
   );
