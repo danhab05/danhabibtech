@@ -1,10 +1,30 @@
 import type { Project } from "@/lib/data";
 
 /**
- * Maquettes décoratives de chaque produit, dessinées en HTML/CSS.
- * Aucune image ni animation : elles montrent l'outil d'un coup d'œil.
+ * Visuel de chaque produit : la vraie capture d'écran quand on en a une,
+ * sinon une maquette dessinée en HTML/CSS.
  */
-export default function ProjectMockup({ id }: { id: Project["id"] }) {
+export default function ProjectMockup({
+  id,
+  screenshot,
+}: {
+  id: Project["id"];
+  screenshot?: Project["screenshot"];
+}) {
+  if (screenshot) {
+    return (
+      <div className="mock mock-shot" aria-hidden="true">
+        <div className="mock-bar">
+          <i />
+          <i />
+          <i />
+          <span>{screenshot.url}</span>
+        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={screenshot.src} alt="" width={1200} height={750} loading="lazy" decoding="async" />
+      </div>
+    );
+  }
   return (
     <div className={`mock mock-${id}`} aria-hidden="true">
       <div className="mock-bar">

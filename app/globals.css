@@ -928,6 +928,11 @@ a.partner-card:hover {
 .mock-body {
   padding: 16px;
 }
+.mock-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 .mock mark {
   display: inline-block;
   padding: 3px 8px;
