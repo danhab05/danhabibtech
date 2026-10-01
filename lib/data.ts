@@ -57,6 +57,7 @@ export const projects: Project[] = [
     features: ["Plusieurs factures d'un coup", "Son modèle Excel à lui", "Montants vérifiés"],
     technologies: ["Python", "OCR", "Excel"],
     link: null,
+    screenshot: { src: "/projects/factures.webp", url: "pharma-compta.vercel.app" },
   },
   {
     id: "crm",
@@ -132,6 +133,7 @@ export const olderProjects: Project[] = [
     features: ["Inscription en ligne", "Résultat envoyé par mail", "Suivi pour le pharmacien"],
     technologies: ["Flutter", "Python", "Flask", "Docker"],
     link: null,
+    screenshot: { src: "/projects/covid.webp", url: "test-antigenique / inscription" },
   },
   {
     id: "extractgrid",
