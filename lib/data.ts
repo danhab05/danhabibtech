@@ -113,9 +113,9 @@ export const projects: Project[] = [
     gain: "100 000",
     gainLabel: "tests gérés en deux ans",
     summary:
-      "Pendant le Covid, les pharmacies étaient débordées. Près de 15 pharmacies ont utilisé l'outil : les patients s'inscrivaient en ligne, recevaient leur résultat par mail automatiquement, et chaque pharmacien suivait tout depuis un seul écran.",
+      "Pendant le Covid, les pharmacies étaient débordées. Près de 15 pharmacies ont utilisé l'outil : les patients s'inscrivaient en ligne, recevaient leur résultat par mail automatiquement, et chaque pharmacien suivait tout depuis un seul écran. L'outil était relié à SI-DEP, la plateforme du gouvernement : chaque résultat y était déclaré directement, et le patient recevait son certificat officiel de test.",
     before: "Avant, tout se faisait au comptoir, avec la file d'attente qui va avec.",
-    features: ["Inscription en ligne", "Résultat envoyé par mail", "Suivi pour chaque pharmacie"],
+    features: ["Inscription en ligne", "Résultat envoyé par mail", "SI-DEP intégré", "Suivi pour chaque pharmacie"],
     technologies: ["Flutter", "Python", "Flask", "Docker"],
     link: null,
     screenshot: { src: "/projects/covid.webp" },
@@ -225,7 +225,7 @@ export const partners: {
   {
     name: "Pharmacie Centrale de l'Est",
     tagline: "Pharmacie",
-    work: "Tests antigéniques : inscription en ligne et résultats par mail",
+    work: "Tests antigéniques : inscription en ligne, résultats par mail et déclaration SI-DEP",
     url: null,
     logo: null,
     colors: { bg: "#0b5d45", accent: "#3ddc97" },
