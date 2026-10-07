@@ -22,7 +22,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.novaor.fr"),
+  metadataBase: new URL("https://novaor.fr"),
   title: {
     default: "NovaOr — Automatisation & développement sur-mesure à Paris",
     template: "%s | NovaOr",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     "intégration CRM API",
     "automatisation PME",
   ],
-  authors: [{ name: "NovaOr", url: "https://www.novaor.fr" }],
+  authors: [{ name: "NovaOr", url: "https://novaor.fr" }],
   creator: "NovaOr",
   publisher: "NovaOr",
   category: "technology",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: "NovaOr — Automatisation & développement sur-mesure",
     description:
       "Automatisation, assistants IA, intégrations et applications sur-mesure pour les entreprises. Paris, remote partout en France.",
-    url: "https://www.novaor.fr",
+    url: "https://novaor.fr",
     siteName: "NovaOr",
     locale: "fr_FR",
     type: "website",

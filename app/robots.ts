@@ -30,7 +30,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://www.novaor.fr/sitemap.xml",
-    host: "https://www.novaor.fr",
+    sitemap: "https://novaor.fr/sitemap.xml",
+    host: "https://novaor.fr",
   };
 }
