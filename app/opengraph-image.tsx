@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "SnowTech — Automatisation & développement sur-mesure à Paris";
+  "NovaOr — Automatisation & développement sur-mesure à Paris";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -68,7 +68,7 @@ export default function Image() {
               textTransform: "uppercase",
             }}
           >
-            SnowTech
+            NovaOr
           </div>
           <div
             style={{
@@ -93,7 +93,7 @@ export default function Image() {
             fontSize: 26,
           }}
         >
-          <div style={{ display: "flex" }}>danhabib.dev</div>
+          <div style={{ display: "flex" }}>novaor.fr</div>
           <div style={{ display: "flex", color: "#a8550c" }}>
             Python · Next.js · Automatisation · Scraping
           </div>

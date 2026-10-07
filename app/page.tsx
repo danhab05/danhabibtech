@@ -83,7 +83,7 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": `${SITE.url}/#website`,
       url: SITE.url,
-      name: "SnowTech",
+      name: "NovaOr",
       description: SITE.description,
       inLanguage: "fr-FR",
       publisher: { "@id": `${SITE.url}/#organization` },
@@ -93,7 +93,7 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": `${SITE.url}/#page`,
       url: SITE.url,
-      name: "SnowTech — Automatisation & développement sur-mesure à Paris",
+      name: "NovaOr — Automatisation & développement sur-mesure à Paris",
       isPartOf: { "@id": `${SITE.url}/#website` },
       about: { "@id": `${SITE.url}/#organization` },
       mainEntity: { "@id": `${SITE.url}/#organization` },
@@ -103,7 +103,7 @@ const jsonLd = {
     {
       "@type": "ItemList",
       "@id": `${SITE.url}/#projets`,
-      name: "Projets SnowTech",
+      name: "Projets NovaOr",
       itemListElement: [...projects, ...olderProjects].map((p, i) => ({
         "@type": "ListItem",
         position: i + 1,
@@ -144,9 +144,9 @@ export default function HomePage() {
       </a>
       <header className="topbar">
         <div className="wrap topbar-inner">
-          <a href="#accueil" className="logo" aria-label="SnowTech, accueil">
+          <a href="#accueil" className="logo" aria-label="NovaOr, accueil">
             <SnowMark />
-            SnowTech
+            NovaOr
           </a>
           <nav aria-label="Navigation principale">
             <a href="#projets">Projets</a>
@@ -367,9 +367,9 @@ export default function HomePage() {
         <div className="wrap footer-inner">
           <a className="logo" href="#accueil">
             <SnowMark />
-            SnowTech
+            NovaOr
           </a>
-          <p>SnowTech · Paris · © {new Date().getFullYear()}</p>
+          <p>NovaOr · Paris · © {new Date().getFullYear()}</p>
           <div>
             <a href={SITE.links.linkedin} target="_blank" rel="noopener noreferrer">
               LinkedIn

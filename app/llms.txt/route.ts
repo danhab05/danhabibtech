@@ -4,11 +4,11 @@ export const dynamic = "force-static";
  * llms.txt — fichier destiné aux modèles de langage et moteurs de réponse
  * (GEO — Generative Engine Optimization). Résumé structuré du site.
  */
-const content = `# SnowTech — Automatisation & développement sur-mesure
+const content = `# NovaOr — Automatisation & développement sur-mesure
 
-> SnowTech est un studio basé à Paris (France), fondé par le développeur
+> NovaOr est un studio basé à Paris (France), fondé par le développeur
 > fullstack Dan Habib, spécialisé en automatisation de processus métier, web scraping et
-> développement d'outils internes sur-mesure. SnowTech supprime les tâches
+> développement d'outils internes sur-mesure. NovaOr supprime les tâches
 > répétitives qui coûtent des heures aux équipes et construit les
 > applications web qui les remplacent. Le studio travaille en remote avec des PME,
 > des équipes opérationnelles et des fondateurs partout en France.
@@ -61,7 +61,7 @@ Flask, Django, Next.js, React, MySQL, Docker, Linux/VPS, Git, APIs REST.
 
 ## Liens
 
-- Site : https://www.danhabib.dev
+- Site : https://novaor.fr
 - GitHub : https://github.com/danhab05
 - LinkedIn : https://www.linkedin.com/in/dan-habib-899b84232
 - X / Twitter : https://x.com/DanHabib05
