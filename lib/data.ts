@@ -19,6 +19,7 @@ export type Project = {
   id:
     | "crm"
     | "cours"
+    | "blg"
     | "factures"
     | "seloger"
     | "ordonnances"
@@ -67,11 +68,11 @@ export const projects: Project[] = [
     gain: "1 clic",
     gainLabel: "pour mettre une annonce en ligne",
     summary:
-      "Facilitimo publie les annonces sur SeLoger à la place de l'agent. L'agent remplit la fiche du bien une fois et clique sur Publier : le robot met l'annonce en ligne, photos comprises, puis envoie un mail de confirmation. Utilisé par l'agence BLG Immobilier, pour qui nous avons aussi fait le site blgimmobilier.fr.",
+      "Facilitimo publie les annonces sur SeLoger à la place de l'agent. L'agent remplit la fiche du bien une fois et clique sur Publier : le robot met l'annonce en ligne, photos comprises, puis envoie un mail de confirmation. Utilisé par l'agence BLG Immobilier.",
     before: "Avant, chaque annonce était ressaisie à la main sur le portail.",
     features: ["Une seule saisie", "Photos envoyées par le robot", "Mail de confirmation"],
     technologies: ["Python", "Selenium", "Docker"],
-    link: "https://blgimmobilier.fr/",
+    link: null,
     screenshot: { src: "/projects/seloger.webp" },
   },
   {
@@ -88,6 +89,21 @@ export const projects: Project[] = [
     technologies: ["Next.js", "React", "Vercel"],
     link: "https://www.assia.school",
     screenshot: { src: "/projects/cours.webp", url: "assia.school" },
+  },
+  {
+    id: "blg",
+    name: "BLG Immobilier",
+    title: "Site d'immobilier neuf",
+    sector: "Agence immobilière",
+    gain: "47 305",
+    gainLabel: "logements neufs en ligne",
+    summary:
+      "Le site blgimmobilier.fr : plus de 47 000 appartements et maisons neufs de plus de 500 promoteurs, une carte pour chercher par région, et un formulaire qui transmet chaque demande à un conseiller. Les pages Marseille, Paris et Lyon sont pensées pour Google.",
+    before: "Avant, l'acheteur devait appeler l'agence pour savoir quels programmes étaient disponibles.",
+    features: ["Carte des programmes", "Recherche par ville et budget", "Demandes envoyées aux conseillers"],
+    technologies: ["PHP", "MySQL", "SEO"],
+    link: "https://www.blgimmobilier.fr/",
+    screenshot: { src: "/projects/blg.webp", url: "blgimmobilier.fr" },
   },
   {
     id: "covid",
