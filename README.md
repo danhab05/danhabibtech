@@ -8,7 +8,7 @@ Thème clair « neige », pensé d’abord pour le mobile. Les cinq projets sont
 ## Stack et contenu
 Next.js 15 App Router, React 18, TypeScript. `app/page.tsx` : page et JSON-LD ; `lib/data.ts` : contenu métier ; `components/Contact.tsx` : contact. Le formulaire est **envoyé par `app/api/contact/route.ts` via Brevo** (expéditeur contact@novaor.fr) vers nos boîtes ; il faut la variable `BREVO_API_KEY`. L’adresse directe reste accessible sans JavaScript.
 
-Metadata, canonical www.novaor.fr, Open Graph, JSON-LD, robots.txt, sitemap.xml et llms.txt conservés.
+Metadata, canonical novaor.fr, Open Graph, JSON-LD, robots.txt, sitemap.xml et llms.txt conservés.
 
 ## Développement et vérification
 ```bash

@@ -1,5 +1,5 @@
 export const SITE = {
-  url: "https://www.novaor.fr",
+  url: "https://novaor.fr",
   name: "NovaOr",
   brand: "NovaOr",
   founder: "Dan Habib",
@@ -40,8 +40,8 @@ export type Project = {
   features: string[];
   technologies: string[];
   link: string | null;
-  /** Capture d'écran réelle du produit (dans /public) et adresse affichée dans la barre. */
-  screenshot?: { src: string; url: string };
+  /** Capture d'écran réelle du produit (dans /public) et, si on veut la montrer, son adresse dans la barre. */
+  screenshot?: { src: string; url?: string };
 };
 
 export const projects: Project[] = [
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     features: ["Biens et mandats", "Acheteurs proposés automatiquement", "Relances et visites"],
     technologies: ["Next.js", "TypeScript", "Docker"],
     link: null,
-    screenshot: { src: "/projects/crm.webp", url: "crm-blg.vercel.app" },
+    screenshot: { src: "/projects/crm.webp" },
   },
   {
     id: "seloger",
@@ -72,7 +72,7 @@ export const projects: Project[] = [
     features: ["Une seule saisie", "Photos envoyées par le robot", "Mail de confirmation"],
     technologies: ["Python", "Selenium", "Docker"],
     link: "https://blgimmobilier.fr/",
-    screenshot: { src: "/projects/seloger.webp", url: "facilitimo.online" },
+    screenshot: { src: "/projects/seloger.webp" },
   },
   {
     id: "cours",
@@ -102,7 +102,7 @@ export const projects: Project[] = [
     features: ["Inscription en ligne", "Résultat envoyé par mail", "Suivi pour chaque pharmacie"],
     technologies: ["Flutter", "Python", "Flask", "Docker"],
     link: null,
-    screenshot: { src: "/projects/covid.webp", url: "test-antigenique / inscription" },
+    screenshot: { src: "/projects/covid.webp" },
   },
 ];
 
@@ -120,7 +120,7 @@ export const olderProjects: Project[] = [
     features: ["Plusieurs factures d'un coup", "Son modèle Excel à lui", "Montants vérifiés"],
     technologies: ["Python", "OCR", "Excel"],
     link: null,
-    screenshot: { src: "/projects/factures.webp", url: "pharma-compta.vercel.app" },
+    screenshot: { src: "/projects/factures.webp" },
   },
   {
     id: "ordonnances",
@@ -148,7 +148,7 @@ export const olderProjects: Project[] = [
     features: ["Détection de la banque", "Débits et crédits séparés", "Export Excel"],
     technologies: ["Next.js", "TypeScript", "Node.js"],
     link: "https://github.com/danhab05/ExtractGrid",
-    screenshot: { src: "/projects/extractgrid.webp", url: "extract-grid.vercel.app" },
+    screenshot: { src: "/projects/extractgrid.webp" },
   },
   {
     id: "ecoledirect",

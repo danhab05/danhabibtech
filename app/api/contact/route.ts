@@ -1,4 +1,5 @@
 import { needTypes } from "@/lib/data";
+import { contactHtml, contactSubject, contactText } from "./email";
 
 /** Les demandes du formulaire partent de cette adresse (domaine authentifié sur Brevo). */
 const SENDER = { name: "NovaOr", email: "contact@novaor.fr" };
@@ -20,9 +21,6 @@ const LIMITS = {
 } as const;
 
 type Field = keyof typeof LIMITS;
-
-const escapeHtml = (s: string) =>
-  s.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 
 export async function POST(request: Request) {
   const apiKey = process.env.BREVO_API_KEY;
@@ -64,27 +62,7 @@ export async function POST(request: Request) {
     ? data.needType
     : "Non précisé";
 
-  const rows: [string, string][] = [
-    ["Prénom", data.firstName],
-    ["Entreprise", data.company || "—"],
-    ["Email", data.email],
-    ["Téléphone", data.phone || "—"],
-    ["Type de besoin", need],
-  ];
-  const textContent = [
-    ...rows.map(([k, v]) => `${k} : ${v}`),
-    "",
-    "Besoin :",
-    data.message,
-  ].join("\n");
-  const htmlContent = `<table cellpadding="4">${rows
-    .map(
-      ([k, v]) =>
-        `<tr><td><strong>${escapeHtml(k)}</strong></td><td>${escapeHtml(v)}</td></tr>`,
-    )
-    .join("")}</table><p><strong>Besoin :</strong></p><p>${escapeHtml(
-    data.message,
-  ).replace(/\n/g, "<br>")}</p>`;
+  const mail = { ...data, need };
 
   const res = await fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",
@@ -97,11 +75,9 @@ export async function POST(request: Request) {
       sender: SENDER,
       to: RECIPIENTS.map((email) => ({ email })),
       replyTo: { email: data.email, name: data.firstName },
-      subject: `Demande — ${need} — ${data.firstName}${
-        data.company ? ` (${data.company})` : ""
-      }`,
-      textContent,
-      htmlContent,
+      subject: contactSubject(mail),
+      textContent: contactText(mail),
+      htmlContent: contactHtml(mail),
     }),
   });
 

@@ -18,7 +18,7 @@ export default function ProjectMockup({
           <i />
           <i />
           <i />
-          <span>{screenshot.url}</span>
+          {screenshot.url && <span>{screenshot.url}</span>}
         </div>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={screenshot.src} alt="" width={1200} height={750} loading="lazy" decoding="async" />
@@ -31,21 +31,15 @@ export default function ProjectMockup({
         <i />
         <i />
         <i />
-        <span>{BAR_LABEL[id]}</span>
+        {BAR_LABEL[id] && <span>{BAR_LABEL[id]}</span>}
       </div>
       <div className="mock-body">{BODIES[id]}</div>
     </div>
   );
 }
 
-const BAR_LABEL: Record<Project["id"], string> = {
-  crm: "crm.agence / pipeline",
-  cours: "cours / espace parent",
-  factures: "factures / export",
-  seloger: "annonces / publier",
-  ordonnances: "ordonnance / envoyer",
-  covid: "tests / résultats",
-  extractgrid: "extractgrid / relevé",
+/** Pas d'adresse inventée dans la barre : seulement un nom de fichier ou de terminal. */
+const BAR_LABEL: Partial<Record<Project["id"], string>> = {
   ecoledirect: "main.py",
   scripts: "terminal",
 };
