@@ -209,7 +209,7 @@ export const partners: {
   {
     name: "BLG Immobilier",
     tagline: "Vivre & investir",
-    work: "Site internet et publication SeLoger avec Facilitimo",
+    work: "Agence reconnue depuis 2002 : 5 agences, plus de 500 promoteurs partenaires. Nous avons fait leur site et Facilitimo.",
     url: "https://blgimmobilier.fr/",
     logo: null,
     colors: { bg: "#032f4a", accent: "#f68a1f" },

@@ -170,24 +170,74 @@ export default function HomePage() {
             Nous créons les outils qui font le travail répétitif à votre place.
           </h1>
           <p className="lead">
-            Logiciels sur mesure et automatisations pour les entreprises. Voici
-            quelques outils que nous avons construits et qui tournent aujourd’hui.
+            Logiciels sur mesure et automatisations pour les entreprises, aux
+            côtés de partenaires reconnus qui nous confient leurs outils.
           </p>
 
-          <ol className="project-index" aria-label="Nos projets">
-            {projects.map((p, i) => (
-              <li key={p.id}>
-                <a href={`#p-${p.id}`} className={`tint-${p.id}`}>
-                  <span className="index-num">0{i + 1}</span>
-                  <span className="index-name">
-                    {p.name ?? p.title}
-                    <small>{p.name ? p.title : p.sector}</small>
-                  </span>
-                  <span className="index-gain">{p.gain}</span>
-                </a>
-              </li>
-            ))}
-          </ol>
+          <div className="hero-partners" role="group" aria-labelledby="partners-title">
+            <p className="label" id="partners-title">
+              Ils nous font confiance
+            </p>
+            <ul className="partner-list">
+              {partners.map((pt) => {
+                const inner = (
+                  <>
+                    {pt.logo ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        className="partner-logo"
+                        src={pt.logo}
+                        alt={`Logo ${pt.name}`}
+                        width={280}
+                        height={130}
+                      />
+                    ) : (
+                      <span
+                        className="partner-wordmark"
+                        aria-label={pt.name}
+                        style={
+                          {
+                            "--pbg": pt.colors.bg,
+                            "--paccent": pt.colors.accent,
+                          } as React.CSSProperties
+                        }
+                      >
+                        <b>{pt.name}</b>
+                        <small>{pt.tagline}</small>
+                      </span>
+                    )}
+                    <span className="partner-work">
+                      {pt.work}
+                      {pt.url && (
+                        <em>
+                          {pt.url
+                            .replace(/^https?:\/\/(www\.)?/, "")
+                            .replace(/\/$/, "")}{" "}
+                          ↗
+                        </em>
+                      )}
+                    </span>
+                  </>
+                );
+                return (
+                  <li key={pt.name}>
+                    {pt.url ? (
+                      <a
+                        className="partner-card"
+                        href={pt.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {inner}
+                      </a>
+                    ) : (
+                      <div className="partner-card">{inner}</div>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
 
           <div className="hero-actions">
             <a className="btn" href="#projets">
@@ -199,70 +249,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="partners wrap" aria-labelledby="partners-title">
-          <p className="label" id="partners-title">
-            Ils nous font confiance
-          </p>
-          <ul className="partner-list">
-            {partners.map((pt) => {
-              const inner = (
-                <>
-                  {pt.logo ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      className="partner-logo"
-                      src={pt.logo}
-                      alt={`Logo ${pt.name}`}
-                      width={280}
-                      height={130}
-                    />
-                  ) : (
-                    <span
-                      className="partner-wordmark"
-                      aria-label={pt.name}
-                      style={
-                        {
-                          "--pbg": pt.colors.bg,
-                          "--paccent": pt.colors.accent,
-                        } as React.CSSProperties
-                      }
-                    >
-                      <b>{pt.name}</b>
-                      <small>{pt.tagline}</small>
-                    </span>
-                  )}
-                  <span className="partner-work">
-                    {pt.work}
-                    {pt.url && (
-                      <em>
-                        {pt.url
-                          .replace(/^https?:\/\/(www\.)?/, "")
-                          .replace(/\/$/, "")}{" "}
-                        ↗
-                      </em>
-                    )}
-                  </span>
-                </>
-              );
-              return (
-                <li key={pt.name}>
-                  {pt.url ? (
-                    <a
-                      className="partner-card"
-                      href={pt.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {inner}
-                    </a>
-                  ) : (
-                    <div className="partner-card">{inner}</div>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        </section>
 
         <section className="projects wrap" id="projets" aria-labelledby="projets-title">
           <div className="section-head">

@@ -230,62 +230,17 @@ h3 {
   color: var(--muted);
   font-size: clamp(17px, 2vw, 19px);
 }
-.project-index {
-  display: grid;
-  gap: 8px;
-  margin-top: 32px;
-}
-.project-index a {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 16px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: var(--surface);
-  transition: border-color 0.15s;
-}
-.project-index a:hover {
-  border-color: var(--ink);
-}
-.index-num {
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  background: var(--tint);
-  color: var(--tint-ink);
-  font-size: 13px;
-  font-weight: 700;
-}
-.index-name {
-  display: grid;
-  font-weight: 600;
-  line-height: 1.25;
-}
-.index-name small {
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 400;
-}
-.index-gain {
-  color: var(--tint-ink);
-  font-family: var(--font-head);
-  font-size: 18px;
-  font-weight: 700;
-  white-space: nowrap;
-}
 .hero-actions {
   display: grid;
   gap: 10px;
   margin-top: 24px;
 }
 
-/* Partenaires */
-.partners {
-  padding-bottom: 56px;
+/* Partenaires (dans le haut de page) */
+.hero-partners {
+  display: grid;
+  gap: 4px;
+  margin-top: 32px;
 }
 .partner-list {
   display: grid;
@@ -1423,31 +1378,8 @@ a.partner-card:hover {
   .hero {
     padding: 80px 0 96px;
   }
-  .project-index {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+  .hero-partners {
     margin-top: 48px;
-  }
-  .project-index a {
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto 1fr;
-    align-items: start;
-    gap: 22px 10px;
-    min-height: 170px;
-    padding: 18px;
-  }
-  .index-name {
-    grid-column: 1 / -1;
-    align-self: end;
-    font-size: 16px;
-  }
-  .index-gain {
-    grid-column: 2;
-    grid-row: 1;
-    font-size: 22px;
-  }
-  .index-num {
-    grid-row: 1;
   }
   .hero-actions {
     margin-top: 32px;
