@@ -1,17 +1,20 @@
 import { test, expect } from "@playwright/test";
 import { mkdir } from "node:fs/promises";
 
-test("contact clearly prepares an email, not a server-side delivery", async ({
+test("contact form sends the request to /api/contact", async ({
   page,
 }, info) => {
+  const posted: Record<string, string>[] = [];
+  await page.route("**/api/contact", async (route) => {
+    posted.push(route.request().postDataJSON());
+    await route.fulfill({ json: { ok: true } });
+  });
   await page.goto("/");
   await page.locator("#contact").scrollIntoViewIfNeeded();
-  const submit = page.getByRole("button", { name: "Préparer mon email" });
+  const submit = page.getByRole("button", { name: "Envoyer ma demande" });
   await expect(submit).toBeVisible();
   await submit.click();
-  await expect(page.getByRole("status")).not.toContainText(
-    "Aucun message n’a été envoyé",
-  );
+  expect(posted).toHaveLength(0);
   await page.locator("#firstName").fill("Camille");
   await page.locator("#email").fill("camille@example.com");
   await page.locator("#company").fill("Atelier Exemple");
@@ -28,14 +31,41 @@ test("contact clearly prepares an email, not a server-side delivery", async ({
       path: `test-results/captures/${info.project.name}-contact-filled.png`,
     });
   await submit.click();
-  await expect(page.getByRole("status")).toContainText(
-    "Aucun message n’a été envoyé",
-  );
+  await expect(page.getByRole("status")).toContainText("bien envoyée");
+  expect(posted).toEqual([
+    expect.objectContaining({
+      firstName: "Camille",
+      email: "camille@example.com",
+      needType: "Automatisation",
+      website: "",
+    }),
+  ]);
+  await expect(page.locator("#firstName")).toHaveValue("");
   await page
     .locator("#contact")
     .screenshot({
       path: `test-results/captures/${info.project.name}-contact-result.png`,
     });
+});
+
+test("contact form reports a failed delivery", async ({ page }) => {
+  await page.route("**/api/contact", (route) =>
+    route.fulfill({ status: 502, json: { error: "send" } }),
+  );
+  await page.goto("/");
+  await page.locator("#firstName").fill("Camille");
+  await page.locator("#email").fill("camille@example.com");
+  await page.locator("#message").fill("Test");
+  await page.getByRole("button", { name: "Envoyer ma demande" }).click();
+  await expect(page.getByRole("status")).toContainText("n’a pas fonctionné");
+  await expect(page.locator("#firstName")).toHaveValue("Camille");
+});
+
+test("contact API rejects invalid requests", async ({ request }) => {
+  const res = await request.post("/api/contact", {
+    data: { firstName: "", email: "pas-un-email", message: "" },
+  });
+  expect([400, 500]).toContain(res.status());
 });
 
 test("native navigation, all projects, FAQ, SEO and static hero", async ({

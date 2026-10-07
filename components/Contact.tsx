@@ -3,39 +3,30 @@
 import { useState } from "react";
 import { SITE, needTypes } from "@/lib/data";
 
-export default function Contact() {
-  const [sent, setSent] = useState(false);
+type Status = "idle" | "sending" | "sent" | "error";
 
-  /**
-   * Le site est statique : pas de backend pour poster le formulaire.
-   * On compose donc un email pré-rempli que le visiteur n'a plus qu'à envoyer.
-   */
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+export default function Contact() {
+  const [status, setStatus] = useState<Status>("idle");
+
+  /** Le formulaire est envoyé par /api/contact (Brevo) directement dans nos boîtes. */
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const data = new FormData(form);
+    const payload = Object.fromEntries(new FormData(form));
 
-    // Champ piège anti-robots : rempli uniquement par un script.
-    if (String(data.get("website") ?? "").trim() !== "") return;
-
-    const get = (k: string) => String(data.get(k) ?? "").trim();
-    const need = get("needType") || "Non précisé";
-    const subject = `Demande — ${need}`;
-    const body = [
-      `Prénom : ${get("firstName")}`,
-      `Entreprise : ${get("company") || "—"}`,
-      `Email : ${get("email")}`,
-      `Téléphone : ${get("phone") || "—"}`,
-      `Type de besoin : ${need}`,
-      "",
-      "Besoin :",
-      get("message"),
-    ].join("\n");
-
-    window.location.href = `mailto:${SITE.email}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
-    setSent(true);
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      form.reset();
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -130,14 +121,20 @@ export default function Contact() {
             />
           </div>
 
-          <button className="btn form-submit" type="submit">
-            Préparer mon email
+          <button
+            className="btn form-submit"
+            type="submit"
+            disabled={status === "sending"}
+          >
+            {status === "sending" ? "Envoi…" : "Envoyer ma demande"}
           </button>
 
           <p className="form-note" role="status">
-            {sent
-              ? "Votre demande est prête. Si votre messagerie ne s’ouvre pas, écrivez directement à danhabibpro@gmail.com. Aucun message n’a été envoyé par ce site."
-              : "Le bouton ouvre votre messagerie avec le message déjà écrit."}
+            {status === "sent"
+              ? "Merci, votre demande est bien envoyée. Nous vous répondons sous 24 h."
+              : status === "error"
+                ? `L’envoi n’a pas fonctionné. Réessayez, ou écrivez-nous directement à ${SITE.email}.`
+                : "Votre message nous est envoyé directement, nous répondons sous 24 h."}
           </p>
         </form>
       </div>
