@@ -1,5 +1,13 @@
 import { needTypes } from "@/lib/data";
-import { contactHtml, contactSubject, contactText } from "./email";
+import { SITE } from "@/lib/data";
+import {
+  CONFIRMATION_SUBJECT,
+  confirmationHtml,
+  confirmationText,
+  contactHtml,
+  contactSubject,
+  contactText,
+} from "./email";
 
 /** Les demandes du formulaire partent de cette adresse (domaine authentifié sur Brevo). */
 const SENDER = { name: "NovaOr", email: "contact@novaor.fr" };
@@ -64,26 +72,42 @@ export async function POST(request: Request) {
 
   const mail = { ...data, need };
 
-  const res = await fetch("https://api.brevo.com/v3/smtp/email", {
-    method: "POST",
-    headers: {
-      "api-key": apiKey,
-      "content-type": "application/json",
-      accept: "application/json",
-    },
-    body: JSON.stringify({
-      sender: SENDER,
-      to: RECIPIENTS.map((email) => ({ email })),
-      replyTo: { email: data.email, name: data.firstName },
-      subject: contactSubject(mail),
-      textContent: contactText(mail),
-      htmlContent: contactHtml(mail),
-    }),
+  const res = await sendEmail(apiKey, {
+    sender: SENDER,
+    to: RECIPIENTS.map((email) => ({ email })),
+    replyTo: { email: data.email, name: data.firstName },
+    subject: contactSubject(mail),
+    textContent: contactText(mail),
+    htmlContent: contactHtml(mail),
   });
 
   if (!res.ok) {
     console.error("Brevo", res.status, await res.text());
     return Response.json({ error: "send" }, { status: 502 });
   }
+
+  // Accusé de réception au visiteur. La demande nous est déjà parvenue : un échec ici ne bloque pas.
+  const ack = await sendEmail(apiKey, {
+    sender: SENDER,
+    to: [{ email: data.email, name: data.firstName }],
+    replyTo: { email: SITE.email, name: SENDER.name },
+    subject: CONFIRMATION_SUBJECT,
+    textContent: confirmationText(mail),
+    htmlContent: confirmationHtml(mail),
+  });
+  if (!ack.ok) console.error("Brevo (confirmation)", ack.status, await ack.text());
+
   return Response.json({ ok: true });
+}
+
+function sendEmail(apiKey: string, payload: Record<string, unknown>) {
+  return fetch("https://api.brevo.com/v3/smtp/email", {
+    method: "POST",
+    headers: {
+      "api-key": apiKey,
+      "content-type": "application/json",
+      accept: "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
 }

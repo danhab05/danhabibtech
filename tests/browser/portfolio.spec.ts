@@ -31,7 +31,11 @@ test("contact form sends the request to /api/contact", async ({
       path: `test-results/captures/${info.project.name}-contact-filled.png`,
     });
   await submit.click();
-  await expect(page.getByRole("status")).toContainText("bien envoyée");
+  await expect(
+    page.getByRole("heading", { name: "Message envoyé, merci Camille !" }),
+  ).toBeFocused();
+  await expect(page.locator(".contact-done")).toContainText("camille@example.com");
+  await expect(page.locator("form.contact-form")).toBeHidden();
   expect(posted).toEqual([
     expect.objectContaining({
       firstName: "Camille",
@@ -40,12 +44,14 @@ test("contact form sends the request to /api/contact", async ({
       website: "",
     }),
   ]);
-  await expect(page.locator("#firstName")).toHaveValue("");
   await page
     .locator("#contact")
     .screenshot({
       path: `test-results/captures/${info.project.name}-contact-result.png`,
     });
+  await page.getByRole("button", { name: "Envoyer une autre demande" }).click();
+  await expect(page.locator("#firstName")).toBeVisible();
+  await expect(page.locator("#firstName")).toHaveValue("");
 });
 
 test("contact form reports a failed delivery", async ({ page }) => {
