@@ -1,6 +1,6 @@
 import Contact from "@/components/Contact";
 import ProjectMockup from "@/components/ProjectMockup";
-import SnowMark from "@/components/SnowMark";
+import Logo from "@/components/Logo";
 import {
   SITE,
   projects,
@@ -46,6 +46,8 @@ const jsonLd = {
         "Flask",
         "Django",
         "MySQL",
+        "Rust",
+        "Go",
       ],
       hasOccupation: {
         "@type": "Occupation",
@@ -74,7 +76,7 @@ const jsonLd = {
       name: SITE.brand,
       url: SITE.url,
       email: `mailto:${SITE.email}`,
-      logo: `${SITE.url}/icon`,
+      logo: `${SITE.url}/icon.png`,
       description: SITE.description,
       founder: { "@id": `${SITE.url}/#person` },
       sameAs: [SITE.links.linkedin, SITE.links.github, SITE.links.twitter],
@@ -145,8 +147,7 @@ export default function HomePage() {
       <header className="topbar">
         <div className="wrap topbar-inner">
           <a href="#accueil" className="logo" aria-label="NovaOr, accueil">
-            <SnowMark />
-            NovaOr
+            <Logo />
           </a>
           <nav aria-label="Navigation principale">
             <a href="#projets">Projets</a>
@@ -365,9 +366,8 @@ export default function HomePage() {
 
       <footer className="footer">
         <div className="wrap footer-inner">
-          <a className="logo" href="#accueil">
-            <SnowMark />
-            NovaOr
+          <a className="logo" href="#accueil" aria-label="NovaOr, accueil">
+            <Logo height={72} />
           </a>
           <p>NovaOr · Paris · © {new Date().getFullYear()}</p>
           <div>

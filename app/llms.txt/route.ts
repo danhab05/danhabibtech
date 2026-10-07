@@ -41,7 +41,7 @@ dépendance au prestataire.
 
 ## Stack technique
 
-Python (avancé), Dart/Flutter (avancé), JavaScript/TypeScript, PHP, Go,
+Python (avancé), Dart/Flutter (avancé), JavaScript/TypeScript, PHP, Go, Rust,
 Flask, Django, Next.js, React, MySQL, Docker, Linux/VPS, Git, APIs REST.
 
 ## Projets marquants
@@ -51,7 +51,7 @@ Flask, Django, Next.js, React, MySQL, Docker, Linux/VPS, Git, APIs REST.
 - Factures vers Excel pour comptable : le comptable dépose une facture, le logiciel lit fournisseur, date, HT, TVA et TTC et remplit l'Excel au format exact du cabinet. Environ 1 seconde par facture contre 10 minutes à la main.
 - Facilitimo, publication SeLoger en un clic (utilisé par BLG Immobilier, https://blgimmobilier.fr/) : l'agent saisit l'annonce une fois, un robot la publie sur le portail SeLoger (champs, photos) et confirme par mail.
 - Ordonnance vers pharmacien en un clic : le patient photographie son ordonnance, choisit sa pharmacie et l'envoie en un clic, sans mail à rédiger. Le pharmacien la reçoit dans son espace et prévient quand la commande est prête.
-- Aussi : tests antigéniques COVID pour une pharmacie (environ 100 000 tests en 2 ans), ExtractGrid (relevés bancaires PDF vers Excel), ecoledirect (bibliothèque Python sur PyPI).
+- Aussi : tests antigéniques COVID pour près de 15 pharmacies (environ 100 000 tests en 2 ans), ExtractGrid (relevés bancaires PDF vers Excel), ecoledirect (bibliothèque Python sur PyPI).
 
 ## Chiffres clés
 

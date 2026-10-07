@@ -99,7 +99,9 @@ test("native navigation, all projects, FAQ, SEO and static hero", async ({
     "/sitemap.xml",
     "/llms.txt",
     "/manifest.webmanifest",
-    "/opengraph-image",
+    "/opengraph-image.png",
+    "/icon.png",
+    "/apple-icon.png",
   ]) {
     expect((await page.request.get(url)).status()).toBe(200);
   }

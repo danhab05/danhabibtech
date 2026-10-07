@@ -184,8 +184,9 @@ h3 {
   font-weight: 700;
   letter-spacing: -0.03em;
 }
-.snowmark {
-  color: var(--accent);
+.logo-img {
+  display: block;
+  height: auto;
 }
 .topbar nav {
   display: none;
