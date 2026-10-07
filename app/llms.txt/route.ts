@@ -61,7 +61,7 @@ Flask, Django, Next.js, React, MySQL, Docker, Linux/VPS, Git, APIs REST.
 
 ## Liens
 
-- Site : https://novaor.fr
+- Site : https://www.novaor.fr
 - GitHub : https://github.com/danhab05
 - LinkedIn : https://www.linkedin.com/in/dan-habib-899b84232
 - X / Twitter : https://x.com/DanHabib05

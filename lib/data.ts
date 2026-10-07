@@ -1,5 +1,5 @@
 export const SITE = {
-  url: "https://novaor.fr",
+  url: "https://www.novaor.fr",
   name: "NovaOr",
   brand: "NovaOr",
   founder: "Dan Habib",
