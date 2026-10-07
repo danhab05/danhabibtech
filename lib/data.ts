@@ -100,6 +100,7 @@ export const projects: Project[] = [
     name: "BLG Immobilier",
     title: "Site d'immobilier neuf",
     sector: "Agence immobilière",
+    year: "2024",
     gain: "47 305",
     gainLabel: "logements neufs en ligne",
     summary:
