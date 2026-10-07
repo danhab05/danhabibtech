@@ -46,20 +46,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: "factures",
-    title: "Factures vers Excel",
-    sector: "Comptable",
-    gain: "1 s",
-    gainLabel: "au lieu de 10 min par facture",
-    summary:
-      "Le comptable glisse ses factures dans le logiciel. Il récupère un fichier Excel déjà rempli, au format qu'il utilise : date, fournisseur, HT, TVA, TTC.",
-    before: "Avant, il ouvrait chaque PDF et recopiait les montants à la main.",
-    features: ["Plusieurs factures d'un coup", "Son modèle Excel à lui", "Montants vérifiés"],
-    technologies: ["Python", "OCR", "Excel"],
-    link: null,
-    screenshot: { src: "/projects/factures.webp", url: "pharma-compta.vercel.app" },
-  },
-  {
     id: "crm",
     title: "CRM immobilier",
     sector: "Agence immobilière",
@@ -104,23 +90,6 @@ export const projects: Project[] = [
     screenshot: { src: "/projects/cours.webp", url: "assia.school" },
   },
   {
-    id: "ordonnances",
-    title: "Ordonnance à la pharmacie",
-    sector: "Pharmacie",
-    gain: "1 clic",
-    gainLabel: "pour envoyer une ordonnance",
-    summary:
-      "Le patient prend son ordonnance en photo, choisit sa pharmacie et envoie. Le pharmacien la reçoit, prépare la commande et prévient quand elle est prête.",
-    before: "Avant, il fallait écrire un mail avec un scan, ou attendre au comptoir.",
-    features: ["Photo et envoi", "Espace pharmacien", "Alerte « commande prête »"],
-    technologies: ["Flutter", "Python", "Flask"],
-    link: null,
-  },
-];
-
-/** Projets précédents. */
-export const olderProjects: Project[] = [
-  {
     id: "covid",
     name: "Tests antigéniques",
     title: "Inscription et résultats automatiques",
@@ -134,6 +103,37 @@ export const olderProjects: Project[] = [
     technologies: ["Flutter", "Python", "Flask", "Docker"],
     link: null,
     screenshot: { src: "/projects/covid.webp", url: "test-antigenique / inscription" },
+  },
+];
+
+/** Autres projets, affichés en bas. */
+export const olderProjects: Project[] = [
+  {
+    id: "factures",
+    title: "Factures vers Excel",
+    sector: "Comptable",
+    gain: "1 s",
+    gainLabel: "au lieu de 10 min par facture",
+    summary:
+      "Le comptable glisse ses factures dans le logiciel. Il récupère un fichier Excel déjà rempli, au format qu'il utilise : date, fournisseur, HT, TVA, TTC.",
+    before: "Avant, il ouvrait chaque PDF et recopiait les montants à la main.",
+    features: ["Plusieurs factures d'un coup", "Son modèle Excel à lui", "Montants vérifiés"],
+    technologies: ["Python", "OCR", "Excel"],
+    link: null,
+    screenshot: { src: "/projects/factures.webp", url: "pharma-compta.vercel.app" },
+  },
+  {
+    id: "ordonnances",
+    title: "Ordonnance à la pharmacie",
+    sector: "Pharmacie",
+    gain: "1 clic",
+    gainLabel: "pour envoyer une ordonnance",
+    summary:
+      "Le patient prend son ordonnance en photo, choisit sa pharmacie et envoie. Le pharmacien la reçoit, prépare la commande et prévient quand elle est prête.",
+    before: "Avant, il fallait écrire un mail avec un scan, ou attendre au comptoir.",
+    features: ["Photo et envoi", "Espace pharmacien", "Alerte « commande prête »"],
+    technologies: ["Flutter", "Python", "Flask"],
+    link: null,
   },
   {
     id: "extractgrid",

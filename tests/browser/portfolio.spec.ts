@@ -46,7 +46,7 @@ test("native navigation, all projects, FAQ, SEO and static hero", async ({
   await page.goto("/");
   await page.evaluate(() => document.fonts.ready);
   await expect(page.locator("h1")).toContainText("travail répétitif");
-  await expect(page.locator(".project-index li")).toHaveCount(5);
+  await expect(page.locator(".project-index li")).toHaveCount(4);
   await expect(page.locator(".project-card")).toHaveCount(9);
   await expect(page.locator(".project-card .mock")).toHaveCount(9);
   await expect(page.locator("video, canvas")).toHaveCount(0);

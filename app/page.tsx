@@ -277,8 +277,8 @@ export default function HomePage() {
 
           <div className="older">
             <div className="section-head">
-              <p className="label">Avant ça</p>
-              <h2>Nos projets précédents</h2>
+              <p className="label">Et aussi</p>
+              <h2>Nos autres projets</h2>
             </div>
             <div className="older-grid">
               {olderProjects.map((p, i) => (
