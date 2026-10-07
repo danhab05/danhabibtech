@@ -32,6 +32,8 @@ export type Project = {
   title: string;
   /** Pour qui. */
   sector: string;
+  /** Année de réalisation. */
+  year?: string;
   /** Le chiffre ou le fait qui résume le gain. */
   gain: string;
   gainLabel: string;
@@ -50,6 +52,7 @@ export const projects: Project[] = [
     id: "crm",
     title: "CRM immobilier",
     sector: "Agence immobilière",
+    year: "2026",
     gain: "1 outil",
     gainLabel: "au lieu de 4 pour suivre l'agence",
     summary:
@@ -65,6 +68,7 @@ export const projects: Project[] = [
     name: "Facilitimo",
     title: "Annonces SeLoger en 1 clic",
     sector: "Agence immobilière",
+    year: "2024",
     gain: "1 clic",
     gainLabel: "pour mettre une annonce en ligne",
     summary:
@@ -80,6 +84,7 @@ export const projects: Project[] = [
     name: "Assia",
     title: "Plateforme de cours particuliers",
     sector: "Soutien scolaire",
+    year: "2026",
     gain: "3 comptes",
     gainLabel: "prof, élève et parent",
     summary:
@@ -110,6 +115,7 @@ export const projects: Project[] = [
     name: "Tests antigéniques",
     title: "Inscription et résultats automatiques",
     sector: "Une quinzaine de pharmacies",
+    year: "2020",
     gain: "100 000",
     gainLabel: "tests gérés en deux ans",
     summary:

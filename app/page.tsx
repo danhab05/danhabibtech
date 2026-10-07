@@ -114,6 +114,7 @@ const jsonLd = {
           name: p.name ? `${p.name} — ${p.title}` : p.title,
           description: p.summary,
           ...(p.link ? { url: p.link } : {}),
+          ...(p.year ? { dateCreated: p.year } : {}),
           keywords: p.technologies.join(", "),
           author: { "@id": `${SITE.url}/#organization` },
         },
@@ -392,6 +393,7 @@ function ProjectCard({
       <div className="project-text">
         <p className="project-meta">
           <span>{num}</span> {p.sector}
+          {p.year && <time className="project-year">{p.year}</time>}
         </p>
         <h3 id={`t-${p.id}`}>
           {p.name ?? p.title}

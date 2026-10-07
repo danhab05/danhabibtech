@@ -376,6 +376,13 @@ a.partner-card:hover {
   font-size: 12px;
   font-weight: 700;
 }
+.project-year {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.project-year::before {
+  content: "· ";
+}
 .project-card h3 {
   font-size: clamp(26px, 4vw, 38px);
 }
