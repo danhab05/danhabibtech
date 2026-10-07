@@ -22,18 +22,18 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.danhabib.dev"),
+  metadataBase: new URL("https://novaor.fr"),
   title: {
-    default: "SnowTech — Automatisation & développement sur-mesure à Paris",
-    template: "%s | SnowTech",
+    default: "NovaOr — Automatisation & développement sur-mesure à Paris",
+    template: "%s | NovaOr",
   },
   description:
-    "Automatisation, assistants IA, intégrations et développement sur-mesure pour les entreprises. SnowTech, studio de développement à Paris : CRM immobilier, plateformes, factures vers Excel, robots de publication. Réponse sous 24 h.",
+    "Automatisation, assistants IA, intégrations et développement sur-mesure pour les entreprises. NovaOr, studio de développement à Paris : CRM immobilier, plateformes, factures vers Excel, robots de publication. Réponse sous 24 h.",
   keywords: [
-    "SnowTech",
-    "Snow Tech",
-    "snowtech",
-    "SnowTech Paris",
+    "NovaOr",
+    "Nova Or",
+    "novaor",
+    "NovaOr Paris",
     "Dan Habib",
     "développeur fullstack Paris",
     "développeur freelance Paris",
@@ -51,25 +51,25 @@ export const metadata: Metadata = {
     "intégration CRM API",
     "automatisation PME",
   ],
-  authors: [{ name: "SnowTech", url: "https://www.danhabib.dev" }],
-  creator: "SnowTech",
-  publisher: "SnowTech",
+  authors: [{ name: "NovaOr", url: "https://novaor.fr" }],
+  creator: "NovaOr",
+  publisher: "NovaOr",
   category: "technology",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "SnowTech — Automatisation & développement sur-mesure",
+    title: "NovaOr — Automatisation & développement sur-mesure",
     description:
       "Automatisation, assistants IA, intégrations et applications sur-mesure pour les entreprises. Paris, remote partout en France.",
-    url: "https://www.danhabib.dev",
-    siteName: "SnowTech",
+    url: "https://novaor.fr",
+    siteName: "NovaOr",
     locale: "fr_FR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SnowTech — Automatisation & développement sur-mesure",
+    title: "NovaOr — Automatisation & développement sur-mesure",
     description:
       "Automatisation, assistants IA et développement sur-mesure. Paris · Remote.",
     creator: "@DanHabib05",

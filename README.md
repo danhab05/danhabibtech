@@ -1,6 +1,6 @@
-# SnowTech
+# NovaOr
 
-Site de SnowTech (studio de Dan Habib) — automatisation, IA et développement sur-mesure.
+Site de NovaOr (studio de Dan Habib) — automatisation, IA et développement sur-mesure.
 
 ## Design
 Thème clair « neige », pensé d’abord pour le mobile. Les cinq projets sont listés dès le haut de page, puis détaillés chacun avec une maquette de l’outil dessinée en HTML/CSS (`components/ProjectMockup.tsx`). Logo flocon en SVG (`components/SnowMark.tsx`). Aucune image, aucune vidéo, aucune animation imposée. Polices Bricolage Grotesque et Inter via `next/font`.
@@ -8,7 +8,7 @@ Thème clair « neige », pensé d’abord pour le mobile. Les cinq projets sont
 ## Stack et contenu
 Next.js 15 App Router, React 18, TypeScript. `app/page.tsx` : page et JSON-LD ; `lib/data.ts` : contenu métier ; `components/Contact.tsx` : contact. Le formulaire **prépare un email mailto**, il ne l’envoie pas : une messagerie configurée est nécessaire. L’adresse directe reste accessible sans JavaScript.
 
-Metadata, canonical www.danhabib.dev, Open Graph, JSON-LD, robots.txt, sitemap.xml et llms.txt conservés.
+Metadata, canonical novaor.fr, Open Graph, JSON-LD, robots.txt, sitemap.xml et llms.txt conservés.
 
 ## Développement et vérification
 ```bash

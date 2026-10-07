@@ -1,13 +1,13 @@
 export const SITE = {
-  url: "https://www.danhabib.dev",
-  name: "SnowTech",
-  brand: "SnowTech",
+  url: "https://novaor.fr",
+  name: "NovaOr",
+  brand: "NovaOr",
   founder: "Dan Habib",
   jobTitle: "Développeur Fullstack & Automatisation",
   email: "danhabibpro@gmail.com",
   location: "Paris, France",
   description:
-    "SnowTech, studio de développement à Paris. Nous créons des logiciels et des automatisations pour les entreprises : CRM immobilier, plateforme de cours particuliers, conversion de factures en Excel, publication d'annonces, envoi d'ordonnances.",
+    "NovaOr, studio de développement à Paris. Nous créons des logiciels et des automatisations pour les entreprises : CRM immobilier, plateforme de cours particuliers, conversion de factures en Excel, publication d'annonces, envoi d'ordonnances.",
   links: {
     github: "https://github.com/danhab05",
     linkedin: "https://www.linkedin.com/in/dan-habib-899b84232",

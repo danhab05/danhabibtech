@@ -1,4 +1,4 @@
-/** Logo SnowTech : un flocon simple à six branches. */
+/** Logo NovaOr : un flocon simple à six branches. */
 export default function SnowMark() {
   return (
     <svg

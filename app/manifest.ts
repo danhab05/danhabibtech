@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "SnowTech — Automatisation & développement sur-mesure",
-    short_name: "SnowTech",
+    name: "NovaOr — Automatisation & développement sur-mesure",
+    short_name: "NovaOr",
     description:
-      "SnowTech, studio basé à Paris : automatisation, scraping et applications web sur-mesure.",
+      "NovaOr, studio basé à Paris : automatisation, scraping et applications web sur-mesure.",
     start_url: "/",
     display: "standalone",
     background_color: "#0e1014",

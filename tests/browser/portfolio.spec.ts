@@ -85,7 +85,7 @@ test("native navigation, all projects, FAQ, SEO and static hero", async ({
   expect(brokenAnchors).toEqual([]);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     "href",
-    "https://www.danhabib.dev",
+    "https://novaor.fr",
   );
   const graph = JSON.parse(
     await page.locator('script[type="application/ld+json"]').innerText(),
