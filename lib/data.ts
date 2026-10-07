@@ -93,13 +93,13 @@ export const projects: Project[] = [
     id: "covid",
     name: "Tests antigéniques",
     title: "Inscription et résultats automatiques",
-    sector: "Pharmacie",
+    sector: "Une quinzaine de pharmacies",
     gain: "100 000",
     gainLabel: "tests gérés en deux ans",
     summary:
-      "Pendant le Covid, une pharmacie était débordée. Les patients s'inscrivaient en ligne, recevaient leur résultat par mail automatiquement, et le pharmacien suivait tout depuis un seul écran.",
+      "Pendant le Covid, les pharmacies étaient débordées. Près de 15 pharmacies ont utilisé l'outil : les patients s'inscrivaient en ligne, recevaient leur résultat par mail automatiquement, et chaque pharmacien suivait tout depuis un seul écran.",
     before: "Avant, tout se faisait au comptoir, avec la file d'attente qui va avec.",
-    features: ["Inscription en ligne", "Résultat envoyé par mail", "Suivi pour le pharmacien"],
+    features: ["Inscription en ligne", "Résultat envoyé par mail", "Suivi pour chaque pharmacie"],
     technologies: ["Flutter", "Python", "Flask", "Docker"],
     link: null,
     screenshot: { src: "/projects/covid.webp", url: "test-antigenique / inscription" },
@@ -129,9 +129,9 @@ export const olderProjects: Project[] = [
     gain: "1 clic",
     gainLabel: "pour envoyer une ordonnance",
     summary:
-      "Le patient prend son ordonnance en photo, choisit sa pharmacie et envoie. Le pharmacien la reçoit, prépare la commande et prévient quand elle est prête.",
+      "Le patient prend son ordonnance en photo, choisit sa pharmacie et envoie. Le pharmacien la reçoit, prépare la commande et prévient quand elle est prête. Les ordonnances sont stockées en accord avec les règles d'hébergement de données de santé (HDS).",
     before: "Avant, il fallait écrire un mail avec un scan, ou attendre au comptoir.",
-    features: ["Photo et envoi", "Espace pharmacien", "Alerte « commande prête »"],
+    features: ["Photo et envoi", "Espace pharmacien", "Alerte « commande prête »", "Hébergement HDS"],
     technologies: ["Flutter", "Python", "Flask"],
     link: null,
   },
@@ -227,6 +227,8 @@ export const stack = [
   "MySQL",
   "Docker",
   "Selenium",
+  "Rust",
+  "Go",
 ] as const;
 
 export const services = [
