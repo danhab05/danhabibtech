@@ -871,6 +871,43 @@ a.partner-card:hover {
   color: var(--muted);
   font-size: 13px;
 }
+.contact-form[hidden] {
+  display: none;
+}
+/* Confirmation après envoi */
+.contact-done {
+  align-content: center;
+  justify-items: start;
+  gap: 12px;
+  min-height: 320px;
+}
+.done-check {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--green-soft);
+  color: var(--green);
+}
+.contact-done h3 {
+  font-family: var(--font-head);
+  font-size: clamp(24px, 3vw, 30px);
+  letter-spacing: -0.02em;
+  outline: none;
+}
+.contact-done p {
+  color: var(--ink-2);
+  font-size: 16px;
+  line-height: 1.55;
+}
+.contact-done .done-mail {
+  color: var(--muted);
+  font-size: 14px;
+}
+.contact-done .btn {
+  margin-top: 8px;
+}
 
 /* Pied de page */
 .footer {

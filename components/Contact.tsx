@@ -1,12 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SITE, needTypes } from "@/lib/data";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
 export default function Contact() {
   const [status, setStatus] = useState<Status>("idle");
+  const [sentTo, setSentTo] = useState({ firstName: "", email: "" });
+  const doneRef = useRef<HTMLHeadingElement>(null);
+
+  // Le formulaire disparaît : on amène le focus (et les lecteurs d'écran) sur la confirmation.
+  useEffect(() => {
+    if (status === "sent") doneRef.current?.focus();
+  }, [status]);
 
   /** Le formulaire est envoyé par /api/contact (Brevo) directement dans nos boîtes. */
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -22,6 +29,10 @@ export default function Contact() {
         body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error(String(res.status));
+      setSentTo({
+        firstName: String(payload.firstName ?? "").trim(),
+        email: String(payload.email ?? "").trim(),
+      });
       form.reset();
       setStatus("sent");
     } catch {
@@ -59,7 +70,42 @@ export default function Contact() {
           </p>
         </div>
 
-        <form className="contact-form" onSubmit={onSubmit}>
+        {status === "sent" && (
+          <div className="contact-form contact-done" role="status">
+            <span className="done-check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12.5l4.5 4.5L19 7.5" />
+              </svg>
+            </span>
+            <h3 ref={doneRef} tabIndex={-1}>
+              Message envoyé{sentTo.firstName ? `, merci ${sentTo.firstName}` : ""} !
+            </h3>
+            <p>
+              Nous avons bien reçu votre demande. Vous aurez un retour
+              généralement sous 24 h.
+            </p>
+            {sentTo.email && (
+              <p className="done-mail">
+                Un email de confirmation vient de partir à{" "}
+                <strong>{sentTo.email}</strong>. Pensez à regarder dans vos
+                spams.
+              </p>
+            )}
+            <button
+              type="button"
+              className="btn btn-outline"
+              onClick={() => setStatus("idle")}
+            >
+              Envoyer une autre demande
+            </button>
+          </div>
+        )}
+
+        <form
+          className="contact-form"
+          onSubmit={onSubmit}
+          hidden={status === "sent"}
+        >
           <div className="field-row">
             <div className="field">
               <label htmlFor="firstName">Prénom</label>
@@ -130,9 +176,7 @@ export default function Contact() {
           </button>
 
           <p className="form-note" role="status">
-            {status === "sent"
-              ? "Merci, votre demande est bien envoyée. Nous vous répondons sous 24 h."
-              : status === "error"
+            {status === "error"
                 ? `L’envoi n’a pas fonctionné. Réessayez, ou écrivez-nous directement à ${SITE.email}.`
                 : "Votre message nous est envoyé directement, nous répondons sous 24 h."}
           </p>
