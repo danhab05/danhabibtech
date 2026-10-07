@@ -76,9 +76,9 @@ test("native navigation, all projects, FAQ, SEO and static hero", async ({
   await page.goto("/");
   await page.evaluate(() => document.fonts.ready);
   await expect(page.locator("h1")).toContainText("travail répétitif");
-  await expect(page.locator(".project-index li")).toHaveCount(4);
-  await expect(page.locator(".project-card")).toHaveCount(9);
-  await expect(page.locator(".project-card .mock")).toHaveCount(9);
+  await expect(page.locator(".project-index li")).toHaveCount(5);
+  await expect(page.locator(".project-card")).toHaveCount(10);
+  await expect(page.locator(".project-card .mock")).toHaveCount(10);
   await expect(page.locator("video, canvas")).toHaveCount(0);
   expect(await page.evaluate(() => document.getAnimations().length)).toBe(0);
   expect(
@@ -123,7 +123,7 @@ test("native navigation, all projects, FAQ, SEO and static hero", async ({
   expect(
     graph.find((n: { "@type": string }) => n["@type"] === "ItemList")
       .itemListElement,
-  ).toHaveLength(9);
+  ).toHaveLength(10);
   for (const url of [
     "/robots.txt",
     "/sitemap.xml",
@@ -149,7 +149,7 @@ test("content and contact remain reachable without JavaScript", async ({
   await page.goto(process.env.TEST_BASE_URL || "http://127.0.0.1:3147");
   await expect(page.locator("h1")).toBeVisible();
   await page.getByRole("link", { name: "Explorer nos projets" }).click();
-  await expect(page.locator(".project-card")).toHaveCount(9);
+  await expect(page.locator(".project-card")).toHaveCount(10);
   const faq = page.locator("#faq details").first();
   await faq.locator("summary").click();
   await expect(faq.locator("p")).toBeVisible();

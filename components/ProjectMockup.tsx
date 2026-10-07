@@ -44,7 +44,8 @@ const BAR_LABEL: Partial<Record<Project["id"], string>> = {
   scripts: "terminal",
 };
 
-const BODIES: Record<Project["id"], React.ReactNode> = {
+/** Maquettes dessinées pour les projets sans capture d'écran. */
+const BODIES: Partial<Record<Project["id"], React.ReactNode>> = {
   crm: (
     <div className="crm">
       {[

@@ -375,6 +375,10 @@ a.partner-card:hover {
   --tint: #fff0e2;
   --tint-ink: #c25418;
 }
+.tint-blg {
+  --tint: #def3f0;
+  --tint-ink: #0b7a70;
+}
 .tint-ordonnances {
   --tint: #dff3f3;
   --tint-ink: #0c7a78;
@@ -552,7 +556,8 @@ a.partner-card:hover {
   display: grid;
   gap: 20px;
 }
-.project-card.compact .project-visual {
+/* Sur une colonne, la maquette passe au-dessus du texte. */
+.project-card .project-visual {
   order: -1;
 }
 .project-card.compact .project-gain strong {
@@ -1431,8 +1436,9 @@ a.partner-card:hover {
     grid-template-columns: 1fr 1fr;
     min-height: 520px;
   }
-  .project-list .project-card:nth-child(even) .project-visual {
-    order: -1;
+  /* Sur deux colonnes, la maquette alterne : à droite, puis à gauche. */
+  .project-list .project-card:nth-child(odd) .project-visual {
+    order: 0;
   }
   .older-grid {
     grid-template-columns: 1fr 1fr;
