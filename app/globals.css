@@ -1,16 +1,20 @@
 :root {
-  --bg: #f4f6f9;
-  --surface: #ffffff;
-  --surface-2: #eef1f5;
-  --ink: #0c111b;
-  --ink-2: #2b3240;
-  --muted: #5a6474;
-  --line: #e1e6ee;
-  --accent: #1f5eff;
-  --accent-soft: #e6edff;
-  --warm: #ff7a45;
-  --green: #0f9d63;
-  --green-soft: #e1f5eb;
+  color-scheme: dark;
+  /* Thème noir-gris : fond, cartes, texte clair, accent doré (logo). */
+  --bg: #121315;
+  --deep: #0b0c0e;
+  --surface: #1a1c20;
+  --surface-2: #22252a;
+  --ink: #f3f4f6;
+  --ink-2: #c9ccd3;
+  --muted: #8f949e;
+  --line: #2b2e34;
+  --accent: #d8ab55;
+  --accent-soft: rgba(216, 171, 85, 0.18);
+  --on-light: #121315;
+  --warm: #ff8a5c;
+  --green: #3ecf8e;
+  --green-soft: rgba(62, 207, 142, 0.14);
   --radius: 20px;
   --font-body: var(--font-sans), system-ui, sans-serif;
   --font-head: var(--font-display), var(--font-sans), system-ui, sans-serif;
@@ -106,7 +110,7 @@ h3 {
   padding: 10px 16px;
   border-radius: 10px;
   background: var(--ink);
-  color: #fff;
+  color: var(--on-light);
   clip-path: inset(50%);
 }
 .skip-link:focus {
@@ -135,7 +139,7 @@ h3 {
   border: 1.5px solid var(--ink);
   border-radius: 14px;
   background: var(--ink);
-  color: #fff;
+  color: var(--on-light);
   font-weight: 600;
   font-size: 15px;
   transition: background-color 0.15s, border-color 0.15s, color 0.15s;
@@ -143,13 +147,14 @@ h3 {
 .btn:hover {
   border-color: var(--accent);
   background: var(--accent);
+  color: var(--on-light);
 }
 .btn-outline {
   background: transparent;
   color: var(--ink);
 }
 .btn-outline:hover {
-  color: #fff;
+  color: var(--on-light);
 }
 .btn-small {
   min-height: 40px;
@@ -164,7 +169,7 @@ h3 {
   top: 0;
   z-index: 50;
   border-bottom: 1px solid var(--line);
-  background: rgba(244, 246, 249, 0.88);
+  background: rgba(18, 19, 21, 0.86);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -315,28 +320,28 @@ a.partner-card:hover {
 
 /* Teintes par projet */
 .tint-factures {
-  --tint: #e1f5eb;
-  --tint-ink: #0b7a4b;
+  --tint: rgba(62, 207, 142, 0.12);
+  --tint-ink: #6fe0a8;
 }
 .tint-crm {
-  --tint: #e6edff;
-  --tint-ink: #1f4fd6;
+  --tint: rgba(96, 140, 255, 0.14);
+  --tint-ink: #9bb8ff;
 }
 .tint-seloger {
-  --tint: #fde8e8;
-  --tint-ink: #c42b2b;
+  --tint: rgba(255, 102, 102, 0.13);
+  --tint-ink: #ff9696;
 }
 .tint-cours {
-  --tint: #fff0e2;
-  --tint-ink: #c25418;
+  --tint: rgba(255, 140, 72, 0.14);
+  --tint-ink: #ffb07a;
 }
 .tint-blg {
-  --tint: #def3f0;
-  --tint-ink: #0b7a70;
+  --tint: rgba(46, 204, 184, 0.13);
+  --tint-ink: #6fe3d2;
 }
 .tint-ordonnances {
-  --tint: #dff3f3;
-  --tint-ink: #0c7a78;
+  --tint: rgba(40, 196, 196, 0.13);
+  --tint-ink: #6ddddd;
 }
 
 /* Projets */
@@ -490,20 +495,20 @@ a.partner-card:hover {
 
 /* Projets précédents */
 .tint-covid {
-  --tint: #eaf1ff;
-  --tint-ink: #2d5bd3;
+  --tint: rgba(106, 146, 255, 0.14);
+  --tint-ink: #a1bcff;
 }
 .tint-extractgrid {
-  --tint: #e5f4ea;
-  --tint-ink: #177a45;
+  --tint: rgba(62, 207, 120, 0.12);
+  --tint-ink: #7be2a4;
 }
 .tint-ecoledirect {
-  --tint: #f1ebff;
-  --tint-ink: #6a3fd1;
+  --tint: rgba(162, 124, 255, 0.15);
+  --tint-ink: #c2acff;
 }
 .tint-scripts {
-  --tint: #eceef2;
-  --tint-ink: #2b3240;
+  --tint: rgba(255, 255, 255, 0.07);
+  --tint-ink: #c9ccd3;
 }
 .project-card h3 small {
   display: block;
@@ -676,8 +681,8 @@ a.partner-card:hover {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--ink);
-  color: #fff;
+  background: var(--accent);
+  color: var(--on-light);
   font-weight: 700;
 }
 .steps h3 {
@@ -733,7 +738,8 @@ a.partner-card:hover {
 /* Contact */
 .contact {
   padding: 64px 0;
-  background: var(--ink);
+  border-top: 1px solid var(--line);
+  background: var(--deep);
   color: #fff;
 }
 .contact-grid {
@@ -741,7 +747,7 @@ a.partner-card:hover {
   gap: 32px;
 }
 .contact .label {
-  color: #8fb0ff;
+  color: var(--accent);
 }
 .contact-intro > p:not(.label) {
   margin-top: 14px;
@@ -874,7 +880,7 @@ a.partner-card:hover {
 /* Pied de page */
 .footer {
   padding: 28px 0;
-  background: var(--ink);
+  background: var(--deep);
   color: rgba(255, 255, 255, 0.6);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 14px;
@@ -1476,6 +1482,81 @@ a.partner-card:hover {
   }
   .contact-form {
     padding: 32px;
+  }
+}
+
+/* Mobile : cartes plus compactes pour éviter des pages interminables. */
+@media (max-width: 559px) {
+  .hero-partners .partner-list {
+    gap: 10px;
+  }
+  .partner-card {
+    gap: 10px;
+    padding: 10px;
+    border-radius: 16px;
+  }
+  .partner-wordmark {
+    padding: 14px 16px 14px 26px;
+    border-radius: 10px;
+  }
+  .partner-wordmark::before {
+    left: 14px;
+    top: 14px;
+    bottom: 14px;
+    width: 3px;
+  }
+  .partner-wordmark b {
+    font-size: 18px;
+  }
+  .partner-wordmark small {
+    font-size: 10px;
+  }
+  .partner-work {
+    padding: 0 4px 4px;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .partner-work em {
+    font-size: 13px;
+  }
+  .project-list {
+    gap: 16px;
+  }
+  .project-card {
+    border-radius: 20px;
+  }
+  .project-visual {
+    padding: 14px 12px;
+  }
+  .project-text {
+    gap: 12px;
+    padding: 20px 18px 22px;
+  }
+  .project-card h3 {
+    font-size: 26px;
+  }
+  .project-card h3 small {
+    font-size: 15px;
+  }
+  .project-gain strong {
+    font-size: 38px;
+  }
+  .project-gain span {
+    font-size: 14px;
+  }
+  .project-summary {
+    font-size: 15.5px;
+    line-height: 1.55;
+  }
+  .project-before {
+    font-size: 14px;
+  }
+  .project-features li {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  .project-foot {
+    font-size: 13px;
   }
 }
 
