@@ -189,6 +189,14 @@ h3 {
   font-weight: 700;
   letter-spacing: -0.03em;
 }
+/* En-tête : logo NovaOr sur novaor.fr, nom « Dan Habib » sur danhabib.dev. */
+.brand-dan,
+[data-brand="dan"] .brand-novaor {
+  display: none;
+}
+[data-brand="dan"] .brand-dan {
+  display: inline;
+}
 .logo-img {
   display: block;
   height: auto;

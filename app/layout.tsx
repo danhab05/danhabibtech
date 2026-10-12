@@ -94,7 +94,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr" className={`${display.variable} ${sans.variable}`}>
+    <html
+      lang="fr"
+      className={`${display.variable} ${sans.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        {/* Sur danhabib.dev, l'en-tête affiche « Dan Habib » : posé avant le rendu, sans clignotement. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `if(/(^|\\.)danhabib\\.dev$/.test(location.hostname))document.documentElement.dataset.brand="dan"`,
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );
