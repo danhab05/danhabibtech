@@ -4,6 +4,7 @@ test("novaor.fr shows the NovaOr logo in the header", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator(".topbar .brand-novaor img")).toBeVisible();
   await expect(page.locator(".topbar .brand-dan")).toBeHidden();
+  await expect(page).toHaveTitle(/^NovaOr — /);
 });
 
 // Chrome force le HTTPS sur les domaines .dev : on sert la vraie page en faisant
@@ -26,4 +27,5 @@ test("danhabib.dev shows « Dan Habib » in the header", async ({ page }) => {
   await expect(page.locator(".topbar .brand-dan")).toHaveText("Dan Habib");
   await expect(page.locator(".topbar .brand-dan")).toBeVisible();
   await expect(page.locator(".topbar .brand-novaor")).toBeHidden();
+  await expect(page).toHaveTitle(/^Dan Habib — /);
 });
