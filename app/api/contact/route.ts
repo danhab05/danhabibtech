@@ -16,7 +16,6 @@ const SENDER = { name: "NovaOr", email: "contact@novaor.fr" };
 const RECIPIENTS = [
   "danhabib011@gmail.com",
   "dan.habib@yahoo.fr",
-  "ariebelhassen2005@gmail.com",
 ];
 
 const LIMITS = {
