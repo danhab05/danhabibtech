@@ -147,8 +147,11 @@ export default function HomePage() {
       </a>
       <header className="topbar">
         <div className="wrap topbar-inner">
-          <a href="#accueil" className="logo" aria-label="NovaOr, accueil">
-            <Logo />
+          <a href="#accueil" className="logo" aria-label="Accueil">
+            <span className="brand-novaor">
+              <Logo />
+            </span>
+            <span className="brand-dan">Dan Habib</span>
           </a>
           <nav aria-label="Navigation principale">
             <a href="#projets">Projets</a>
