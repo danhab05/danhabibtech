@@ -26,7 +26,8 @@ export type Project = {
     | "extractgrid"
     | "covid"
     | "ecoledirect"
-    | "scripts";
+    | "scripts"
+    | "novaor";
   /** Nom du produit ou du client, quand il existe. */
   name?: string;
   title: string;
@@ -131,6 +132,22 @@ export const projects: Project[] = [
 
 /** Autres projets, affichés en bas. */
 export const olderProjects: Project[] = [
+  {
+    id: "novaor",
+    name: "NovaOr",
+    title: "Site du studio",
+    sector: "Studio NovaOr",
+    year: "Octobre 2026",
+    gain: "2 sites",
+    gainLabel: "novaor.fr et danhabib.dev, un seul code",
+    summary:
+      "Le site novaor.fr : les projets, les partenaires et un formulaire de contact qui envoie chaque demande directement par email, avec un accusé de réception au visiteur. Le même code sert aussi danhabib.dev, avec son propre nom en haut et dans l'onglet.",
+    before: "Avant, le formulaire ouvrait seulement la messagerie du visiteur.",
+    features: ["Envoi direct des demandes", "Accusé de réception par email", "Deux domaines, un seul code"],
+    technologies: ["Next.js", "TypeScript", "Brevo", "Vercel"],
+    link: "https://novaor.fr",
+    screenshot: { src: "/projects/novaor.webp", url: "novaor.fr" },
+  },
   {
     id: "factures",
     title: "Factures vers Excel",
