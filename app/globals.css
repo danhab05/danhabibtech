@@ -347,6 +347,10 @@ a.partner-card:hover {
   --tint: rgba(46, 204, 184, 0.13);
   --tint-ink: #6fe3d2;
 }
+.tint-novaor {
+  --tint: rgba(216, 171, 85, 0.14);
+  --tint-ink: #e6c27a;
+}
 .tint-ordonnances {
   --tint: rgba(40, 196, 196, 0.13);
   --tint-ink: #6ddddd;
