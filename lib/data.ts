@@ -27,7 +27,7 @@ export type Project = {
     | "covid"
     | "ecoledirect"
     | "scripts"
-    | "novaor";
+    | "notreretraite";
   /** Nom du produit ou du client, quand il existe. */
   name?: string;
   title: string;
@@ -133,20 +133,20 @@ export const projects: Project[] = [
 /** Autres projets, affichés en bas. */
 export const olderProjects: Project[] = [
   {
-    id: "novaor",
-    name: "NovaOr",
-    title: "Site du studio",
-    sector: "Studio NovaOr",
+    id: "notreretraite",
+    name: "Notre Retraite",
+    title: "Simulateurs retraite et courtage",
+    sector: "Courtier en assurance",
     year: "Octobre 2026",
-    gain: "2 sites",
-    gainLabel: "novaor.fr et danhabib.dev, un seul code",
+    gain: "37",
+    gainLabel: "simulateurs gratuits, 270 guides",
     summary:
-      "Le site novaor.fr : les projets, les partenaires et un formulaire de contact qui envoie chaque demande directement par email, avec un accusé de réception au visiteur. Le même code sert aussi danhabib.dev, avec son propre nom en haut et dans l'onglet.",
-    before: "Avant, le formulaire ouvrait seulement la messagerie du visiteur.",
-    features: ["Envoi direct des demandes", "Accusé de réception par email", "Deux domaines, un seul code"],
-    technologies: ["Next.js", "TypeScript", "Brevo", "Vercel"],
-    link: "https://novaor.fr",
-    screenshot: { src: "/projects/novaor.webp", url: "novaor.fr" },
+      "Le site notreretraite.com, pour un cabinet de courtage à Paris : 37 calculatrices sur les barèmes 2026 (pension, PER, impôts, assurance-vie, immobilier) qui tournent dans le navigateur, 270 guides, et le rapport de chaque simulation envoyé par email. Un conseiller prend ensuite le relais.",
+    before: "Avant, il fallait chercher les barèmes et faire les calculs soi-même avant d'appeler un conseiller.",
+    features: ["37 simulateurs", "Rapport envoyé par email", "270 guides"],
+    technologies: ["React", "Brevo"],
+    link: "https://notreretraite.com/",
+    screenshot: { src: "/projects/notreretraite.webp", url: "notreretraite.com" },
   },
   {
     id: "factures",
