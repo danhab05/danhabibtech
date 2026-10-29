@@ -231,6 +231,14 @@ export const partners: {
   colors: { bg: string; accent: string };
 }[] = [
   {
+    name: "Notre Retraite",
+    tagline: "Courtier retraite",
+    work: "Cabinet de courtage à Paris, immatriculé à l'ORIAS. Nous avons fait leur site : 37 simulateurs et 270 guides.",
+    url: "https://notreretraite.com/",
+    logo: null,
+    colors: { bg: "#123326", accent: "#d9a35b" },
+  },
+  {
     name: "BLG Immobilier",
     tagline: "Vivre & investir",
     work: "Agence reconnue depuis 2002 : 5 agences, plus de 500 promoteurs partenaires. Nous avons fait leur site et Facilitimo.",

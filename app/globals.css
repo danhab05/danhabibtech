@@ -1410,7 +1410,7 @@ a.partner-card:hover {
     margin-top: 32px;
   }
   .partner-list {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 14px;
   }
   .partner-wordmark {
