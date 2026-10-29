@@ -50,6 +50,38 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "notreretraite",
+    name: "Notre Retraite",
+    title: "Simulateurs retraite et courtage",
+    sector: "Courtier en assurance",
+    year: "Octobre 2026",
+    gain: "37",
+    gainLabel: "simulateurs gratuits, 270 guides",
+    summary:
+      "Le site notreretraite.com, pour un cabinet de courtage à Paris : 37 calculatrices sur les barèmes 2026 (pension, PER, impôts, assurance-vie, immobilier) qui tournent dans le navigateur, 270 guides, et le rapport de chaque simulation envoyé par email. Un conseiller prend ensuite le relais.",
+    before: "Avant, il fallait chercher les barèmes et faire les calculs soi-même avant d'appeler un conseiller.",
+    features: ["37 simulateurs", "Rapport envoyé par email", "270 guides"],
+    technologies: ["React", "Brevo"],
+    link: "https://notreretraite.com/",
+    screenshot: { src: "/projects/notreretraite.webp", url: "notreretraite.com" },
+  },
+  {
+    id: "blg",
+    name: "BLG Immobilier",
+    title: "Site d'immobilier neuf",
+    sector: "Agence immobilière",
+    year: "2024",
+    gain: "47 305",
+    gainLabel: "logements neufs en ligne",
+    summary:
+      "Le site blgimmobilier.fr : plus de 47 000 appartements et maisons neufs de plus de 500 promoteurs, une carte pour chercher par région, et un formulaire qui transmet chaque demande à un conseiller. Les pages Marseille, Paris et Lyon sont pensées pour Google.",
+    before: "Avant, l'acheteur devait appeler l'agence pour savoir quels programmes étaient disponibles.",
+    features: ["Carte des programmes", "Recherche par ville et budget", "Demandes envoyées aux conseillers"],
+    technologies: ["PHP", "Supabase"],
+    link: "https://www.blgimmobilier.fr/",
+    screenshot: { src: "/projects/blg.webp", url: "blgimmobilier.fr" },
+  },
+  {
     id: "crm",
     title: "CRM immobilier",
     sector: "Agence immobilière",
@@ -97,22 +129,6 @@ export const projects: Project[] = [
     screenshot: { src: "/projects/cours.webp", url: "assia.school" },
   },
   {
-    id: "blg",
-    name: "BLG Immobilier",
-    title: "Site d'immobilier neuf",
-    sector: "Agence immobilière",
-    year: "2024",
-    gain: "47 305",
-    gainLabel: "logements neufs en ligne",
-    summary:
-      "Le site blgimmobilier.fr : plus de 47 000 appartements et maisons neufs de plus de 500 promoteurs, une carte pour chercher par région, et un formulaire qui transmet chaque demande à un conseiller. Les pages Marseille, Paris et Lyon sont pensées pour Google.",
-    before: "Avant, l'acheteur devait appeler l'agence pour savoir quels programmes étaient disponibles.",
-    features: ["Carte des programmes", "Recherche par ville et budget", "Demandes envoyées aux conseillers"],
-    technologies: ["PHP", "Supabase"],
-    link: "https://www.blgimmobilier.fr/",
-    screenshot: { src: "/projects/blg.webp", url: "blgimmobilier.fr" },
-  },
-  {
     id: "covid",
     name: "Tests antigéniques",
     title: "Inscription et résultats automatiques",
@@ -132,22 +148,6 @@ export const projects: Project[] = [
 
 /** Autres projets, affichés en bas. */
 export const olderProjects: Project[] = [
-  {
-    id: "notreretraite",
-    name: "Notre Retraite",
-    title: "Simulateurs retraite et courtage",
-    sector: "Courtier en assurance",
-    year: "Octobre 2026",
-    gain: "37",
-    gainLabel: "simulateurs gratuits, 270 guides",
-    summary:
-      "Le site notreretraite.com, pour un cabinet de courtage à Paris : 37 calculatrices sur les barèmes 2026 (pension, PER, impôts, assurance-vie, immobilier) qui tournent dans le navigateur, 270 guides, et le rapport de chaque simulation envoyé par email. Un conseiller prend ensuite le relais.",
-    before: "Avant, il fallait chercher les barèmes et faire les calculs soi-même avant d'appeler un conseiller.",
-    features: ["37 simulateurs", "Rapport envoyé par email", "270 guides"],
-    technologies: ["React", "Brevo"],
-    link: "https://notreretraite.com/",
-    screenshot: { src: "/projects/notreretraite.webp", url: "notreretraite.com" },
-  },
   {
     id: "factures",
     title: "Factures vers Excel",
